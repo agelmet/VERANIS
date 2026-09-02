@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<!--
+  Δρ. Βεράνης Σωτήρης — Νευροχειρουργός | Αθήνα, Κολωνάκι
+  Designed & built by Advon Media — https://advonmedia.com
+
+  SKELETON ROLL
+  Hero:          video-style ken-burns (dark cinematic, animated neural filament field)
+  Nav:           top bar, glass, centered brand lockup on mobile
+  Services:      cards grid (3×2) + numbered editorial list for the featured technique
+  Social proof:  large single quote
+  Contact:       split map + form
+  FAQ:           full-width band after social proof, 3 grouped accordion columns
+-->
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Νευροχειρουργός Κολωνάκι | Δρ. Βεράνης Σωτήρης</title>
+<meta name="description" content="Νευροχειρουργός στο Κολωνάκι. Ο Δρ. Βεράνης Σωτήρης εξειδικεύεται σε ελάχιστα επεμβατική χειρουργική σπονδυλικής στήλης και όγκους εγκεφάλου. Κλείστε ραντεβού.">
+<meta name="author" content="Δρ. Βεράνης Σωτήρης">
+<meta name="theme-color" content="#070C12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Δρ. Βεράνης Σωτήρης — Νευροχειρουργός">
+<meta property="og:title" content="Νευροχειρουργός Κολωνάκι | Δρ. Βεράνης Σωτήρης">
+<meta property="og:description" content="Ιδιωτικό ιατρείο νευροχειρουργικής στο Κολωνάκι. Ελάχιστα επεμβατικές τεχνικές σπονδυλικής στήλης, χειρουργική όγκων εγκεφάλου, νευροπλοήγηση Stealth Station 8.">
+<meta property="og:image" content="assets/veranis-sotiris-neurosurgeon-athens.jpg">
+<meta property="og:locale" content="el_GR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/neural-pathways-hero.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070C12'/%3E%3Cpath d='M20 46V18l24 28V18' stroke='%234FC5B8' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --ink:#0B1119;
+  --ink-deep:#070C12;
+  --ink-2:#14202B;
+  --bone:#F7F5F1;
+  --bone-2:#EFEBE4;
+  --paper:#FFFFFF;
+  --accent:#0E6E66;
+  --accent-deep:#0A544E;
+  --accent-lite:#4FC5B8;
+  --muted:#5B6B74;
+  --muted-2:#8A98A0;
+  --line:rgba(11,17,25,.11);
+  --line-soft:rgba(11,17,25,.06);
+  --line-dark:rgba(255,255,255,.13);
+  --shadow:0 1px 2px rgba(11,17,25,.04),0 12px 32px -12px rgba(11,17,25,.14);
+  --shadow-lg:0 2px 4px rgba(11,17,25,.05),0 32px 64px -24px rgba(11,17,25,.22);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  --maxw:1280px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.72;font-weight:400;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.012em;line-height:1.08}
+p{margin:0}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);position:relative;z-index:1}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* skip link */
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:#fff;padding:12px 20px;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent-lite);outline-offset:3px;border-radius:2px}
+
+/* ============================================================
+   TYPE SCALE
+   ============================================================ */
+.eyebrow{
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:'';width:28px;height:1px;background:currentColor;opacity:.5}
+.on-dark .eyebrow,.dark .eyebrow{color:var(--accent-lite)}
+.h-xl{font-size:clamp(44px,8.4vw,104px);line-height:.95;letter-spacing:-.03em}
+.h-lg{font-size:clamp(34px,5.2vw,64px);line-height:1.03;letter-spacing:-.022em}
+.h-md{font-size:clamp(26px,3.4vw,40px);line-height:1.1}
+.h-sm{font-size:clamp(20px,2.2vw,25px);line-height:1.22}
+.lede{font-size:clamp(16.5px,1.5vw,19.5px);line-height:1.72;color:var(--muted);font-weight:300}
+.dark .lede,.on-dark .lede{color:rgba(255,255,255,.72)}
+.small{font-size:14.5px;line-height:1.68;color:var(--muted)}
+.label{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2)}
+
+/* section shell */
+section{position:relative}
+.sect{padding-block:clamp(72px,10vw,148px)}
+.sect-tight{padding-block:clamp(56px,7vw,104px)}
+.dark{background:var(--ink-deep);color:#F2F5F7}
+.dark h1,.dark h2,.dark h3,.dark h4{color:#fff}
+.tint{background:var(--bone-2)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+.sect-head{max-width:760px}
+.sect-head .h-lg{margin-top:22px}
+.sect-head .lede{margin-top:22px}
+.sect-num{
+  position:absolute;z-index:0;top:clamp(40px,6vw,84px);right:var(--pad);
+  font-family:var(--serif);font-size:clamp(56px,9vw,124px);line-height:1;
+  color:var(--ink);opacity:.05;pointer-events:none;user-select:none;font-style:italic;
+}
+.dark .sect-num{color:#fff;opacity:.07}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:2px;font-size:13px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+  transition:transform .45s var(--ease),background .3s,color .3s,border-color .3s,box-shadow .45s var(--ease);
+  border:1px solid transparent;white-space:nowrap;
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn-solid{background:var(--accent);color:#fff}
+.btn-solid:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(14,110,102,.7)}
+.btn-glow{background:var(--accent-lite);color:#06231F}
+.btn-glow:hover{background:#6FE0D3;transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(79,197,184,.55)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-ghost-d{border-color:rgba(255,255,255,.28);color:#fff}
+.btn-ghost-d:hover{border-color:#fff;background:rgba(255,255,255,.06);transform:translateY(-2px)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.hdr{
+  position:fixed;inset:0 0 auto 0;z-index:90;
+  transition:background .5s var(--ease),backdrop-filter .5s,border-color .5s,padding .5s var(--ease);
+  border-bottom:1px solid transparent;padding-block:18px;
+}
+.hdr.stuck{
+  background:rgba(247,245,241,.82);backdrop-filter:saturate(1.6) blur(18px);
+  -webkit-backdrop-filter:saturate(1.6) blur(18px);
+  border-bottom-color:var(--line);padding-block:11px;
+}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:14px}
+
+.brand{display:flex;align-items:center;gap:13px;flex:none}
+.brand-mark{
+  width:38px;height:38px;border-radius:9px;flex:none;
+  background:linear-gradient(150deg,#0E6E66,#0B1119 70%);
+  display:grid;place-items:center;box-shadow:0 4px 14px -6px rgba(14,110,102,.7);
+}
+.brand-mark svg{width:21px;height:21px}
+.brand-txt{display:flex;flex-direction:column;line-height:1.05}
+.brand-name{font-family:var(--serif);font-size:19.5px;letter-spacing:-.005em;color:#fff;white-space:nowrap}
+.brand-role{font-size:8.8px;font-weight:600;letter-spacing:.23em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px}
+.hdr.stuck .brand-name{color:var(--ink)}
+.hdr.stuck .brand-role{color:var(--muted-2)}
+
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{
+  font-size:12px;font-weight:500;letter-spacing:.01em;padding:9px 10px;border-radius:2px;
+  color:rgba(255,255,255,.78);transition:color .25s,background .25s;position:relative;white-space:nowrap;
+}
+.nav a::after{content:'';position:absolute;left:10px;right:10px;bottom:4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr.stuck .nav a{color:var(--muted)}
+.hdr.stuck .nav a:hover{color:var(--ink)}
+
+.hdr-act{display:flex;align-items:center;gap:10px;flex:none}
+.lang{display:flex;align-items:center;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden}
+.hdr.stuck .lang{border-color:var(--line)}
+.lang button{
+  display:flex;align-items:center;gap:6px;padding:7px 11px;font-size:11px;font-weight:600;
+  letter-spacing:.1em;color:rgba(255,255,255,.6);transition:background .25s,color .25s;
+}
+.hdr.stuck .lang button{color:var(--muted)}
+.lang button.on{background:var(--accent);color:#fff}
+.hdr.stuck .lang button.on{background:var(--accent);color:#fff}
+.flag{width:17px;height:12px;border-radius:1.5px;flex:none;display:block}
+.hdr .btn{padding:12px 18px;font-size:11px;letter-spacing:.08em}
+.hdr-act{min-width:0}
+
+.burger{display:none;width:42px;height:42px;border:1px solid rgba(255,255,255,.22);border-radius:2px;place-items:center}
+.hdr.stuck .burger{border-color:var(--line)}
+.burger span{display:block;width:17px;height:1.5px;background:currentColor;color:#fff;transition:.3s}
+.hdr.stuck .burger span{color:var(--ink)}
+.burger span+span{margin-top:4.5px}
+
+/* mobile drawer */
+.drawer{
+  position:fixed;inset:0;z-index:120;background:var(--ink-deep);visibility:hidden;
+  transform:translateY(-100%);transition:transform .6s var(--ease),visibility 0s linear .6s;
+  display:flex;flex-direction:column;padding:22px var(--pad) 40px;overflow-y:auto;
+}
+.drawer.open{transform:translateY(0);visibility:visible;transition:transform .6s var(--ease),visibility 0s}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:38px}
+.drawer-close{width:44px;height:44px;border:1px solid rgba(255,255,255,.24);border-radius:2px;display:grid;place-items:center;color:#fff}
+.drawer-close svg{width:19px;height:19px}
+.drawer nav{display:flex;flex-direction:column;gap:2px}
+.drawer nav a{
+  font-family:var(--serif);font-size:31px;color:#fff;padding:11px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.drawer-foot{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+.drawer-foot .btn{width:100%}
+.drawer-meta{margin-top:28px;font-size:13px;color:rgba(255,255,255,.5);line-height:2}
+.drawer-meta a{color:var(--accent-lite)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  background:var(--ink-deep);color:#fff;overflow:hidden;padding-block:150px 64px;isolation:isolate;
+}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;opacity:.30;
+  filter:grayscale(.35) contrast(1.06) brightness(.8);
+  animation:kb 26s var(--ease) infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-1.5%,-1.5%,0)}}
+@media (prefers-reduced-motion:reduce){.hero-bg img{animation:none}}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 18%,rgba(14,110,102,.30),transparent 62%),
+    radial-gradient(80% 70% at 8% 92%,rgba(79,197,184,.13),transparent 60%),
+    linear-gradient(180deg,rgba(7,12,18,.86) 0%,rgba(7,12,18,.56) 34%,rgba(7,12,18,.94) 88%);
+}
+.hero-net{position:absolute;inset:0;z-index:1;opacity:.5;pointer-events:none}
+.hero-net path{fill:none;stroke:var(--accent-lite);stroke-width:.8;stroke-linecap:round;
+  stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:draw 7s var(--ease) forwards}
+.hero-net circle{fill:var(--accent-lite);opacity:0;animation:pop .9s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:.85}}
+@media (prefers-reduced-motion:reduce){
+  .hero-net path{animation:none;stroke-dashoffset:0}
+  .hero-net circle{animation:none;opacity:.85}
+}
+.hero-in{position:relative;z-index:2;width:100%}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.hero h1{margin-top:26px}
+.hero h1 em{display:block;font-style:italic;font-weight:300;color:var(--accent-lite)}
+.hero p.lede{max-width:520px;margin-top:26px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-side{display:flex;flex-direction:column;gap:20px;align-items:flex-end;text-align:right;padding-bottom:6px}
+.hero-side .item{border-right:1px solid rgba(255,255,255,.16);padding-right:18px}
+.hero-side .k{font-family:var(--serif);font-size:30px;color:#fff;line-height:1}
+.hero-side .v{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:7px}
+.scroll-hint{
+  position:absolute;left:var(--pad);bottom:26px;z-index:3;display:flex;align-items:center;gap:11px;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);
+}
+.scroll-hint i{display:block;width:1px;height:34px;background:linear-gradient(rgba(255,255,255,.5),transparent);animation:sc 2.4s ease-in-out infinite}
+@keyframes sc{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+/* marquee credentials strip */
+.strip{background:var(--ink);color:rgba(255,255,255,.55);border-block:1px solid rgba(255,255,255,.07);overflow:hidden;padding-block:15px}
+.strip-track{display:flex;gap:0;width:max-content;animation:mq 42s linear infinite}
+@media (prefers-reduced-motion:reduce){.strip-track{animation:none}}
+.strip-track span{
+  display:inline-flex;align-items:center;gap:22px;padding-inline:22px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;
+}
+.strip-track span::after{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent-lite);opacity:.6}
+@keyframes mq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(34px,5.5vw,84px);align-items:center}
+.portrait{position:relative}
+.portrait-frame{
+  position:relative;border-radius:3px;overflow:hidden;background:linear-gradient(170deg,#dfe6e4,#c3d1ce);
+  box-shadow:var(--shadow-lg);aspect-ratio:768/914;
+}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;cursor:zoom-in;transition:transform 1.1s var(--ease)}
+.portrait-frame:hover img{transform:scale(1.035)}
+.portrait::before{
+  content:'';position:absolute;inset:30px -26px -26px 30px;border:1px solid var(--accent);opacity:.32;border-radius:3px;z-index:-1;
+}
+.portrait-cap{
+  position:absolute;left:-14px;bottom:22px;background:var(--ink-deep);color:#fff;
+  padding:14px 20px;border-radius:2px;box-shadow:var(--shadow-lg);max-width:78%;
+}
+.portrait-cap .n{font-family:var(--serif);font-size:19px;line-height:1.15}
+.portrait-cap .r{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-lite);margin-top:6px}
+.about-body p+p{margin-top:20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:46px;border-top:1px solid var(--line)}
+.stat{padding:26px 20px 0 0;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.stat:last-child{border-right:0}
+.stat .k{font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1;color:var(--ink)}
+.stat .v{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-top:auto;padding-top:12px;line-height:1.6}
+
+/* ============================================================
+   CARD GRIDS
+   ============================================================ */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.card{background:var(--bone);padding:clamp(26px,3vw,40px);position:relative;transition:background .45s var(--ease),transform .45s var(--ease)}
+.card::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+.card:hover{background:var(--paper)}
+.card:hover::before{transform:scaleX(1)}
+.card .ic{width:40px;height:40px;color:var(--accent);margin-bottom:22px}
+.card .ic svg{width:100%;height:100%}
+.card h3{font-size:23px;margin-bottom:13px}
+.card p{font-size:14.6px;line-height:1.75;color:var(--muted)}
+.tint .card{background:var(--bone-2)}
+.tint .card:hover{background:var(--paper)}
+
+/* dark tech grid */
+.grid-tech{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:56px}
+.tcard{background:var(--ink-deep);padding:clamp(26px,3vw,38px);transition:background .45s var(--ease)}
+.tcard:hover{background:#0C141C}
+.tcard .n{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--accent-lite);opacity:.8}
+.tcard h3{font-size:21px;margin:12px 0 13px;line-height:1.2}
+.tcard p{font-size:14.4px;line-height:1.78;color:rgba(255,255,255,.62)}
+
+/* numbered editorial list */
+.numlist{margin-top:52px;border-top:1px solid var(--line-dark)}
+.numrow{display:grid;grid-template-columns:76px minmax(0,1fr) minmax(0,1.5fr);gap:clamp(16px,3vw,44px);
+  padding-block:30px;border-bottom:1px solid var(--line-dark);align-items:baseline;transition:padding-left .5s var(--ease)}
+.numrow:hover{padding-left:10px}
+.numrow .n{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--accent-lite)}
+.numrow h3{font-size:clamp(20px,2.4vw,27px)}
+.numrow p{font-size:14.6px;line-height:1.78;color:rgba(255,255,255,.6)}
+
+/* feature split */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,5vw,80px);align-items:start}
+.split-body p+p{margin-top:20px}
+
+/* ============================================================
+   ATLAS (interactive anatomy)
+   ============================================================ */
+.atlas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-dark);
+  border:1px solid var(--line-dark);margin-top:56px}
+.atlas-pane{background:var(--ink-deep);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;align-items:center}
+.atlas-pane .label{color:rgba(255,255,255,.42);align-self:flex-start}
+.atlas-pane h3{font-size:22px;align-self:flex-start;margin:8px 0 4px}
+.atlas-pane .hint{font-size:12px;color:rgba(255,255,255,.36);align-self:flex-start;margin-bottom:14px}
+.atlas-svg{width:100%;max-width:330px}
+.atlas-svg .hit{cursor:pointer;transition:opacity .3s}
+.atlas-svg .seg{fill:rgba(255,255,255,.055);stroke:rgba(255,255,255,.22);stroke-width:1;transition:fill .35s var(--ease),stroke .35s var(--ease)}
+.atlas-svg .hit:hover .seg,.atlas-svg .hit.on .seg{fill:rgba(79,197,184,.26);stroke:var(--accent-lite)}
+.atlas-svg .lab{fill:rgba(255,255,255,.62);font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.1em;pointer-events:none}
+.atlas-svg .hit:hover .lab,.atlas-svg .hit.on .lab{fill:#fff}
+.atlas-detail{
+  grid-column:1/-1;background:var(--ink);padding:clamp(26px,4vw,52px);border-top:1px solid var(--line-dark);
+}
+.atlas-detail .rgn{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-lite)}
+.atlas-detail h3{font-size:clamp(26px,3.4vw,40px);margin:12px 0 16px}
+.atlas-detail>p{max-width:820px;color:rgba(255,255,255,.68);font-size:15.5px;line-height:1.78}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.path-grid .p{border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
+.path-grid .p h4{font-size:16.5px;font-family:var(--sans);font-weight:600;letter-spacing:0;color:#fff;line-height:1.4}
+.path-grid .p p{font-size:13.6px;line-height:1.72;color:rgba(255,255,255,.55);margin-top:9px}
+.tx{margin-top:34px;padding:22px 26px;border-left:2px solid var(--accent-lite);background:rgba(79,197,184,.06)}
+.tx .label{color:var(--accent-lite)}
+.tx p{margin-top:9px;font-size:14.6px;line-height:1.76;color:rgba(255,255,255,.76)}
+
+/* ============================================================
+   CLINIC
+   ============================================================ */
+.clinic-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:center}
+.clinic-img{border-radius:3px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:1344/768;background:var(--bone-2)}
+.clinic-img img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform 1.1s var(--ease)}
+.clinic-img:hover img{transform:scale(1.045)}
+.info-list{margin-top:38px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.info{background:var(--bone);padding:22px 26px;display:grid;grid-template-columns:34px 1fr;gap:18px;align-items:start}
+.info svg{width:19px;height:19px;color:var(--accent);margin-top:4px}
+.info .label{color:var(--muted-2)}
+.info .t{font-size:16px;line-height:1.62;margin-top:7px}
+.info address{font-style:normal}
+.info .t a:hover{color:var(--accent)}
+.map{margin-top:40px;border:1px solid var(--line);border-radius:3px;overflow:hidden;filter:grayscale(.85) contrast(1.04);transition:filter .6s}
+.map:hover{filter:grayscale(0)}
+.map iframe{display:block;width:100%;height:340px;border:0}
+
+/* ============================================================
+   TESTIMONIAL
+   ============================================================ */
+.quote{max-width:930px;margin-inline:auto;text-align:center}
+.quote .mark{font-family:var(--serif);font-size:96px;line-height:.6;color:var(--accent-lite);opacity:.5}
+.quote blockquote{margin:22px 0 0;font-family:var(--serif);font-size:clamp(23px,3.2vw,38px);line-height:1.36;font-style:italic;font-weight:300;color:#fff}
+.quote .who{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:15px}
+.quote .av{width:50px;height:50px;border-radius:50%;background:linear-gradient(150deg,var(--accent),var(--ink-2));
+  display:grid;place-items:center;font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff;flex:none}
+.quote .who .n{font-size:15px;font-weight:600;color:#fff;text-align:left}
+.quote .who .c{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-lite);margin-top:4px;text-align:left}
+
+/* ============================================================
+   PATIENT RESOURCES
+   ============================================================ */
+.res-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--paper);
+  padding:9px 17px;border-radius:100px;font-size:12.5px;font-weight:500;color:var(--muted)}
+.chip b{color:var(--ink);font-weight:600}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:block}
+.tabs{display:flex;gap:6px;margin-top:48px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tab{
+  position:relative;padding:14px 22px 15px;font-size:13px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted-2);transition:color .3s;display:inline-flex;align-items:center;gap:10px;
+}
+.tab .c{font-size:10.5px;font-weight:600;background:var(--line-soft);color:var(--muted);padding:2px 8px;border-radius:100px;transition:.3s}
+.tab::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .45s var(--ease)}
+.tab.on{color:var(--ink)}
+.tab.on .c{background:var(--accent);color:#fff}
+.tab.on::after{transform:scaleX(1)}
+.res-panel[hidden]{display:none}
+.res-group{margin-top:46px}
+.res-group>.label{display:flex;align-items:center;gap:14px;color:var(--accent)}
+.res-group>.label::after{content:'';flex:1;height:1px;background:var(--line)}
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.doc-grid.one{grid-template-columns:1fr}
+.doc-grid.two{grid-template-columns:repeat(2,1fr)}
+.doc{
+  background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:26px;
+  display:flex;flex-direction:column;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;
+}
+.doc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(14,110,102,.4)}
+.doc-ic{width:44px;height:44px;border-radius:2px;background:rgba(14,110,102,.08);display:grid;place-items:center;color:var(--accent);margin-bottom:20px;flex:none}
+.doc-ic svg{width:21px;height:21px}
+.doc h4{font-family:var(--serif);font-size:20.5px;font-weight:500;line-height:1.22;letter-spacing:-.005em}
+.doc p{font-size:13.6px;line-height:1.72;color:var(--muted);margin-top:12px;flex:1}
+.doc-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.doc-foot .pg{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2)}
+.doc-foot a{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:7px}
+.doc-foot a svg{width:13px;height:13px;transition:transform .4s var(--ease)}
+.doc-foot a:hover svg{transform:translateX(4px)}
+.res-cta{margin-top:56px;background:var(--ink-deep);color:#fff;padding:clamp(30px,4vw,52px);border-radius:3px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px}
+.res-cta h3{font-size:clamp(24px,3vw,33px)}
+.res-cta p{color:rgba(255,255,255,.6);font-size:14.8px;margin-top:10px;max-width:520px}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,48px);margin-top:56px}
+.faq-col>.label{color:var(--accent);padding-bottom:14px;border-bottom:1px solid var(--line);display:block}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  text-align:left;padding:19px 0;font-size:15.4px;font-weight:500;line-height:1.5;transition:color .3s}
+.qa button:hover{color:var(--accent)}
+.qa .pm{position:relative;width:15px;height:15px;flex:none;margin-top:5px}
+.qa .pm::before,.qa .pm::after{content:'';position:absolute;background:var(--accent);transition:transform .45s var(--ease)}
+.qa .pm::before{top:7px;left:0;width:15px;height:1.5px}
+.qa .pm::after{left:6.75px;top:0;width:1.5px;height:15px}
+.qa[data-open="1"] .pm::after{transform:scaleY(0)}
+.qa .ans{overflow:hidden;height:0;transition:height .5s var(--ease)}
+.qa .ans p{padding:0 0 22px;font-size:14.5px;line-height:1.8;color:var(--muted);max-width:56ch}
+
+/* ============================================================
+   BOOKING + CONTACT
+   ============================================================ */
+.form-split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.contact-lines{margin-top:40px;display:flex;flex-direction:column;gap:2px}
+.cline{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-dark);align-items:center}
+.cline .ci{width:38px;height:38px;border:1px solid rgba(255,255,255,.16);border-radius:2px;display:grid;place-items:center;color:var(--accent-lite)}
+.cline .ci svg{width:17px;height:17px}
+.cline .label{color:rgba(255,255,255,.4)}
+.cline .v{font-size:17px;color:#fff;margin-top:3px}
+.cline .v a:hover{color:var(--accent-lite)}
+.form{background:var(--paper);border-radius:3px;padding:clamp(26px,3.4vw,46px);box-shadow:var(--shadow-lg)}
+.dark .form{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);box-shadow:none}
+.form h3{font-size:clamp(23px,2.6vw,31px);margin-bottom:6px}
+.form .small{margin-bottom:26px}
+.dark .form .small{color:rgba(255,255,255,.55)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:8px}
+.dark .field label{color:rgba(255,255,255,.45)}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:2px;background:var(--bone);
+  font-family:var(--sans);font-size:15px;color:var(--ink);transition:border-color .3s,background .3s;
+}
+.dark .field input,.dark .field select,.dark .field textarea{
+  background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14);color:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--accent);background:var(--paper)}
+.dark .field input:focus,.dark .field select:focus,.dark .field textarea:focus{background:rgba(255,255,255,.07);border-color:var(--accent-lite)}
+.field textarea{resize:vertical;min-height:112px}
+.form .btn{width:100%;margin-top:8px}
+.form-note{font-size:12.4px;color:var(--muted-2);margin-top:16px;text-align:center}
+.dark .form-note{color:rgba(255,255,255,.42)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.ftr{background:var(--ink-deep);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.08);padding-block:56px 30px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.ftr h4{font-size:11px;font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:18px}
+.ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.ftr a{font-size:14.4px;transition:color .25s}
+.ftr a:hover{color:var(--accent-lite)}
+.ftr address{font-style:normal;font-size:14.4px;line-height:1.9}
+.ftr-brand p{font-size:14.4px;line-height:1.85;margin-top:18px;max-width:340px;color:rgba(255,255,255,.55)}
+.ftr-bot{margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:12.6px;color:rgba(255,255,255,.42)}
+.ftr-bot a{color:rgba(255,255,255,.65)}
+.ftr-bot a:hover{color:var(--accent-lite)}
+
+/* floating call button (mobile) */
+.fab{
+  position:fixed;right:16px;bottom:16px;z-index:80;display:none;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;padding:14px 20px;border-radius:100px;
+  box-shadow:0 12px 32px -10px rgba(14,110,102,.8);font-size:13px;font-weight:600;letter-spacing:.06em
+}
+.fab svg{width:16px;height:16px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(7,12,18,.94);display:none;align-items:center;justify-content:center;padding:24px;
+  opacity:0;transition:opacity .35s}
+.lb.on{display:flex}
+.lb.vis{opacity:1}
+.lb img{max-width:min(1100px,92vw);max-height:88vh;width:auto;border-radius:3px;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)}
+.lb-x{position:absolute;top:20px;right:20px;width:46px;height:46px;border:1px solid rgba(255,255,255,.25);
+  border-radius:2px;display:grid;place-items:center;color:#fff}
+.lb-x svg{width:19px;height:19px}
+.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:rgba(255,255,255,.6);font-size:13px;padding-inline:24px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:grid}
+  .hdr .btn{display:none}
+  .grid-3,.grid-tech,.doc-grid,.path-grid{grid-template-columns:repeat(2,1fr)}
+  .faq-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-side{display:none}
+  .hero-grid{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .about-grid,.split,.clinic-grid,.form-split,.atlas{grid-template-columns:1fr}
+  .portrait{max-width:400px;margin-inline:auto}
+  .portrait::before{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--line);padding-bottom:22px}
+  .stat:nth-child(2n){border-right:0}
+  .numrow{grid-template-columns:44px 1fr;row-gap:8px}
+  .numrow p{grid-column:2}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+  .ftr-brand{grid-column:1/-1}
+  .fab{display:inline-flex}
+  body{padding-bottom:0}
+}
+@media (max-width:1240px){
+  .nav a{font-size:11.4px;padding:9px 8px}
+  .brand-name{font-size:18px}
+}
+@media (max-width:620px){
+  .brand-mark{width:32px;height:32px;border-radius:8px}
+  .brand-mark svg{width:18px;height:18px}
+  .lang button{padding:6px 8px;font-size:10px;gap:4px}
+  .burger{width:38px;height:38px}
+  .hdr-in{gap:8px}
+  .grid-3,.grid-2,.grid-tech,.doc-grid,.doc-grid.two,.path-grid,.faq-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .hero{min-height:92svh;padding-block:130px 88px}
+  .res-cta{flex-direction:column;align-items:flex-start}
+  .res-cta .btn{width:100%}
+  .brand-name{font-size:17px}
+  .drawer nav a{font-size:26px}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Physician", "name": "Δρ. Βεράνης Σωτήρης — Νευροχειρουργός", "alternateName": "Dr. Veranis Sotiris — Neurosurgeon", "medicalSpecialty": "Neurologic", "image": "assets/veranis-sotiris-neurosurgeon-athens.jpg", "telephone": "+306983517455", "email": "veranissotiris@gmail.com", "priceRange": "€€", "availableLanguage": ["el", "en"], "address": {"@type": "PostalAddress", "streetAddress": "Αλωπεκής 41", "addressLocality": "Αθήνα", "addressRegion": "Αττική", "postalCode": "10676", "addressCountry": "GR"}, "geo": {"@type": "GeoCoordinates", "latitude": 37.9765, "longitude": 23.744}, "areaServed": [{"@type": "Place", "name": "Κολωνάκι"}, {"@type": "Place", "name": "Αθήνα"}, {"@type": "Place", "name": "Αττική"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "15:00", "closes": "21:00"}], "employee": {"@type": "Person", "name": "Σωτήρης Βεράνης", "alternateName": "Sotiris Veranis", "jobTitle": "Νευροχειρουργός", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Ιατρική Σχολή, Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών"}, "knowsLanguage": ["el", "en"], "knowsAbout": ["Χειρουργική όγκων εγκεφάλου", "Ελάχιστα επεμβατική χειρουργική σπονδυλικής στήλης", "Χειρουργική υπόφυσης", "Χειρουργική περιφερικών νεύρων", "Νευροπλοήγηση"], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Τίτλος Ιατρικής Ειδικότητας Νευροχειρουργικής"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "el", "mainEntity": [{"@type": "Question", "name": "Πότε πρέπει να επισκεφθώ νευροχειρουργό;", "acceptedAnswer": {"@type": "Answer", "text": "Καλό είναι να απευθυνθείτε σε νευροχειρουργό εάν έχετε επίμονες ή έντονες κεφαλαλγίες, μούδιασμα ή αδυναμία στα άκρα, πόνο στον αυχένα ή τη μέση που δεν υποχωρεί με συντηρητική αγωγή, διαταραχές όρασης, δυσκολία στη βάδιση, ή εάν μια μαγνητική ή αξονική τομογραφία ανέδειξε βλάβη, όγκο ή δομική ανωμαλία στον εγκέφαλο ή τη σπονδυλική στήλη."}}, {"@type": "Question", "name": "Χρειάζομαι παραπεμπτικό για να κλείσω ραντεβού;", "acceptedAnswer": {"@type": "Answer", "text": "Δεν απαιτείται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας με το ιατρείο για να κλείσετε ραντεβού. Εάν έχετε ήδη πρόσφατες απεικονιστικές εξετάσεις (μαγνητική, αξονική) ή νευρολογικές γνωματεύσεις, παρακαλούμε να τις φέρετε στην πρώτη επίσκεψη — βοηθούν σημαντικά στην εκτίμηση."}}, {"@type": "Question", "name": "Τι να περιμένω στην πρώτη μου επίσκεψη;", "acceptedAnswer": {"@type": "Answer", "text": "Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας."}}, {"@type": "Question", "name": "Χρειάζεται πάντα χειρουργείο;", "acceptedAnswer": {"@type": "Answer", "text": "Σε καμία περίπτωση. Πολλές νευρολογικές παθήσεις ανταποκρίνονται πολύ καλά σε συντηρητική αντιμετώπιση, όπως φυσικοθεραπεία, φαρμακευτική αγωγή ή στοχευμένες εγχύσεις. Το χειρουργείο προτείνεται μόνο όταν έχουν εξαντληθεί οι μη χειρουργικές επιλογές ή όταν υπάρχει σαφής ιατρική ένδειξη, όπως πίεση νεύρου που προκαλεί προϊούσα αδυναμία."}}, {"@type": "Question", "name": "Τι είναι η ελάχιστα επεμβατική νευροχειρουργική;", "acceptedAnswer": {"@type": "Answer", "text": "Οι ελάχιστα επεμβατικές τεχνικές αξιοποιούν μικρές τομές και εξειδικευμένα εργαλεία για την προσπέλαση του εγκεφάλου ή της σπονδυλικής στήλης με ελάχιστη διατάραξη των γύρω ιστών. Τα οφέλη περιλαμβάνουν μικρότερη απώλεια αίματος, συντομότερη νοσηλεία, λιγότερο μετεγχειρητικό πόνο και ταχύτερη επιστροφή στην καθημερινότητα σε σχέση με την κλασική ανοικτή χειρουργική."}}, {"@type": "Question", "name": "Πώς προετοιμάζομαι για επέμβαση σπονδυλικής στήλης ή εγκεφάλου;", "acceptedAnswer": {"@type": "Answer", "text": "Η προετοιμασία διαφέρει ανάλογα με την επέμβαση, αλλά γενικά περιλαμβάνει προεγχειρητικές αιματολογικές και απεικονιστικές εξετάσεις, διακοπή ορισμένων φαρμάκων (όπως τα αντιπηκτικά) σύμφωνα με τις οδηγίες, νηστεία πριν από την επέμβαση και οργάνωση υποστήριξης στο σπίτι μετά. Ο Δρ. Βεράνης θα σας δώσει εξατομικευμένη λίστα προεγχειρητικού ελέγχου."}}, {"@type": "Question", "name": "Πόσο διαρκεί η ανάρρωση μετά από επέμβαση σπονδυλικής στήλης;", "acceptedAnswer": {"@type": "Answer", "text": "Η ανάρρωση εξαρτάται από το είδος και την έκταση της επέμβασης. Οι ασθενείς που υποβάλλονται σε ελάχιστα επεμβατική δισκεκτομή συχνά επιστρέφουν σπίτι την ίδια ή την επόμενη ημέρα και επανέρχονται σε ήπια δραστηριότητα μέσα σε δύο έως τέσσερις εβδομάδες. Οι πιο σύνθετες σπονδυλοδεσίες μπορεί να χρειαστούν έξι έως δώδεκα εβδομάδες για πλήρη ανάρρωση. Ο Δρ. Βεράνης θα σας δώσει χρονοδιάγραμμα προσαρμοσμένο στη δική σας περίπτωση."}}, {"@type": "Question", "name": "Πότε μπορώ να επιστρέψω στη δουλειά μου;", "acceptedAnswer": {"@type": "Answer", "text": "Ο χρόνος επιστροφής στην εργασία διαφέρει σημαντικά. Για γραφειακή ή καθιστική εργασία, οι ασθενείς συνήθως επιστρέφουν μέσα σε δύο έως τέσσερις εβδομάδες μετά από ελάχιστα επεμβατική επέμβαση. Η χειρωνακτική εργασία μπορεί να απαιτήσει έξι έως δώδεκα εβδομάδες. Το εξατομικευμένο πλάνο λαμβάνει υπόψη το επάγγελμά σας, την επέμβαση και τη γενική σας κατάσταση."}}, {"@type": "Question", "name": "Θα χρειαστώ φυσικοθεραπεία μετά την επέμβαση;", "acceptedAnswer": {"@type": "Answer", "text": "Στις περισσότερες περιπτώσεις, ναι. Η μετεγχειρητική φυσικοθεραπεία αποτελεί σημαντικό μέρος της ανάρρωσης, ιδίως μετά από επεμβάσεις σπονδυλικής στήλης. Αποκαθιστά τη μυϊκή ισχύ, την ευλυγισία και τη λειτουργικότητα και μειώνει τον κίνδυνο υποτροπής. Ο Δρ. Βεράνης συνεργάζεται στενά με έμπειρους φυσικοθεραπευτές και θα σας παραπέμψει αναλόγως."}}]}</script>
+</head>
+<body id="top">
+<a class="skip" href="#main" data-el="Μετάβαση στο περιεχόμενο" data-en="Skip to content">Μετάβαση στο περιεχόμενο</a>
+
+<!-- ══════════════════════════ HEADER ══════════════════════════ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Δρ. Βεράνης Σωτήρης — αρχική">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-txt">
+        <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
+        <span class="brand-role" data-en="Neurosurgeon">Νευροχειρουργός</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Κύρια πλοήγηση">
+      <a href="#about" data-en="About">Ο Ιατρός</a>
+      <a href="#services" data-en="Services">Υπηρεσίες</a>
+      <a href="#atlas" data-en="Atlas">Ανατομία</a>
+      <a href="#clinic" data-en="Clinic">Ιατρείο</a>
+      <a href="#resources" data-en="Resources">Εκπαίδευση</a>
+      <a href="#faq" data-en="FAQ">Ερωτήσεις</a>
+      <a href="#contact" data-en="Contact">Επικοινωνία</a>
+    </nav>
+
+    <div class="hdr-act">
+      <div class="lang" role="group" aria-label="Γλώσσα / Language">
+        <button type="button" data-lang="el" class="on" aria-label="Ελληνικά">
+          <svg class="flag" viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#0D5EAF"/><g fill="#fff"><rect y="2" width="27" height="2"/><rect y="6" width="27" height="2"/><rect y="10" width="27" height="2"/><rect y="14" width="27" height="2"/></g><rect width="10" height="10" fill="#0D5EAF"/><g fill="#fff"><rect x="4" width="2" height="10"/><rect y="4" width="10" height="2"/></g></svg>EL</button>
+        <button type="button" data-lang="en" aria-label="English">
+          <svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="fc"><path d="M0 0h60v30H0z"/></clipPath><g clip-path="url(#fc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</button>
+      </div>
+      <a class="btn btn-solid" href="#booking" data-en="Book Now">Ραντεβού</a>
+      <button class="burger" id="burger" type="button" aria-label="Μενού" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Μενού">
+  <div class="drawer-top">
+    <a class="brand" href="#top" data-close>
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-txt">
+        <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
+        <span class="brand-role" data-en="Neurosurgeon">Νευροχειρουργός</span>
+      </span>
+    </a>
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Κλείσιμο μενού">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Πλοήγηση κινητού">
+    <a href="#about" data-close data-en="About">Ο Ιατρός</a>
+    <a href="#services" data-close data-en="Services">Υπηρεσίες</a>
+    <a href="#atlas" data-close data-en="Anatomical Atlas">Ανατομικός Χάρτης</a>
+    <a href="#clinic" data-close data-en="Clinic">Ιατρείο</a>
+    <a href="#resources" data-close data-en="Patient Resources">Εκπαίδευση Ασθενών</a>
+    <a href="#faq" data-close data-en="FAQ">Ερωτήσεις</a>
+    <a href="#contact" data-close data-en="Contact">Επικοινωνία</a>
+  </nav>
+  <div class="drawer-foot">
+    <a class="btn btn-glow" href="#booking" data-close data-en="Book Appointment">Κλείστε Ραντεβού</a>
+    <a class="btn btn-ghost-d" href="tel:+306983517455">+30 698 351 7455</a>
+  </div>
+  <div class="drawer-meta">
+    <span data-en="Alopekis 41, Kolonaki, Athens 10676">Αλωπεκής 41, Κολωνάκι, Αθήνα 10676</span><br>
+    <a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-bg">
+    <picture>
+      <source srcset="assets/neural-pathways-hero.webp" type="image/webp">
+      <img src="assets/neural-pathways-hero.jpg" width="1536" height="672" alt="Απεικόνιση νευρικών οδών του εγκεφάλου" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+
+  <svg class="hero-net" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path style="--l:1400;animation-delay:.1s"  d="M-40 640 C 220 560, 300 400, 520 380 S 900 430, 1080 300 S 1340 150, 1500 190"/>
+    <path style="--l:1500;animation-delay:.35s" d="M-40 760 C 260 730, 420 610, 620 560 S 1010 560, 1200 470 S 1400 380, 1520 400"/>
+    <path style="--l:1300;animation-delay:.6s"  d="M-40 460 C 180 430, 340 300, 560 260 S 880 300, 1060 210 S 1320 90, 1500 110"/>
+    <path style="--l:900;animation-delay:.85s"  d="M300 900 C 340 720, 470 620, 520 380"/>
+    <path style="--l:800;animation-delay:1.05s" d="M1080 300 C 1120 460, 1180 560, 1200 470"/>
+    <path style="--l:700;animation-delay:1.25s" d="M620 560 C 700 500, 780 470, 1060 210"/>
+    <circle cx="520" cy="380" r="3.4" style="animation-delay:2.2s"/>
+    <circle cx="1080" cy="300" r="3.4" style="animation-delay:2.5s"/>
+    <circle cx="620" cy="560" r="3" style="animation-delay:2.7s"/>
+    <circle cx="1200" cy="470" r="3" style="animation-delay:2.9s"/>
+    <circle cx="1060" cy="210" r="2.6" style="animation-delay:3.1s"/>
+    <circle cx="560" cy="260" r="2.6" style="animation-delay:3.3s"/>
+  </svg>
+
+  <div class="wrap hero-in">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-en="Private Practice Neurosurgery · Athens">Ιδιωτικό Ιατρείο Νευροχειρουργικής · Αθήνα</span>
+        <h1 class="h-xl" id="h1"><span data-en="Dr. Veranis">Δρ. Βεράνης</span><em data-en="Sotiris">Σωτήρης</em></h1>
+        <p class="lede" data-en="Precision, compassion, and excellence in neurosurgical care. Dedicated to restoring health and quality of life.">Ακρίβεια, ενσυναίσθηση και αριστεία στη νευροχειρουργική φροντίδα. Με αφοσίωση στην αποκατάσταση της υγείας και της ποιότητας ζωής.</p>
+        <div class="hero-cta">
+          <a class="btn btn-glow" href="#booking" data-en="Schedule a Consultation">Κλείστε Ραντεβού</a>
+          <a class="btn btn-ghost-d" href="#about" data-en="Learn More">Μάθετε Περισσότερα</a>
+        </div>
+      </div>
+      <div class="hero-side" aria-hidden="true">
+        <div class="item"><div class="k">20+</div><div class="v" data-en="Years of practice">Έτη εμπειρίας</div></div>
+        <div class="item"><div class="k">2.000+</div><div class="v" data-en="Surgeries">Επεμβάσεις</div></div>
+        <div class="item"><div class="k" data-en="Kolonaki">Κολωνάκι</div><div class="v" data-en="Athens clinic">Ιατρείο Αθηνών</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><i></i><span data-en="Scroll">Κύλιση</span></div>
+</section>
+
+<!-- ══════════════════════════ CREDENTIAL STRIP ══════════════════════════ -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span data-en="University of Athens Medical School">Ιατρική Σχολή Πανεπιστημίου Αθηνών</span>
+    <span data-en="Board Certified Neurosurgery">Τίτλος Ειδικότητας Νευροχειρουργικής</span>
+    <span data-en="Minimally Invasive Spine Surgery">Ελάχιστα Επεμβατική Χειρουργική Σπονδυλικής Στήλης</span>
+    <span data-en="Stealth Station 8 Neuronavigation">Νευροπλοήγηση Stealth Station 8</span>
+    <span data-en="DTI Tractography &amp; fMRI">Χαρτογράφηση Νευρικών Οδών &amp; fMRI</span>
+    <span data-en="European Fellowships">Μετεκπαίδευση σε Ευρωπαϊκά Κέντρα</span>
+    <span data-en="University of Athens Medical School">Ιατρική Σχολή Πανεπιστημίου Αθηνών</span>
+    <span data-en="Board Certified Neurosurgery">Τίτλος Ειδικότητας Νευροχειρουργικής</span>
+    <span data-en="Minimally Invasive Spine Surgery">Ελάχιστα Επεμβατική Χειρουργική Σπονδυλικής Στήλης</span>
+    <span data-en="Stealth Station 8 Neuronavigation">Νευροπλοήγηση Stealth Station 8</span>
+    <span data-en="DTI Tractography &amp; fMRI">Χαρτογράφηση Νευρικών Οδών &amp; fMRI</span>
+    <span data-en="European Fellowships">Μετεκπαίδευση σε Ευρωπαϊκά Κέντρα</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+<section class="sect" id="about" aria-labelledby="h-about">
+  <span class="sect-num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait rv">
+        <div class="portrait-frame">
+          <picture>
+            <source srcset="assets/veranis-sotiris-neurosurgeon-athens.webp" type="image/webp">
+            <img src="assets/veranis-sotiris-neurosurgeon-athens.jpg" width="720" height="856"
+                 alt="Ο Δρ. Βεράνης Σωτήρης, νευροχειρουργός, με χειρουργική στολή"
+                 loading="lazy" decoding="async" data-lb data-cap="Δρ. Βεράνης Σωτήρης, Νευροχειρουργός">
+          </picture>
+        </div>
+        <div class="portrait-cap">
+          <div class="n" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</div>
+          <div class="r" data-en="Neurosurgeon · Athens">Νευροχειρουργός · Αθήνα</div>
+        </div>
+      </div>
+
+      <div class="about-body rv">
+        <span class="eyebrow" data-en="About the Surgeon">Ο Χειρουργός</span>
+        <h2 class="h-lg" id="h-about" style="margin-top:22px" data-en="A commitment to neurological excellence">Μια δέσμευση στη νευροχειρουργική αριστεία</h2>
+        <div style="margin-top:26px">
+          <p class="lede" data-en="Dr. Veranis Sotiris is a neurosurgeon based in Athens with over two decades of experience in diagnosing and treating complex neurological conditions. Trained at the University of Athens and with advanced fellowships across leading European institutions, he combines technical expertise with a deeply patient-centred approach to care.">Ο Δρ. Βεράνης Σωτήρης είναι νευροχειρουργός με έδρα την Αθήνα και εμπειρία άνω των δύο δεκαετιών στη διάγνωση και την αντιμετώπιση σύνθετων νευρολογικών παθήσεων. Με σπουδές στην Ιατρική Σχολή του Πανεπιστημίου Αθηνών και μετεκπαίδευση σε κορυφαία ευρωπαϊκά κέντρα, συνδυάζει την τεχνική κατάρτιση με μια βαθιά ανθρωποκεντρική προσέγγιση.</p>
+          <p class="lede" style="margin-top:20px" data-en="His practice in Kolonaki is dedicated to personalised, evidence-based neurosurgical care — from minimally invasive spine procedures to complex brain tumour surgery — so that every patient receives the highest standard of treatment in a warm, supportive environment.">Το ιατρείο του στο Κολωνάκι είναι αφιερωμένο σε εξατομικευμένη, τεκμηριωμένη νευροχειρουργική φροντίδα — από ελάχιστα επεμβατικές τεχνικές σπονδυλικής στήλης έως σύνθετες επεμβάσεις όγκων εγκεφάλου — ώστε κάθε ασθενής να λαμβάνει το υψηλότερο επίπεδο θεραπείας σε ένα ζεστό, υποστηρικτικό περιβάλλον.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="k" data-en="Univ. of Athens">Παν. Αθηνών</div><div class="v" data-en="Medical School">Ιατρική Σχολή</div></div>
+          <div class="stat"><div class="k">20+</div><div class="v" data-en="Years clinical experience">Έτη κλινικής εμπειρίας</div></div>
+          <div class="stat"><div class="k" data-en="Certified">Ειδικότητα</div><div class="v" data-en="Neurosurgery">Νευροχειρουργική</div></div>
+          <div class="stat"><div class="k">2.000+</div><div class="v" data-en="Successful surgeries">Επιτυχείς επεμβάσεις</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SERVICES ══════════════════════════ -->
+<section class="sect tint" id="services" aria-labelledby="h-services">
+  <span class="sect-num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Specialisations">Εξειδικεύσεις</span>
+      <h2 class="h-lg" id="h-services" data-en="Areas of expertise">Τομείς εξειδίκευσης</h2>
+      <p class="lede" data-en="The full range of neurosurgical services, with a focus on minimally invasive techniques and personalised patient care.">Το πλήρες φάσμα νευροχειρουργικών υπηρεσιών, με έμφαση στις ελάχιστα επεμβατικές τεχνικές και στην εξατομικευμένη φροντίδα του ασθενούς.</p>
+    </div>
+
+    <div class="grid-3 rv">
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3a4 4 0 0 0-4 4 3.5 3.5 0 0 0-1.5 6.6A3.5 3.5 0 0 0 9 20a3 3 0 0 0 3-1.6 3 3 0 0 0 3 1.6 3.5 3.5 0 0 0 2.5-6.4A3.5 3.5 0 0 0 16 7a4 4 0 0 0-4-4Z"/><path d="M12 7v13"/></svg></div>
+        <h3 data-en="Brain Tumour Surgery">Χειρουργική Όγκων Εγκεφάλου</h3>
+        <p data-en="Advanced surgical treatment of benign and malignant brain tumours using state-of-the-art microsurgical and neuronavigation techniques, planned so that the maximum safe resection is achieved while eloquent brain function is preserved.">Προηγμένη χειρουργική αντιμετώπιση καλοήθων και κακοήθων όγκων του εγκεφάλου με σύγχρονες μικροχειρουργικές τεχνικές και νευροπλοήγηση. Ο σχεδιασμός κάθε επέμβασης στοχεύει στη μέγιστη ασφαλή αφαίρεση του όγκου με ταυτόχρονη διαφύλαξη των λειτουργικών περιοχών του εγκεφάλου.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20"/><path d="M8 5h8M8 9h8M8 13h8M8 17h8"/><path d="M6 5.5 4 4M18 5.5 20 4M6 17.5 4 19M18 17.5 20 19"/></svg></div>
+        <h3 data-en="Spine Surgery">Χειρουργική Σπονδυλικής Στήλης</h3>
+        <p data-en="A complete range of spinal procedures including disc herniation repair, treatment of spinal stenosis and minimally invasive spinal fusion, tailored to the level and severity of each patient's condition.">Ολοκληρωμένο φάσμα επεμβάσεων σπονδυλικής στήλης: αποκατάσταση κήλης μεσοσπονδυλίου δίσκου, αντιμετώπιση στένωσης σπονδυλικού σωλήνα και ελάχιστα επεμβατική σπονδυλοδεσία, προσαρμοσμένα στο επίπεδο και τη βαρύτητα της πάθησης κάθε ασθενούς.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12h4l2-6 3 12 2.5-7 1.5 3h5"/><circle cx="18" cy="7" r="2.4"/></svg></div>
+        <h3 data-en="Cerebrovascular Consultation">Αγγειακή Εγκεφαλική Εκτίμηση</h3>
+        <p data-en="Clinical consultation for patients with cerebrovascular conditions including aneurysms and arteriovenous malformations, in close collaboration with the neurointerventional unit for coordinated, multidisciplinary management.">Κλινική εκτίμηση ασθενών με αγγειακές παθήσεις του εγκεφάλου, όπως ανευρύσματα και αρτηριοφλεβώδεις δυσπλασίες, σε στενή συνεργασία με τη μονάδα επεμβατικής νευροακτινολογίας για συντονισμένη, διεπιστημονική αντιμετώπιση.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 8a7 7 0 0 1 14 0c0 3-2 4.5-2 7a5 5 0 0 1-10 0c0-2.5-2-4-2-7Z"/><circle cx="12" cy="12" r="2.2"/></svg></div>
+        <h3 data-en="Pituitary Surgery">Χειρουργική Υπόφυσης</h3>
+        <p data-en="Transsphenoidal and endoscopic approaches for pituitary adenomas and other sellar region tumours, offering excellent visualisation of the tumour with minimal disruption and a short recovery time.">Διασφηνοειδικές και ενδοσκοπικές προσπελάσεις για αδενώματα υπόφυσης και άλλους όγκους της περιοχής του τουρκικού εφιππίου. Προσφέρουν άριστη απεικόνιση του όγκου με ελάχιστη επιβάρυνση των ιστών και σύντομο χρόνο ανάρρωσης.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 6c4 0 4 12 8 12s4-12 8-12"/><circle cx="4" cy="6" r="1.6"/><circle cx="20" cy="6" r="1.6"/></svg></div>
+        <h3 data-en="Peripheral Nerve Surgery">Χειρουργική Περιφερικών Νεύρων</h3>
+        <p data-en="Microsurgical treatment of carpal tunnel syndrome and other nerve compression syndromes, restoring sensation and strength through short procedures with a fast return to daily activity.">Μικροχειρουργική αντιμετώπιση του συνδρόμου καρπιαίου σωλήνα και άλλων συνδρόμων πίεσης περιφερικών νεύρων. Οι επεμβάσεις είναι σύντομες, αποκαθιστούν την αισθητικότητα και τη μυϊκή ισχύ και επιτρέπουν ταχεία επιστροφή στην καθημερινότητα.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3 data-en="Neurosurgical Consultations">Νευροχειρουργικές Γνωματεύσεις</h3>
+        <p data-en="Thorough diagnostic evaluation and a personalised treatment plan for the full spectrum of neurological conditions, including second opinions on an already proposed surgical plan.">Ενδελεχής διαγνωστική εκτίμηση και εξατομικευμένο σχέδιο θεραπείας για όλο το φάσμα των νευρολογικών παθήσεων, συμπεριλαμβανομένης της δεύτερης γνώμης σε ήδη προτεινόμενο χειρουργικό πλάνο.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ MINIMALLY INVASIVE SPINE ══════════════════════════ -->
+<section class="sect dark" id="mis" aria-labelledby="h-mis">
+  <span class="sect-num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <div class="split rv">
+      <div>
+        <span class="eyebrow" data-en="Featured Technique">Τεχνική Αιχμής</span>
+        <h2 class="h-lg" id="h-mis" style="margin-top:22px" data-en="Minimally invasive spine surgery">Ελάχιστα επεμβατική χειρουργική σπονδυλικής στήλης</h2>
+      </div>
+      <div class="split-body">
+        <p class="lede" data-en="Modern spinal conditions can now be treated through very small incisions using advanced endoscopic and tubular retractor systems. Dr. Veranis specialises in the full spectrum of minimally invasive spinal techniques, from microdiscectomy and endoscopic foraminotomy to percutaneous pedicle screw fixation and minimally invasive lumbar interbody fusion (MIS-TLIF / XLIF).">Οι σύγχρονες παθήσεις της σπονδυλικής στήλης αντιμετωπίζονται πλέον μέσα από πολύ μικρές τομές, με προηγμένα ενδοσκοπικά συστήματα και σωληνωτούς διαστολείς. Ο Δρ. Βεράνης εξειδικεύεται σε όλο το φάσμα των ελάχιστα επεμβατικών τεχνικών, από τη μικροδισκεκτομή και την ενδοσκοπική διανοίξη τρήματος έως τη διαδερμική σπονδυλοδεσία με βίδες και τη σπονδυλοδεσία οσφύος (MIS-TLIF / XLIF).</p>
+        <p class="lede" data-en="These approaches reduce muscle trauma, surgical blood loss and post-operative pain — resulting in shorter hospital stays (often one to two days) and a significantly faster return to daily life compared with traditional open surgery.">Οι προσπελάσεις αυτές περιορίζουν τον τραυματισμό των μυών, την απώλεια αίματος και τον μετεγχειρητικό πόνο. Το αποτέλεσμα είναι μικρότερη διάρκεια νοσηλείας — συχνά μία έως δύο ημέρες — και σημαντικά ταχύτερη επιστροφή στην καθημερινή ζωή σε σύγκριση με την κλασική ανοικτή χειρουργική.</p>
+      </div>
+    </div>
+
+    <div class="numlist rv">
+      <div class="numrow">
+        <div class="n">01</div>
+        <h3 data-en="Microdiscectomy">Μικροδισκεκτομή</h3>
+        <p data-en="Removal of herniated disc material through a keyhole incision, relieving nerve root compression.">Αφαίρεση του τμήματος του δίσκου που έχει προπέσει, μέσα από μια ελάχιστη τομή, με αποσυμπίεση της νευρικής ρίζας.</p>
+      </div>
+      <div class="numrow">
+        <div class="n">02</div>
+        <h3 data-en="Endoscopic Foraminotomy">Ενδοσκοπική Διάνοιξη Τρήματος</h3>
+        <p data-en="Endoscopic widening of the neural foramen to decompress pinched nerves with minimal tissue disruption.">Ενδοσκοπική διεύρυνση του μεσοσπονδύλιου τρήματος για την αποσυμπίεση παγιδευμένων νεύρων, με ελάχιστη διατάραξη των ιστών.</p>
+      </div>
+      <div class="numrow">
+        <div class="n">03</div>
+        <h3 data-en="MIS Lumbar Fusion (TLIF / XLIF)">Ελάχιστα Επεμβατική Σπονδυλοδεσία Οσφύος (TLIF / XLIF)</h3>
+        <p data-en="Spinal stabilisation through small lateral or posterior incisions that preserve the surrounding musculature.">Σταθεροποίηση της σπονδυλικής στήλης μέσα από μικρές πλάγιες ή οπίσθιες τομές, με διατήρηση της παρακείμενης μυϊκής μάζας.</p>
+      </div>
+      <div class="numrow">
+        <div class="n">04</div>
+        <h3 data-en="Percutaneous Pedicle Screw Fixation">Διαδερμική Τοποθέτηση Διαυχενικών Βιδών</h3>
+        <p data-en="Fluoroscopy-guided screw placement for spinal stabilisation, without traditional stripping of the muscles.">Τοποθέτηση βιδών υπό ακτινοσκοπικό έλεγχο για σταθεροποίηση της σπονδυλικής στήλης, χωρίς την κλασική αποκόλληση των μυών.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ NEURO-ONCOLOGY TECH ══════════════════════════ -->
+<section class="sect" id="technology" aria-labelledby="h-tech">
+  <span class="sect-num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Neuro-oncology">Νευρο-ογκολογία</span>
+      <h2 class="h-lg" id="h-tech" data-en="Advanced technology in brain tumour surgery">Τεχνολογία αιχμής στη χειρουργική όγκων εγκεφάλου</h2>
+      <p class="lede" data-en="Achieving the optimal balance between maximal tumour resection and preservation of neurological function demands a multi-modal technological approach. Dr. Veranis integrates the following advanced tools in every complex brain tumour procedure.">Η ισορροπία ανάμεσα στη μέγιστη αφαίρεση του όγκου και τη διατήρηση της νευρολογικής λειτουργίας απαιτεί συνδυασμένη χρήση πολλαπλών τεχνολογιών. Ο Δρ. Βεράνης αξιοποιεί τα παρακάτω εργαλεία σε κάθε σύνθετη επέμβαση όγκου εγκεφάλου.</p>
+    </div>
+
+    <div class="grid-3 rv">
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3 data-en="Stealth Station 8 Neuronavigation (Medtronic)">Νευροπλοήγηση Stealth Station 8 (Medtronic)</h3>
+        <p data-en="The latest-generation Medtronic Stealth Station 8 platform provides intraoperative guidance of GPS-grade accuracy, integrating pre-operative MRI, CT and functional data in real time. It allows sub-millimetre surgical precision for maximal safe tumour resection while critical brain structures are protected.">Η πλατφόρμα τελευταίας γενιάς Medtronic Stealth Station 8 προσφέρει διεγχειρητική καθοδήγηση ακριβείας, ενσωματώνοντας σε πραγματικό χρόνο τα προεγχειρητικά δεδομένα μαγνητικής, αξονικής και λειτουργικής απεικόνισης. Επιτρέπει χειρουργική ακρίβεια κάτω του χιλιοστού για μέγιστη ασφαλή αφαίρεση του όγκου, με προστασία των κρίσιμων δομών του εγκεφάλου.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18c4-1 5-6 9-7s6 2 9 1"/><path d="M3 13c4-1 5-6 9-7s6 2 9 1"/><path d="M3 8c3-.5 4-3 6-3"/></svg></div>
+        <h3 data-en="Fiber Tract Mapping (DTI Tractography)">Χαρτογράφηση Νευρικών Οδών (DTI Tractography)</h3>
+        <p data-en="Diffusion tensor imaging tractography maps the brain's white matter highways — the corticospinal tract, the arcuate fasciculus, the optic radiations — and imports them directly into the Stealth Station 8. The surgeon navigates around eloquent fibre bundles in real time, minimising the risk of post-operative motor or language deficits.">Η τρακτογραφία με απεικόνιση τανυστή διάχυσης χαρτογραφεί τις μεγάλες οδούς της λευκής ουσίας — φλοιονωτιαία δεσμίδα, τοξοειδής δεσμίδα, οπτικές ακτινοβολίες — και τις εισάγει απευθείας στο Stealth Station 8. Ο χειρουργός πλοηγείται γύρω από τις λειτουργικές δεσμίδες σε πραγματικό χρόνο, μειώνοντας τον κίνδυνο μετεγχειρητικού κινητικού ή γλωσσικού ελλείμματος.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3a5 5 0 0 0-5 5c0 2 1 3 1 5v3a4 4 0 0 0 8 0v-3c0-2 1-3 1-5a5 5 0 0 0-5-5Z"/><path d="M9 11h6"/></svg></div>
+        <h3 data-en="Functional MRI (fMRI) Integration">Ενσωμάτωση Λειτουργικής Μαγνητικής (fMRI)</h3>
+        <p data-en="Pre-operative BOLD fMRI localises eloquent cortex — motor, language and visual areas — and is seamlessly fused with the Stealth Station 8 navigation dataset. The surgical corridor is planned around active brain regions before a single incision is made.">Η προεγχειρητική λειτουργική μαγνητική τομογραφία εντοπίζει τις λειτουργικές περιοχές του φλοιού — κινητικές, γλωσσικές και οπτικές — και συγχωνεύεται με τα δεδομένα πλοήγησης του Stealth Station 8. Έτσι ο χειρουργικός διάδρομος σχεδιάζεται γύρω από τις ενεργές περιοχές του εγκεφάλου πριν γίνει η πρώτη τομή.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v4M5.6 5.6l2.8 2.8M3 12h4M5.6 18.4l2.8-2.8M12 21v-4M18.4 18.4l-2.8-2.8M21 12h-4M18.4 5.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3 data-en="Intraoperative Fluorescence (5-ALA)">Διεγχειρητικός Φθορισμός (5-ALA)</h3>
+        <p data-en="Patients receive 5-aminolevulinic acid before surgery; malignant glioma cells then fluoresce pink under ultraviolet light, guiding the surgeon to residual tumour tissue that is invisible under white light and complementing the navigation data.">Ο ασθενής λαμβάνει προεγχειρητικά 5-αμινολεβουλινικό οξύ. Τα κύτταρα του κακοήθους γλοιώματος φθορίζουν ροζ κάτω από υπεριώδες φως, καθοδηγώντας τον χειρουργό σε υπολειπόμενο ογκικό ιστό που δεν διακρίνεται με το λευκό φως και συμπληρώνοντας τα δεδομένα της νευροπλοήγησης.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3v8a6 6 0 0 0 12 0V3"/><path d="M9 21h6M12 17v4"/><path d="M4 7h4M16 7h4"/></svg></div>
+        <h3 data-en="Cavitron Ultrasonic Surgical Aspirator (CUSA)">Υπερηχητικός Χειρουργικός Αναρροφητήρας (CUSA)</h3>
+        <p data-en="An ultrasonic device that selectively emulsifies and aspirates tumour tissue with minimal mechanical force on the surrounding brain parenchyma, enabling efficient removal of tumour bulk with greatly reduced collateral damage.">Συσκευή υπερήχων που γαλακτωματοποιεί και αναρροφά επιλεκτικά τον ογκικό ιστό, ασκώντας ελάχιστη μηχανική πίεση στο γειτονικό εγκεφαλικό παρέγχυμα. Επιτρέπει την αποτελεσματική αφαίρεση της μάζας του όγκου με σημαντικά μικρότερη παράπλευρη βλάβη.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 12h4l2-5 3 10 2.5-8 1.8 5 1.7-2H22"/></svg></div>
+        <h3 data-en="Intraoperative Neurophysiological Monitoring">Διεγχειρητικό Νευροφυσιολογικό Monitoring</h3>
+        <p data-en="Continuous real-time monitoring of motor evoked potentials (MEPs) and somatosensory evoked potentials (SSEPs) throughout the operation provides an early warning system whenever neural structures are at risk.">Συνεχής παρακολούθηση σε πραγματικό χρόνο των κινητικών (MEPs) και σωματοαισθητικών (SSEPs) προκλητών δυναμικών καθ' όλη τη διάρκεια της επέμβασης. Λειτουργεί ως σύστημα έγκαιρης προειδοποίησης όταν κάποια νευρική δομή τίθεται σε κίνδυνο.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SPINAL ONCOLOGY ══════════════════════════ -->
+<section class="sect tint" id="spinal-oncology" aria-labelledby="h-so">
+  <span class="sect-num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Spinal Oncology">Ογκολογία Σπονδυλικής Στήλης</span>
+      <h2 class="h-lg" id="h-so" data-en="Spinal cord tumours">Όγκοι νωτιαίου μυελού</h2>
+      <p class="lede" data-en="Spinal cord tumours are classified by their anatomical relationship to the cord and the dura. Each category calls for a distinct surgical strategy, and management is guided throughout by intraoperative neurophysiological monitoring to preserve motor and sensory function.">Οι όγκοι του νωτιαίου μυελού ταξινομούνται με βάση την ανατομική τους σχέση με τον μυελό και τη σκληρά μήνιγγα. Κάθε κατηγορία απαιτεί διαφορετική χειρουργική στρατηγική, ενώ η αντιμετώπιση καθοδηγείται από διεγχειρητικό νευροφυσιολογικό monitoring για τη διατήρηση της κινητικής και αισθητικής λειτουργίας.</p>
+    </div>
+
+    <div class="grid-2 rv">
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3 data-en="Intramedullary Tumours">Ενδομυελικοί Όγκοι</h3>
+        <p data-en="Tumours arising within the substance of the spinal cord itself — most commonly ependymomas and astrocytomas. They present with progressive myelopathy: bilateral weakness, a sensory level, and sphincter dysfunction. Surgical resection under neurophysiological monitoring is the mainstay of treatment.">Όγκοι που αναπτύσσονται μέσα στην ουσία του ίδιου του νωτιαίου μυελού — συνηθέστερα επενδυμώματα και αστροκυτώματα. Εκδηλώνονται με προϊούσα μυελοπάθεια: αμφοτερόπλευρη αδυναμία, αισθητικό επίπεδο και διαταραχή των σφιγκτήρων. Η χειρουργική αφαίρεση υπό νευροφυσιολογικό monitoring αποτελεί τη θεραπεία εκλογής.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20"/><circle cx="12" cy="12" r="7.5"/><circle cx="16" cy="9" r="2"/></svg></div>
+        <h3 data-en="Intradural–Extramedullary Tumours">Ενδοσκληρίδιοι Εξωμυελικοί Όγκοι</h3>
+        <p data-en="Meningiomas and schwannomas grow inside the dural sac but outside the cord. They compress the cord gradually, causing progressive myelopathy and radiculopathy. Microsurgical resection is curative in the vast majority of cases.">Τα μηνιγγιώματα και τα σβαννώματα αναπτύσσονται εντός του σκληρού σάκου αλλά εκτός του μυελού. Πιέζουν σταδιακά τον νωτιαίο μυελό, προκαλώντας προϊούσα μυελοπάθεια και ριζοπάθεια. Η μικροχειρουργική αφαίρεση είναι θεραπευτική στη συντριπτική πλειονότητα των περιπτώσεων.</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="6" y="4" width="12" height="5" rx="1.4"/><rect x="6" y="15" width="12" height="5" rx="1.4"/><path d="M12 9v6"/><circle cx="15.5" cy="12" r="1.8"/></svg></div>
+        <h3 data-en="Spinal Metastases">Μεταστάσεις Σπονδυλικής Στήλης</h3>
+        <p data-en="Secondary tumours from lung, breast, prostate or renal cell carcinoma invading the vertebral bodies and the epidural space. They may cause acute cord compression requiring emergency decompression and stabilisation. Separation surgery followed by stereotactic radiosurgery (SRS) is the modern standard.">Δευτεροπαθείς όγκοι από καρκίνο πνεύμονα, μαστού, προστάτη ή νεφρού που διηθούν τα σπονδυλικά σώματα και τον επισκληρίδιο χώρο. Μπορεί να προκαλέσουν οξεία πίεση του μυελού που απαιτεί επείγουσα αποσυμπίεση και σταθεροποίηση. Η σύγχρονη πρακτική είναι η χειρουργική αποκόλλησης και στη συνέχεια στερεοτακτική ακτινοχειρουργική (SRS).</p>
+      </article>
+
+      <article class="card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 3h10v6l-5 12L7 9V3Z"/><path d="M7 9h10"/></svg></div>
+        <h3 data-en="Primary Bone Tumours of the Spine">Πρωτοπαθείς Οστικοί Όγκοι Σπονδυλικής Στήλης</h3>
+        <p data-en="Rare lesions including chordoma, giant cell tumour and osteosarcoma. They require en-bloc or wide resection for curative intent, often combined with pre-operative embolisation and reconstruction with titanium implants.">Σπάνιες βλάβες όπως το χόρδωμα, ο γιγαντοκυτταρικός όγκος και το οστεοσάρκωμα. Για θεραπευτικό αποτέλεσμα απαιτούν en-bloc ή ευρεία εκτομή, συχνά σε συνδυασμό με προεγχειρητικό εμβολισμό και αποκατάσταση με εμφυτεύματα τιτανίου.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ANATOMICAL ATLAS ══════════════════════════ -->
+<section class="sect dark" id="atlas" aria-labelledby="h-atlas">
+  <span class="sect-num" aria-hidden="true">06</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Interactive Guide">Διαδραστικός Οδηγός</span>
+      <h2 class="h-lg" id="h-atlas" data-en="Anatomical reference map">Ανατομικός χάρτης αναφοράς</h2>
+      <p class="lede" data-en="Select any region of the spine or the brain to read about the conditions that commonly affect it and the surgical options available.">Επιλέξτε μια περιοχή της σπονδυλικής στήλης ή του εγκεφάλου για να διαβάσετε τις παθήσεις που την αφορούν συχνότερα και τις διαθέσιμες χειρουργικές επιλογές.</p>
+    </div>
+
+    <div class="atlas rv">
+      <!-- SPINE -->
+      <div class="atlas-pane">
+        <span class="label" data-en="Spine">Σπονδυλική Στήλη</span>
+        <h3 data-en="Vertebral column">Σπονδυλική στήλη</h3>
+        <p class="hint" data-en="Select a region to learn more">Επιλέξτε περιοχή για περισσότερα</p>
+        <svg class="atlas-svg" viewBox="0 0 210 470" role="group" aria-label="Χάρτης σπονδυλικής στήλης">
+          <g class="hit" data-r="cervical" tabindex="0" role="button" aria-label="Αυχενική μοίρα C1-C7">
+            <rect class="seg" x="86" y="18" width="30" height="10" rx="4"/>
+            <rect class="seg" x="85" y="32" width="32" height="10" rx="4"/>
+            <rect class="seg" x="84" y="46" width="34" height="10" rx="4"/>
+            <rect class="seg" x="84" y="60" width="34" height="10" rx="4"/>
+            <rect class="seg" x="83" y="74" width="36" height="10" rx="4"/>
+            <rect class="seg" x="83" y="88" width="36" height="10" rx="4"/>
+            <rect class="seg" x="82" y="102" width="38" height="10" rx="4"/>
+            <text class="lab" x="132" y="68">C1–C7</text>
+          </g>
+          <g class="hit" data-r="thoracic" tabindex="0" role="button" aria-label="Θωρακική μοίρα T1-T12">
+            <rect class="seg" x="80" y="122" width="42" height="11" rx="4"/>
+            <rect class="seg" x="79" y="137" width="44" height="11" rx="4"/>
+            <rect class="seg" x="79" y="152" width="44" height="11" rx="4"/>
+            <rect class="seg" x="78" y="167" width="46" height="11" rx="4"/>
+            <rect class="seg" x="78" y="182" width="46" height="11" rx="4"/>
+            <rect class="seg" x="77" y="197" width="48" height="11" rx="4"/>
+            <rect class="seg" x="77" y="212" width="48" height="11" rx="4"/>
+            <rect class="seg" x="76" y="227" width="50" height="11" rx="4"/>
+            <rect class="seg" x="76" y="242" width="50" height="11" rx="4"/>
+            <rect class="seg" x="75" y="257" width="52" height="11" rx="4"/>
+            <rect class="seg" x="75" y="272" width="52" height="11" rx="4"/>
+            <rect class="seg" x="74" y="287" width="54" height="11" rx="4"/>
+            <text class="lab" x="140" y="212">T1–T12</text>
+          </g>
+          <g class="hit" data-r="lumbar" tabindex="0" role="button" aria-label="Οσφυϊκή μοίρα L1-L5">
+            <rect class="seg" x="70" y="310" width="62" height="14" rx="5"/>
+            <rect class="seg" x="69" y="329" width="64" height="14" rx="5"/>
+            <rect class="seg" x="68" y="348" width="66" height="14" rx="5"/>
+            <rect class="seg" x="68" y="367" width="66" height="14" rx="5"/>
+            <rect class="seg" x="69" y="386" width="64" height="14" rx="5"/>
+            <text class="lab" x="146" y="358">L1–L5</text>
+          </g>
+          <g class="hit" data-r="sacral" tabindex="0" role="button" aria-label="Ιερό οστό και κόκκυγας S1-S5">
+            <path class="seg" d="M72 410 h58 l-9 34 c-2 8 -8 13 -20 13 s-18 -5 -20 -13 Z"/>
+            <text class="lab" x="140" y="432">S1–S5</text>
+          </g>
+        </svg>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;width:100%">
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="cervical" type="button" data-en="Cervical">Αυχενική</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="thoracic" type="button" data-en="Thoracic">Θωρακική</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="lumbar" type="button" data-en="Lumbar">Οσφυϊκή</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="sacral" type="button" data-en="Sacrum">Ιερό οστό</button>
+        </div>
+      </div>
+
+      <!-- BRAIN -->
+      <div class="atlas-pane">
+        <span class="label" data-en="Brain">Εγκέφαλος</span>
+        <h3 data-en="Cerebral regions">Περιοχές εγκεφάλου</h3>
+        <p class="hint" data-en="Select a region to learn more">Επιλέξτε περιοχή για περισσότερα</p>
+        <svg class="atlas-svg" viewBox="0 0 280 240" role="group" aria-label="Χάρτης εγκεφάλου">
+          <g class="hit" data-r="frontal" tabindex="0" role="button" aria-label="Μετωπιαίος λοβός">
+            <path class="seg" d="M52 118 C44 78 70 38 112 32 L126 34 L128 116 L96 132 L66 132 C56 130 53 126 52 118 Z"/>
+            <text class="lab" x="66" y="82" data-en="Frontal">Μετωπιαίος</text>
+          </g>
+          <g class="hit" data-r="parietal" tabindex="0" role="button" aria-label="Βρεγματικός λοβός">
+            <path class="seg" d="M126 34 C170 28 212 44 228 74 L214 96 L168 104 L132 100 L128 34 Z"/>
+            <text class="lab" x="152" y="70" data-en="Parietal">Βρεγματικός</text>
+          </g>
+          <g class="hit" data-r="temporal" tabindex="0" role="button" aria-label="Κροταφικός λοβός">
+            <path class="seg" d="M96 132 L128 116 L132 100 L168 104 L176 134 C170 152 150 160 124 158 C110 157 100 148 96 132 Z"/>
+            <text class="lab" x="106" y="141" data-en="Temporal">Κροταφικός</text>
+          </g>
+          <g class="hit" data-r="cerebellum" tabindex="0" role="button" aria-label="Παρεγκεφαλίδα">
+            <path class="seg" d="M214 96 L228 74 C240 96 240 124 226 140 C214 153 196 156 180 152 L176 134 Z"/>
+            <text class="lab" x="196" y="126" data-en="Cerebellum">Παρεγκεφαλίδα</text>
+          </g>
+          <g class="hit" data-r="brainstem" tabindex="0" role="button" aria-label="Εγκεφαλικό στέλεχος">
+            <path class="seg" d="M164 150 L186 153 L182 190 C180 202 172 208 163 206 C154 204 152 196 154 186 Z"/>
+            <text class="lab" x="192" y="186" data-en="Brainstem">Στέλεχος</text>
+          </g>
+        </svg>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;width:100%">
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="frontal" type="button" data-en="Frontal">Μετωπιαίος</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="parietal" type="button" data-en="Parietal">Βρεγματικός</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="temporal" type="button" data-en="Temporal">Κροταφικός</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="cerebellum" type="button" data-en="Cerebellum">Παρεγκεφαλίδα</button>
+          <button class="btn btn-ghost-d" style="padding:8px 14px;font-size:10.5px" data-r="brainstem" type="button" data-en="Brainstem">Στέλεχος</button>
+        </div>
+      </div>
+
+      <div class="atlas-detail" id="atlasDetail" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ CLINIC ══════════════════════════ -->
+<section class="sect" id="clinic" aria-labelledby="h-clinic">
+  <span class="sect-num" aria-hidden="true">07</span>
+  <div class="wrap">
+    <div class="clinic-grid">
+      <div class="rv">
+        <span class="eyebrow" data-en="The Clinic">Το Ιατρείο</span>
+        <h2 class="h-lg" id="h-clinic" style="margin-top:22px" data-en="Visit our practice">Επισκεφθείτε το ιατρείο</h2>
+        <p class="lede" style="margin-top:22px" data-en="Located in the heart of Kolonaki, one of Athens' most central and well-connected neighbourhoods, the clinic offers a calm, modern environment for your consultation.">Στην καρδιά του Κολωνακίου, σε μία από τις πιο κεντρικές και εύκολα προσβάσιμες περιοχές της Αθήνας, το ιατρείο προσφέρει ένα ήρεμο, σύγχρονο περιβάλλον για την εξέτασή σας.</p>
+
+        <div class="info-list">
+          <div class="info">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <div>
+              <span class="label" data-en="Address">Διεύθυνση</span>
+              <address class="t"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Alopekis 41, Kolonaki<br>Athens 10676, Greece">Αλωπεκής 41, Κολωνάκι<br>Αθήνα 10676</a></address>
+            </div>
+          </div>
+          <div class="info">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <div>
+              <span class="label" data-en="Office hours">Ώρες Ιατρείου</span>
+              <div class="t" data-en="Monday – Friday: 15:00 – 21:00<br>Saturday: by appointment">Δευτέρα – Παρασκευή: 15:00 – 21:00<br>Σάββατο: κατόπιν ραντεβού</div>
+            </div>
+          </div>
+          <div class="info">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 18h16M6 18V9l6-4 6 4v9"/><path d="M10 18v-4h4v4"/></svg>
+            <div>
+              <span class="label" data-en="Getting here">Πρόσβαση</span>
+              <div class="t" data-en="Close to Evangelismos metro station (Line 3). Street parking is available on Alopekis and the surrounding streets.">Κοντά στον σταθμό μετρό Ευαγγελισμός (Γραμμή 3). Υπάρχει στάθμευση επί της Αλωπεκής και στους γύρω δρόμους.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px">
+          <a class="btn btn-solid" href="tel:+306983517455">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
+            +30 698 351 7455
+          </a>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Get directions">Οδηγίες Πρόσβασης</a>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="clinic-img">
+          <picture>
+            <source srcset="assets/neurosurgery-clinic-kolonaki-athens.webp" type="image/webp">
+            <img src="assets/neurosurgery-clinic-kolonaki-athens.jpg" width="1344" height="768"
+                 alt="Ο χώρος του νευροχειρουργικού ιατρείου στο Κολωνάκι, με θέα στην Ακρόπολη"
+                 loading="lazy" decoding="async" data-lb data-cap="Το ιατρείο στο Κολωνάκι">
+          </picture>
+        </div>
+        <div class="map">
+          <iframe title="Χάρτης: Αλωπεκής 41, Κολωνάκι, Αθήνα" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Alopekis%2041,%20Kolonaki,%20Athens%2010676&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PATIENT STORY ══════════════════════════ -->
+<section class="sect dark" id="stories" aria-labelledby="h-stories">
+  <span class="sect-num" aria-hidden="true">08</span>
+  <div class="wrap">
+    <div class="quote rv">
+      <span class="eyebrow" style="justify-content:center" data-en="Patient Stories">Μαρτυρίες Ασθενών</span>
+      <h2 class="sr" id="h-stories" data-en="What our patients say">Τι λένε οι ασθενείς μας</h2>
+      <div class="mark" aria-hidden="true">&ldquo;</div>
+      <blockquote data-en="After years of debilitating back pain, Dr. Veranis performed a minimally invasive discectomy that gave me my life back. Within weeks I was walking without pain for the first time in years. His calm, thorough approach made me feel safe throughout the entire process.">Μετά από χρόνια εξουθενωτικού πόνου στη μέση, ο Δρ. Βεράνης πραγματοποίησε μια ελάχιστα επεμβατική δισκεκτομή που μου έδωσε πίσω τη ζωή μου. Μέσα σε λίγες εβδομάδες περπατούσα χωρίς πόνο για πρώτη φορά έπειτα από χρόνια. Η ήρεμη και μεθοδική του προσέγγιση με έκανε να νιώθω ασφαλής σε όλη τη διαδικασία.</blockquote>
+      <div class="who">
+        <span class="av" aria-hidden="true">ΕΠ</span>
+        <div>
+          <div class="n" data-en="Eleni Papadopoulou, 52">Ελένη Παπαδοπούλου, 52</div>
+          <div class="c" data-en="Lumbar disc herniation">Κήλη μεσοσπονδυλίου δίσκου οσφύος</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PATIENT RESOURCES ══════════════════════════ -->
+<section class="sect" id="resources" aria-labelledby="h-res">
+  <span class="sect-num" aria-hidden="true">09</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Patient Education">Εκπαίδευση Ασθενών</span>
+      <h2 class="h-lg" id="h-res" data-en="Patient resources &amp; guides">Πόροι και οδηγοί για ασθενείς</h2>
+      <p class="lede" data-en="Comprehensive educational material to help you understand your condition, prepare confidently for surgery, and recover safely at home. All documents are prepared in collaboration with Dr. Veranis Sotiris.">Πλήρες εκπαιδευτικό υλικό που θα σας βοηθήσει να κατανοήσετε την πάθησή σας, να προετοιμαστείτε με αυτοπεποίθηση για χειρουργική επέμβαση και να αναρρώσετε με ασφάλεια στο σπίτι. Όλα τα έγγραφα προετοιμάζονται σε συνεργασία με τον Δρ. Βεράνη Σωτήρη.</p>
+      <div class="res-stats">
+        <span class="chip"><i></i><b>10</b> <span data-en="Education Brochures">Εκπαιδευτικά Φυλλάδια</span></span>
+        <span class="chip"><i></i><b>6</b> <span data-en="Pre-op Guides">Προεγχειρητικοί Οδηγοί</span></span>
+        <span class="chip"><i></i><b>7</b> <span data-en="Recovery Checklists">Λίστες Ελέγχου Ανάκαμψης</span></span>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Κατηγορίες εγγράφων">
+      <button class="tab on" role="tab" id="tab-spine" aria-controls="panel-spine" aria-selected="true" data-tab="spine" type="button"><span data-en="Spine">Σπονδυλική στήλη</span><span class="c">11</span></button>
+      <button class="tab" role="tab" id="tab-brain" aria-controls="panel-brain" aria-selected="false" data-tab="brain" type="button"><span data-en="Brain">Εγκέφαλος</span><span class="c">6</span></button>
+      <button class="tab" role="tab" id="tab-nerve" aria-controls="panel-nerve" aria-selected="false" data-tab="nerve" type="button"><span data-en="Nerve">Νεύρα</span><span class="c">6</span></button>
+    </div>
+
+    <div class="res-panel" id="panel-spine" role="tabpanel" aria-labelledby="tab-spine">
+      <div class="res-group rv">
+        <span class="label" data-en="Patient Education Brochures">Εκπαιδευτικά Φυλλάδια</span>
+        <div class="doc-grid">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><ellipse cx="12" cy="12" rx="7.5" ry="3"/></svg></div>
+            <h4 data-en="Disc Herniation — Lumbar &amp; Cervical">Κήλη Μεσοσπονδυλίου Δίσκου — Οσφυϊκή &amp; Αυχενική</h4>
+            <p data-en="A patient-friendly overview of lumbar and cervical disc herniation — causes, symptoms, diagnostic workup, and treatment options including conservative management and surgery.">Κατανοητή παρουσίαση της κήλης μεσοσπονδυλίου δίσκου στην οσφυϊκή και την αυχενική μοίρα — αίτια, συμπτώματα, διαγνωστικός έλεγχος και επιλογές θεραπείας, από τη συντηρητική αντιμετώπιση έως τη χειρουργική επέμβαση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>8</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Κήλη%20Μεσοσπονδυλίου%20Δίσκου%20-%20Οσφυϊκή%20και%20Αυχενική" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M8 6h8M8 10h8M8 14h8M8 18h8"/></svg></div>
+            <h4 data-en="Spinal Stenosis">Στένωση Σπονδυλικού Σωλήνα</h4>
+            <p data-en="Detailed guide on spinal stenosis pathophysiology, neurogenic claudication symptoms, imaging findings, and the full spectrum of treatment from physiotherapy to decompressive surgery.">Αναλυτικός οδηγός για την παθοφυσιολογία της στένωσης, τη νευρογενή διαλείπουσα χωλότητα, τα απεικονιστικά ευρήματα και όλο το φάσμα της θεραπείας, από τη φυσικοθεραπεία έως την αποσυμπιεστική επέμβαση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>10</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Στένωση%20Σπονδυλικού%20Σωλήνα" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c0 3-2 4-2 7s2 4 2 7"/><path d="M15 3c0 3 2 4 2 7s-2 4-2 7"/><path d="M7 21h10"/></svg></div>
+            <h4 data-en="Cervical Disc Herniation">Αυχενική Δισκοκήλη</h4>
+            <p data-en="Focused guide on herniated discs in the neck — explaining radiculopathy vs myelopathy symptoms, the role of MRI in diagnosis, and treatment options from collar immobilisation to ACDF surgery.">Στοχευμένος οδηγός για τη δισκοκήλη της αυχενικής μοίρας — διάκριση ριζοπάθειας από μυελοπάθεια, ο ρόλος της μαγνητικής τομογραφίας στη διάγνωση και οι θεραπευτικές επιλογές, από το αυχενικό κολάρο έως την επέμβαση ACDF.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>8</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Αυχενική%20Δισκοκήλη" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="12" height="5" rx="1.5"/><rect x="8" y="14" width="12" height="5" rx="1.5"/></svg></div>
+            <h4 data-en="Spondylolisthesis">Σπονδυλολίσθηση</h4>
+            <p data-en="Patient education on vertebral slippage grades (Meyerding I–IV), degenerative vs isthmic types, the conservative physiotherapy approach, and when spinal stabilisation surgery is indicated.">Ενημέρωση για τους βαθμούς ολίσθησης σπονδύλου (Meyerding I–IV), τη διάκριση εκφυλιστικής και ισθμικής μορφής, τη συντηρητική αντιμετώπιση με φυσικοθεραπεία και τις ενδείξεις για σταθεροποιητική επέμβαση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>7</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Σπονδυλολίσθηση" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6c5 0 4 12 9 12s7-6 9-6"/><circle cx="3" cy="6" r="1.5"/><circle cx="21" cy="12" r="1.5"/></svg></div>
+            <h4 data-en="Sciatica">Ισχιαλγία</h4>
+            <p data-en="Comprehensive guide on sciatic nerve irritation — differentiating disc herniation from piriformis syndrome, pain pathway anatomy, nerve conduction studies, physiotherapy, injections, and surgery.">Πλήρης οδηγός για τον ερεθισμό του ισχιακού νεύρου — διαφοροδιάγνωση δισκοκήλης και συνδρόμου απιοειδούς, ανατομία της οδού του πόνου, ηλεκτροφυσιολογικός έλεγχος, φυσικοθεραπεία, εγχύσεις και χειρουργείο.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ισχιαλγία" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Pre-operative Preparation Guides">Προεγχειρητικοί Οδηγοί</span>
+        <div class="doc-grid">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+            <h4 data-en="General Pre-operative Preparation">Γενική Προεγχειρητική Προετοιμασία</h4>
+            <p data-en="Essential preparation instructions covering fasting protocols, medication adjustments (anticoagulants, NSAIDs), the anaesthesia consultation, and what to bring to hospital on the day of surgery.">Βασικές οδηγίες προετοιμασίας: πρωτόκολλα νηστείας, προσαρμογή της φαρμακευτικής αγωγής (αντιπηκτικά, αντιφλεγμονώδη), προαναισθητική εκτίμηση και τι πρέπει να έχετε μαζί σας την ημέρα του χειρουργείου.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Γενική%20Προεγχειρητική%20Προετοιμασία" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12.5l2.6 2.6L16 9.5"/></svg></div>
+            <h4 data-en="Preparing for Microdiscectomy">Προετοιμασία για Μικροδισκεκτομή</h4>
+            <p data-en="Specific preparation steps for patients undergoing microdiscectomy, including bowel preparation, skin care, post-operative mobility expectations, and home environment setup.">Ειδικά βήματα προετοιμασίας για ασθενείς που υποβάλλονται σε μικροδισκεκτομή: προετοιμασία εντέρου, φροντίδα του δέρματος, τι να περιμένετε ως προς την κινητοποίηση μετά την επέμβαση και οργάνωση του χώρου στο σπίτι.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>4</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Προετοιμασία%20για%20Μικροδισκεκτομή" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c0 3-2 4-2 7s2 4 2 7"/><path d="M15 3c0 3 2 4 2 7s-2 4-2 7"/><path d="M7 21h10"/></svg></div>
+            <h4 data-en="Preparing for ACDF">Προετοιμασία για ACDF</h4>
+            <p data-en="Step-by-step preparation for anterior cervical discectomy and fusion — neck brace fitting, swallowing and voice change expectations, theatre positioning, and overnight stay planning.">Βήμα προς βήμα προετοιμασία για πρόσθια αυχενική δισκεκτομή και σπονδυλοδεσία — προσαρμογή του αυχενικού κηδεμόνα, τι να περιμένετε στην κατάποση και τη φωνή, τοποθέτηση στο χειρουργείο και σχεδιασμός της διανυκτέρευσης.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>5</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Προετοιμασία%20για%20ACDF" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Post-operative Recovery Checklists">Λίστες Ελέγχου Ανάκαμψης</span>
+        <div class="doc-grid">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+            <h4 data-en="Lumbar Surgery Recovery — Week by Week">Ανάρρωση μετά από Επέμβαση Οσφύος</h4>
+            <p data-en="Week-by-week recovery checklist including wound care, activity restrictions, physiotherapy milestones, warning signs requiring urgent review, and return-to-work guidance.">Λίστα ελέγχου ανάρρωσης εβδομάδα προς εβδομάδα: φροντίδα του τραύματος, περιορισμοί δραστηριότητας, ορόσημα φυσικοθεραπείας, σημεία που απαιτούν άμεση επανεκτίμηση και οδηγίες επιστροφής στην εργασία.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>8</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Επέμβαση%20Οσφύος" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12.5l2.6 2.6L16 9.5"/></svg></div>
+            <h4 data-en="Spinal Fusion Recovery — 12 Weeks">Ανάρρωση μετά από Σπονδυλοδεσία — 12 Εβδομάδες</h4>
+            <p data-en="A comprehensive 12-week recovery plan covering brace use, lifting restrictions, driving guidelines, bone healing optimisation, and long-term lifestyle recommendations.">Ολοκληρωμένο πρόγραμμα ανάρρωσης δώδεκα εβδομάδων: χρήση κηδεμόνα, περιορισμοί στην άρση βάρους, οδηγίες για την οδήγηση, βελτιστοποίηση της οστικής πώρωσης και μακροπρόθεσμες συστάσεις τρόπου ζωής.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>10</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Σπονδυλοδεσία%20-%2012%20Εβδομάδες" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c0 3-2 4-2 7s2 4 2 7"/><path d="M15 3c0 3 2 4 2 7s-2 4-2 7"/><path d="M7 21h10"/></svg></div>
+            <h4 data-en="Recovery after ACDF">Ανάρρωση μετά από ACDF</h4>
+            <p data-en="Detailed recovery guide after anterior cervical discectomy — neck collar use, swallowing difficulty management, wound hygiene, driving restrictions, and physiotherapy progression over 8 weeks.">Αναλυτικός οδηγός ανάρρωσης μετά από πρόσθια αυχενική δισκεκτομή — χρήση αυχενικού κολάρου, διαχείριση δυσκολιών στην κατάποση, υγιεινή του τραύματος, περιορισμοί στην οδήγηση και εξέλιξη της φυσικοθεραπείας σε οκτώ εβδομάδες.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>7</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20ACDF" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="res-panel" id="panel-brain" role="tabpanel" aria-labelledby="tab-brain" hidden>
+      <div class="res-group rv">
+        <span class="label" data-en="Patient Education Brochures">Εκπαιδευτικά Φυλλάδια</span>
+        <div class="doc-grid">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11Z"/></svg></div>
+            <h4 data-en="Stealth Station 8 Neuronavigation &amp; Fiber Tract Mapping">Νευροπλοήγηση Stealth Station 8 &amp; Χαρτογράφηση Νευρικών Οδών</h4>
+            <p data-en="An in-depth explanation of how Medtronic Stealth Station 8 neuronavigation integrates fiber tract mapping (DTI tractography) and functional MRI data to guide the surgeon around eloquent cortex and white matter pathways, enabling maximal safe resection with preserved neurological function.">Εις βάθος επεξήγηση του πώς η νευροπλοήγηση Medtronic Stealth Station 8 ενσωματώνει τη χαρτογράφηση νευρικών οδών (τρακτογραφία DTI) και τα δεδομένα λειτουργικής μαγνητικής, ώστε ο χειρουργός να κινείται γύρω από τις λειτουργικές περιοχές και τις οδούς της λευκής ουσίας, επιτυγχάνοντας μέγιστη ασφαλή αφαίρεση με διατήρηση της νευρολογικής λειτουργίας.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>10</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Νευροπλοήγηση%20Stealth%20Station%208%20και%20Χαρτογράφηση%20Νευρικών%20Οδών" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a4 4 0 0 0-4 4 3.4 3.4 0 0 0-1.3 6.2A3.4 3.4 0 0 0 9 20a3 3 0 0 0 3-1.6 3 3 0 0 0 3 1.6 3.4 3.4 0 0 0 2.3-5.8A3.4 3.4 0 0 0 16 8a4 4 0 0 0-4-4Z"/><path d="M12 8v10"/></svg></div>
+            <h4 data-en="Brain Tumours — A Patient's Guide">Όγκοι Εγκεφάλου — Οδηγός Ασθενούς</h4>
+            <p data-en="An accessible explanation of primary and secondary brain tumours, grading systems (WHO I–IV), the role of MRI and PET imaging, and an overview of surgical, radiation and chemotherapy options.">Προσιτή εξήγηση των πρωτοπαθών και δευτεροπαθών όγκων του εγκεφάλου, των συστημάτων διαβάθμισης (WHO I–IV), του ρόλου της μαγνητικής και της PET απεικόνισης, καθώς και επισκόπηση των χειρουργικών, ακτινοθεραπευτικών και χημειοθεραπευτικών επιλογών.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>12</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Όγκοι%20Εγκεφάλου%20-%20Οδηγός%20Ασθενούς" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8a7 7 0 0 1 14 0c0 3-2 4.5-2 7a5 5 0 0 1-10 0c0-2.5-2-4-2-7Z"/><circle cx="12" cy="13" r="2"/></svg></div>
+            <h4 data-en="Pituitary Adenomas">Αδενώματα Υπόφυσης</h4>
+            <p data-en="A guide covering the pituitary gland's functions, adenoma types (functioning vs non-functioning), hormonal effects, visual field disturbances, and the transsphenoidal surgical approach.">Οδηγός για τις λειτουργίες της υπόφυσης, τους τύπους αδενώματος (εκκριτικά και μη εκκριτικά), τις ορμονικές επιπτώσεις, τις διαταραχές των οπτικών πεδίων και τη διασφηνοειδική χειρουργική προσπέλαση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>8</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Αδενώματα%20Υπόφυσης" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Pre-operative Preparation Guides">Προεγχειρητικοί Οδηγοί</span>
+        <div class="doc-grid one">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+            <h4 data-en="Preparing for Craniotomy">Προετοιμασία για Κρανιοτομή</h4>
+            <p data-en="A preparation checklist for craniotomy patients, including how pre-operative fMRI and DTI tractography scans are used to plan the safest surgical approach with Medtronic Stealth Station 8 neuronavigation. Covers medication protocols, steroid and anti-epileptic instructions, and ICU admission expectations.">Λίστα προετοιμασίας για ασθενείς που υποβάλλονται σε κρανιοτομή, με επεξήγηση του πώς οι προεγχειρητικές εξετάσεις λειτουργικής μαγνητικής και τρακτογραφίας DTI χρησιμοποιούνται για τον σχεδιασμό της ασφαλέστερης προσπέλασης με νευροπλοήγηση Stealth Station 8. Περιλαμβάνει πρωτόκολλα φαρμακευτικής αγωγής, οδηγίες για κορτικοστεροειδή και αντιεπιληπτικά, και τι να περιμένετε από τη νοσηλεία στη ΜΕΘ.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>7</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Προετοιμασία%20για%20Κρανιοτομή" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Post-operative Recovery Checklists">Λίστες Ελέγχου Ανάκαμψης</span>
+        <div class="doc-grid two">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+            <h4 data-en="Recovery after Craniotomy">Ανάρρωση μετά από Κρανιοτομή</h4>
+            <p data-en="Recovery milestones from ICU through discharge and beyond — wound care, seizure precautions, activity restrictions, cognitive fatigue management, and the follow-up imaging schedule.">Ορόσημα ανάρρωσης από τη ΜΕΘ έως το εξιτήριο και μετά — φροντίδα του τραύματος, προφυλάξεις για επιληπτικές κρίσεις, περιορισμοί δραστηριότητας, διαχείριση της γνωσιακής κόπωσης και πρόγραμμα επανελέγχου με απεικόνιση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>10</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Κρανιοτομή" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8a7 7 0 0 1 14 0c0 3-2 4.5-2 7a5 5 0 0 1-10 0c0-2.5-2-4-2-7Z"/><circle cx="12" cy="13" r="2"/></svg></div>
+            <h4 data-en="Recovery after Transsphenoidal Surgery">Ανάρρωση μετά από Διασφηνοειδική Επέμβαση</h4>
+            <p data-en="Specific guidance after transsphenoidal surgery covering nasal packing care, fluid intake monitoring for diabetes insipidus, hormone replacement protocols, and endocrinology follow-up.">Ειδικές οδηγίες μετά από διασφηνοειδική επέμβαση: φροντίδα του ρινικού επιπωματισμού, παρακολούθηση της πρόσληψης υγρών για άποιο διαβήτη, πρωτόκολλα ορμονικής υποκατάστασης και ενδοκρινολογική παρακολούθηση.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Διασφηνοειδική%20Επέμβαση" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="res-panel" id="panel-nerve" role="tabpanel" aria-labelledby="tab-nerve" hidden>
+      <div class="res-group rv">
+        <span class="label" data-en="Patient Education Brochures">Εκπαιδευτικά Φυλλάδια</span>
+        <div class="doc-grid two">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V12m0-1V4.5a1.5 1.5 0 0 1 3 0V12m0-1V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a5 5 0 0 1-5-5v-3l-1.5-2a1.6 1.6 0 0 1 2.4-2L8 12"/></svg></div>
+            <h4 data-en="Carpal Tunnel Syndrome">Σύνδρομο Καρπιαίου Σωλήνα</h4>
+            <p data-en="A complete overview of median nerve compression at the wrist — risk factors, electrodiagnostic testing (NCS/EMG), splinting and steroid injection options, and carpal tunnel release surgery.">Πλήρης επισκόπηση της πίεσης του μέσου νεύρου στον καρπό — παράγοντες κινδύνου, ηλεκτροδιαγνωστικός έλεγχος (NCS/EMG), επιλογές νάρθηκα και έγχυσης κορτικοστεροειδούς, και η επέμβαση αποδέσμευσης του καρπιαίου σωλήνα.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Σύνδρομο%20Καρπιαίου%20Σωλήνα" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 10h.01M15 10h.01M8.5 15c2 1.6 5 1.6 7 0"/></svg></div>
+            <h4 data-en="Trigeminal Neuralgia">Νευραλγία Τριδύμου</h4>
+            <p data-en="A patient guide explaining trigeminal nerve anatomy, triggers and pain characteristics, medical management (carbamazepine), and surgical options including microvascular decompression (MVD).">Οδηγός για την ανατομία του τριδύμου νεύρου, τους εκλυτικούς παράγοντες και τα χαρακτηριστικά του πόνου, τη φαρμακευτική αντιμετώπιση (καρβαμαζεπίνη) και τις χειρουργικές επιλογές, όπως η μικροαγγειακή αποσυμπίεση (MVD).</p>
+            <div class="doc-foot">
+              <span class="pg"><span>8</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Νευραλγία%20Τριδύμου" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Pre-operative Preparation Guides">Προεγχειρητικοί Οδηγοί</span>
+        <div class="doc-grid two">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6c5 0 4 12 9 12s7-6 9-6"/><circle cx="3" cy="6" r="1.5"/><circle cx="21" cy="12" r="1.5"/></svg></div>
+            <h4 data-en="Preparing for Nerve Decompression">Προετοιμασία για Αποσυμπίεση Περιφερικού Νεύρου</h4>
+            <p data-en="Pre-surgery instructions for patients undergoing nerve decompression or repair, covering anaesthesia type (local vs general), tourniquet use, limb positioning, and expected procedure duration.">Οδηγίες πριν από επέμβαση αποσυμπίεσης ή αποκατάστασης περιφερικού νεύρου: είδος αναισθησίας (τοπική ή γενική), χρήση ίσχαιμης περίδεσης, τοποθέτηση του άκρου και αναμενόμενη διάρκεια της επέμβασης.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>4</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Προετοιμασία%20για%20Αποσυμπίεση%20Περιφερικού%20Νεύρου" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+            <h4 data-en="Preparing for MVD Surgery">Προετοιμασία για Μικροαγγειακή Αποσυμπίεση (MVD)</h4>
+            <p data-en="A detailed preparation guide for MVD surgery including posterior fossa craniotomy specifics, an explanation of hearing and facial nerve monitoring, and ICU stay expectations.">Αναλυτικός οδηγός προετοιμασίας για επέμβαση MVD, με τις ιδιαιτερότητες της κρανιοτομής οπίσθιου κρανιακού βόθρου, επεξήγηση της παρακολούθησης της ακοής και του προσωπικού νεύρου, και τι να περιμένετε από την παραμονή στη ΜΕΘ.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Προετοιμασία%20για%20Μικροαγγειακή%20Αποσυμπίεση%20(MVD)" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="res-group rv">
+        <span class="label" data-en="Post-operative Recovery Checklists">Λίστες Ελέγχου Ανάκαμψης</span>
+        <div class="doc-grid two">
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V12m0-1V4.5a1.5 1.5 0 0 1 3 0V12m0-1V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a5 5 0 0 1-5-5v-3l-1.5-2a1.6 1.6 0 0 1 2.4-2L8 12"/></svg></div>
+            <h4 data-en="Recovery after Carpal Tunnel Release">Ανάρρωση μετά από Αποδέσμευση Καρπιαίου Σωλήνα</h4>
+            <p data-en="A day-by-day recovery plan covering dressing changes, hand elevation, grip strengthening exercises, driving restrictions, and the expected timeline for symptom resolution.">Πρόγραμμα ανάρρωσης ημέρα προς ημέρα: αλλαγές επιδέσμων, ανύψωση του χεριού, ασκήσεις ενδυνάμωσης της λαβής, περιορισμοί στην οδήγηση και αναμενόμενο χρονοδιάγραμμα υποχώρησης των συμπτωμάτων.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>4</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Αποδέσμευση%20Καρπιαίου%20Σωλήνα" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.6-7 9-7 9Z"/></svg></div>
+            <h4 data-en="Recovery after MVD">Ανάρρωση μετά από Μικροαγγειακή Αποσυμπίεση</h4>
+            <p data-en="Recovery guidance after microvascular decompression covering craniotomy wound care, hearing monitoring, pain management, activity resumption milestones, and long-term outcomes.">Οδηγίες ανάρρωσης μετά από μικροαγγειακή αποσυμπίεση: φροντίδα του τραύματος της κρανιοτομής, παρακολούθηση της ακοής, διαχείριση του πόνου, ορόσημα επανέναρξης δραστηριοτήτων και μακροπρόθεσμα αποτελέσματα.</p>
+            <div class="doc-foot">
+              <span class="pg"><span>6</span> <span data-en="pages">σελίδες</span></span>
+              <a href="mailto:veranissotiris@gmail.com?subject=%CE%91%CE%AF%CF%84%CE%B7%CE%BC%CE%B1%20%CE%B5%CE%BD%CF%84%CF%8D%CF%80%CE%BF%CF%85:%20Ανάρρωση%20μετά%20από%20Μικροαγγειακή%20Αποσυμπίεση" data-en="Request guide">Ζητήστε το<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-cta rv">
+      <div>
+        <h3 data-en="Need a specific document?">Χρειάζεστε κάποιο συγκεκριμένο έγγραφο;</h3>
+        <p data-en="Contact the clinic directly and our team will send the relevant guide to your email within 24 hours.">Επικοινωνήστε απευθείας με το ιατρείο και θα σας αποστείλουμε τον σχετικό οδηγό στο email σας μέσα σε 24 ώρες.</p>
+      </div>
+      <a class="btn btn-glow" href="mailto:veranissotiris@gmail.com" data-en="Email the clinic">Στείλτε μας Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FAQ ══════════════════════════ -->
+<section class="sect tint" id="faq" aria-labelledby="h-faq">
+  <span class="sect-num" aria-hidden="true">10</span>
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow" data-en="Patient Information">Ενημέρωση Ασθενών</span>
+      <h2 class="h-lg" id="h-faq" data-en="Frequently asked questions">Συχνές ερωτήσεις</h2>
+      <p class="lede" data-en="Answers to the questions patients ask most often about neurosurgical care, procedures and recovery.">Απαντήσεις στις ερωτήσεις που θέτουν συχνότερα οι ασθενείς σχετικά με τη νευροχειρουργική φροντίδα, τις επεμβάσεις και την ανάρρωση.</p>
+    </div>
+
+    <div class="faq-grid rv">
+      <div class="faq-col">
+        <span class="label" data-en="General">Γενικά</span>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="When should I see a neurosurgeon?">Πότε πρέπει να επισκεφθώ νευροχειρουργό;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="You should consult a neurosurgeon if you experience persistent or severe headaches, numbness or weakness in your limbs, neck or back pain that does not respond to conservative treatment, changes in vision, difficulty walking, or if an MRI or CT scan has revealed a lesion, tumour or structural abnormality in the brain or spine.">Καλό είναι να απευθυνθείτε σε νευροχειρουργό εάν έχετε επίμονες ή έντονες κεφαλαλγίες, μούδιασμα ή αδυναμία στα άκρα, πόνο στον αυχένα ή τη μέση που δεν υποχωρεί με συντηρητική αγωγή, διαταραχές όρασης, δυσκολία στη βάδιση, ή εάν μια μαγνητική ή αξονική τομογραφία ανέδειξε βλάβη, όγκο ή δομική ανωμαλία στον εγκέφαλο ή τη σπονδυλική στήλη.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="Do I need a referral to book an appointment?">Χρειάζομαι παραπεμπτικό για να κλείσω ραντεβού;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="No referral is required. You are welcome to contact the practice directly to schedule a consultation. If you already have recent imaging (MRI, CT) or neurological reports, please bring them to your first visit — they greatly assist the evaluation.">Δεν απαιτείται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας με το ιατρείο για να κλείσετε ραντεβού. Εάν έχετε ήδη πρόσφατες απεικονιστικές εξετάσεις (μαγνητική, αξονική) ή νευρολογικές γνωματεύσεις, παρακαλούμε να τις φέρετε στην πρώτη επίσκεψη — βοηθούν σημαντικά στην εκτίμηση.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="What should I expect during my first consultation?">Τι να περιμένω στην πρώτη μου επίσκεψη;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Your first visit typically lasts 30 to 45 minutes. Dr. Veranis will review your medical history, discuss your symptoms in detail, perform a full neurological examination and study any imaging you bring. You will leave with a clear explanation of the findings and an outlined treatment plan.">Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-col">
+        <span class="label" data-en="Surgery &amp; Treatment">Χειρουργείο &amp; Θεραπεία</span>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="Is surgery always necessary?">Χρειάζεται πάντα χειρουργείο;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Not at all. Many neurological conditions respond well to conservative management, including physiotherapy, medication or targeted injections. Surgery is recommended only when non-surgical options have been exhausted, or when there is a clear medical indication such as nerve compression causing progressive weakness.">Σε καμία περίπτωση. Πολλές νευρολογικές παθήσεις ανταποκρίνονται πολύ καλά σε συντηρητική αντιμετώπιση, όπως φυσικοθεραπεία, φαρμακευτική αγωγή ή στοχευμένες εγχύσεις. Το χειρουργείο προτείνεται μόνο όταν έχουν εξαντληθεί οι μη χειρουργικές επιλογές ή όταν υπάρχει σαφής ιατρική ένδειξη, όπως πίεση νεύρου που προκαλεί προϊούσα αδυναμία.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="What is minimally invasive neurosurgery?">Τι είναι η ελάχιστα επεμβατική νευροχειρουργική;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Minimally invasive techniques use small incisions and specialised instruments to reach the brain or spine with minimal disruption to the surrounding tissue. The benefits include reduced blood loss, shorter hospital stays, less post-operative pain and a faster return to daily activity compared with traditional open surgery.">Οι ελάχιστα επεμβατικές τεχνικές αξιοποιούν μικρές τομές και εξειδικευμένα εργαλεία για την προσπέλαση του εγκεφάλου ή της σπονδυλικής στήλης με ελάχιστη διατάραξη των γύρω ιστών. Τα οφέλη περιλαμβάνουν μικρότερη απώλεια αίματος, συντομότερη νοσηλεία, λιγότερο μετεγχειρητικό πόνο και ταχύτερη επιστροφή στην καθημερινότητα σε σχέση με την κλασική ανοικτή χειρουργική.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="How do I prepare for spinal or brain surgery?">Πώς προετοιμάζομαι για επέμβαση σπονδυλικής στήλης ή εγκεφάλου;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Preparation varies by procedure, but generally includes pre-operative blood tests and imaging, stopping certain medications (such as blood thinners) as advised, fasting before the procedure, and arranging support at home afterwards. Dr. Veranis will provide you with a personalised pre-operative checklist.">Η προετοιμασία διαφέρει ανάλογα με την επέμβαση, αλλά γενικά περιλαμβάνει προεγχειρητικές αιματολογικές και απεικονιστικές εξετάσεις, διακοπή ορισμένων φαρμάκων (όπως τα αντιπηκτικά) σύμφωνα με τις οδηγίες, νηστεία πριν από την επέμβαση και οργάνωση υποστήριξης στο σπίτι μετά. Ο Δρ. Βεράνης θα σας δώσει εξατομικευμένη λίστα προεγχειρητικού ελέγχου.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-col">
+        <span class="label" data-en="Recovery">Ανάρρωση</span>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="How long is recovery after spine surgery?">Πόσο διαρκεί η ανάρρωση μετά από επέμβαση σπονδυλικής στήλης;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Recovery depends on the type and extent of the procedure. Patients who have a minimally invasive discectomy often return home the same day or the next morning and resume light activity within two to four weeks. More complex fusion procedures may require six to twelve weeks for full recovery. Dr. Veranis will give you a timeline specific to your case.">Η ανάρρωση εξαρτάται από το είδος και την έκταση της επέμβασης. Οι ασθενείς που υποβάλλονται σε ελάχιστα επεμβατική δισκεκτομή συχνά επιστρέφουν σπίτι την ίδια ή την επόμενη ημέρα και επανέρχονται σε ήπια δραστηριότητα μέσα σε δύο έως τέσσερις εβδομάδες. Οι πιο σύνθετες σπονδυλοδεσίες μπορεί να χρειαστούν έξι έως δώδεκα εβδομάδες για πλήρη ανάρρωση. Ο Δρ. Βεράνης θα σας δώσει χρονοδιάγραμμα προσαρμοσμένο στη δική σας περίπτωση.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="When can I return to work?">Πότε μπορώ να επιστρέψω στη δουλειά μου;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="Return-to-work timelines vary widely. For desk-based or sedentary work, patients often return within two to four weeks following a minimally invasive procedure. Physical or manual work may require six to twelve weeks. Your individual plan takes into account your occupation, the procedure and your overall health.">Ο χρόνος επιστροφής στην εργασία διαφέρει σημαντικά. Για γραφειακή ή καθιστική εργασία, οι ασθενείς συνήθως επιστρέφουν μέσα σε δύο έως τέσσερις εβδομάδες μετά από ελάχιστα επεμβατική επέμβαση. Η χειρωνακτική εργασία μπορεί να απαιτήσει έξι έως δώδεκα εβδομάδες. Το εξατομικευμένο πλάνο λαμβάνει υπόψη το επάγγελμά σας, την επέμβαση και τη γενική σας κατάσταση.</p></div>
+        </div>
+        <div class="qa" data-open="0">
+          <button type="button" aria-expanded="false"><span data-en="Will I need physiotherapy after surgery?">Θα χρειαστώ φυσικοθεραπεία μετά την επέμβαση;</span><span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><p data-en="In most cases, yes. Post-operative physiotherapy is an important part of recovery, particularly after spine surgery. It restores strength, flexibility and function, and reduces the risk of recurrence. Dr. Veranis works closely with experienced physiotherapists and will provide the appropriate referrals.">Στις περισσότερες περιπτώσεις, ναι. Η μετεγχειρητική φυσικοθεραπεία αποτελεί σημαντικό μέρος της ανάρρωσης, ιδίως μετά από επεμβάσεις σπονδυλικής στήλης. Αποκαθιστά τη μυϊκή ισχύ, την ευλυγισία και τη λειτουργικότητα και μειώνει τον κίνδυνο υποτροπής. Ο Δρ. Βεράνης συνεργάζεται στενά με έμπειρους φυσικοθεραπευτές και θα σας παραπέμψει αναλόγως.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="small rv" style="margin-top:38px;text-align:center" data-en="Have a question that is not listed here? &lt;a href=&quot;#contact&quot; style=&quot;color:var(--accent);font-weight:600&quot;&gt;Contact us directly.&lt;/a&gt;">Έχετε κάποια ερώτηση που δεν αναφέρεται εδώ; <a href="#contact" style="color:var(--accent);font-weight:600">Επικοινωνήστε μαζί μας.</a></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BOOKING + CONTACT ══════════════════════════ -->
+<section class="sect dark" id="contact" aria-labelledby="h-contact">
+  <span class="sect-num" aria-hidden="true">11</span>
+  <div class="wrap">
+    <div class="form-split">
+      <div class="rv" id="booking">
+        <span class="eyebrow" data-en="Get in Touch">Επικοινωνία</span>
+        <h2 class="h-lg" id="h-contact" style="margin-top:22px" data-en="Schedule your consultation">Κλείστε το ραντεβού σας</h2>
+        <p class="lede" style="margin-top:22px" data-en="Whether you need a second opinion, a new diagnosis, or you are ready to discuss treatment options, we are here to help. Get in touch to arrange your appointment.">Είτε χρειάζεστε δεύτερη γνώμη, είτε μια νέα διάγνωση, είτε είστε έτοιμοι να συζητήσετε τις θεραπευτικές σας επιλογές, είμαστε εδώ για εσάς. Επικοινωνήστε μαζί μας για να κανονίσουμε το ραντεβού σας.</p>
+
+        <div class="contact-lines">
+          <div class="cline">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg></span>
+            <div><span class="label" data-en="Mobile &amp; Viber">Κινητό &amp; Viber</span><div class="v"><a href="tel:+306983517455">+30 698 351 7455</a></div></div>
+          </div>
+          <div class="cline">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span>
+            <div><span class="label">Email</span><div class="v"><a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a></div></div>
+          </div>
+          <div class="cline">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <div><span class="label" data-en="Address">Διεύθυνση</span><div class="v"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Alopekis 41, Kolonaki, Athens">Αλωπεκής 41, Κολωνάκι, Αθήνα</a></div></div>
+          </div>
+          <div class="cline">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <div><span class="label" data-en="Office hours">Ώρες Ιατρείου</span><div class="v" style="font-size:15px" data-en="Mon – Fri 15:00 – 21:00 · Sat by appointment">Δευ – Παρ 15:00 – 21:00 · Σάβ κατόπιν ραντεβού</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form rv">
+        <h3 data-en="Request an appointment">Αίτημα ραντεβού</h3>
+        <p class="small" data-en="Fill in the form below and we will confirm your appointment within 24 hours.">Συμπληρώστε τη φόρμα και θα επιβεβαιώσουμε το ραντεβού σας μέσα σε 24 ώρες.</p>
+        <form id="bookForm" novalidate>
+          <div class="frow">
+            <div class="field">
+              <label for="f-first" data-en="First name">Όνομα</label>
+              <input id="f-first" name="first" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="f-last" data-en="Last name">Επώνυμο</label>
+              <input id="f-last" name="last" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="field">
+              <label for="f-phone" data-en="Phone / Viber">Τηλέφωνο / Viber</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email">
+            </div>
+          </div>
+          <div class="frow">
+            <div class="field">
+              <label for="f-date" data-en="Preferred date">Προτιμώμενη ημερομηνία</label>
+              <input id="f-date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="f-reason" data-en="Reason for consultation">Λόγος επίσκεψης</label>
+              <select id="f-reason" name="reason">
+                <option data-en="Spine — back or neck pain">Σπονδυλική στήλη — πόνος μέσης ή αυχένα</option>
+                <option data-en="Brain — tumour or lesion">Εγκέφαλος — όγκος ή βλάβη</option>
+                <option data-en="Peripheral nerve">Περιφερικό νεύρο</option>
+                <option data-en="Second opinion">Δεύτερη γνώμη</option>
+                <option data-en="Other">Άλλο</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg" data-en="Message">Μήνυμα</label>
+            <textarea id="f-msg" name="message" rows="4"></textarea>
+          </div>
+          <button class="btn btn-glow" type="submit" data-en="Send request">Αποστολή Αιτήματος</button>
+          <p class="form-note" data-en="Your request opens in your email app. We typically respond within 24 hours.">Το αίτημά σας ανοίγει στην εφαρμογή email σας. Απαντάμε συνήθως μέσα σε 24 ώρες.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <a class="brand" href="#top" aria-label="Επιστροφή στην αρχή">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="brand-txt">
+            <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
+            <span class="brand-role" data-en="Neurosurgeon · Athens">Νευροχειρουργός · Αθήνα</span>
+          </span>
+        </a>
+        <p data-en="Private neurosurgical practice in Kolonaki, Athens. Minimally invasive spine surgery, brain tumour surgery and peripheral nerve surgery.">Ιδιωτικό ιατρείο νευροχειρουργικής στο Κολωνάκι. Ελάχιστα επεμβατική χειρουργική σπονδυλικής στήλης, χειρουργική όγκων εγκεφάλου και περιφερικών νεύρων.</p>
+      </div>
+
+      <div>
+        <h4 data-en="Navigation">Πλοήγηση</h4>
+        <ul>
+          <li><a href="#about" data-en="About">Ο Ιατρός</a></li>
+          <li><a href="#services" data-en="Services">Υπηρεσίες</a></li>
+          <li><a href="#atlas" data-en="Anatomical Atlas">Ανατομικός Χάρτης</a></li>
+          <li><a href="#resources" data-en="Patient Resources">Εκπαίδευση Ασθενών</a></li>
+          <li><a href="#faq" data-en="FAQ">Συχνές Ερωτήσεις</a></li>
+          <li><a href="#booking" data-en="Book Appointment">Κλείστε Ραντεβού</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-en="Clinic">Ιατρείο</h4>
+        <address>
+          <span data-en="Alopekis 41, Kolonaki">Αλωπεκής 41, Κολωνάκι</span><br>
+          <span data-en="Athens 10676, Greece">Αθήνα 10676</span><br>
+          <a href="tel:+306983517455">+30 698 351 7455</a><br>
+          <a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="ftr-bot">
+      <span>&copy; <span id="yr">2026</span> <span data-en="Dr. Veranis Sotiris. All rights reserved.">Δρ. Βεράνης Σωτήρης. Με την επιφύλαξη παντός δικαιώματος.</span></span>
+      <span><span data-en="Designed by">Σχεδιασμός από</span> <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="tel:+306983517455" aria-label="Καλέστε το ιατρείο">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
+  <span data-en="Call">Κλήση</span>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Προβολή εικόνας">
+  <button class="lb-x" id="lbClose" type="button" aria-label="Κλείσιμο">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- i18n ---------- */
+  var lang = 'el';
+  var nodes = null;
+  function collect(){
+    nodes = Array.prototype.slice.call(document.querySelectorAll('[data-en]'));
+    nodes.forEach(function(n){ if(!n.hasAttribute('data-el')) n.setAttribute('data-el', (n.ownerSVGElement || n.tagName === 'text') ? n.textContent : n.innerHTML); });
+  }
+  function apply(l){
+    lang = l;
+    document.documentElement.lang = (l === 'el') ? 'el' : 'en';
+    nodes.forEach(function(n){
+      var v = n.getAttribute(l === 'el' ? 'data-el' : 'data-en');
+      if(n.ownerSVGElement || n.tagName === 'text'){ n.textContent = v; } else { n.innerHTML = v; }
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-lang') === l);
+    });
+    renderAtlas();
+    try{ localStorage.setItem('veranis-lang', l); }catch(e){}
+  }
+  collect();
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+
+  /* ---------- header ---------- */
+  var hdr = document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('stuck', window.scrollY > 40); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- mobile drawer ---------- */
+  var drawer = document.getElementById('drawer'),
+      burger = document.getElementById('burger');
+  function openDrawer(){ drawer.classList.add('open'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  burger.addEventListener('click', openDrawer);
+  document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('[data-close]').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+
+  /* ---------- reveal ---------- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    rv.forEach(function(el){ io.observe(el); });
+  } else {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- FAQ ---------- */
+  document.querySelectorAll('.qa').forEach(function(qa){
+    var btn = qa.querySelector('button'), ans = qa.querySelector('.ans');
+    btn.addEventListener('click', function(){
+      var open = qa.getAttribute('data-open') === '1';
+      qa.setAttribute('data-open', open ? '0' : '1');
+      btn.setAttribute('aria-expanded', String(!open));
+      ans.style.height = open ? '0px' : (ans.scrollHeight + 'px');
+    });
+  });
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.qa[data-open="1"] .ans').forEach(function(a){ a.style.height = a.scrollHeight + 'px'; });
+  });
+
+  /* ---------- resource tabs ---------- */
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      var k = t.getAttribute('data-tab');
+      document.querySelectorAll('.tab').forEach(function(x){
+        var on = x === t;
+        x.classList.toggle('on', on);
+        x.setAttribute('aria-selected', String(on));
+      });
+      document.querySelectorAll('.res-panel').forEach(function(p){ p.hidden = (p.id !== 'panel-' + k); });
+      document.querySelectorAll('#panel-' + k + ' .rv').forEach(function(el){ el.classList.add('in'); });
+    });
+  });
+
+  /* ---------- anatomical atlas ---------- */
+  var ATLAS = {
+    cervical:{
+      kind:{el:'Σπονδυλική στήλη · Α1–Α7', en:'Spine Region · C1–C7'},
+      t:{el:'Αυχενική Μοίρα', en:'Cervical Spine'},
+      d:{el:'Η αυχενική μοίρα στηρίζει το κρανίο και φιλοξενεί τον νωτιαίο μυελό και τις νευρικές ρίζες που ελέγχουν την αισθητικότητα και την κίνηση των άνω άκρων, των χεριών και του διαφράγματος. Είναι το πιο ευκίνητο τμήμα της σπονδυλικής στήλης και γι&#39; αυτό επιρρεπές σε εκφυλιστικές αλλοιώσεις και κακώσεις.',
+         en:'The cervical spine forms the neck and supports the skull, housing the spinal cord and the nerve roots that control sensation and movement in the arms, hands and diaphragm. It is the most mobile segment of the spine, which makes it susceptible to degenerative change and injury.'},
+      p:[
+        {t:{el:'Αυχενική Δισκοκήλη',en:'Cervical Disc Herniation'}, d:{el:'Πρόπτωση του πηκτοειδούς πυρήνα μέσα από τον ινώδη δακτύλιο, με πίεση των αυχενικών νευρικών ριζών (ριζοπάθεια) ή του νωτιαίου μυελού (μυελοπάθεια). Προκαλεί αυχεναλγία, πόνο στο χέρι, αδυναμία ή μούδιασμα.', en:'Protrusion of the nucleus pulposus through the annulus fibrosus, compressing cervical nerve roots (radiculopathy) or the spinal cord (myelopathy), causing neck pain, arm pain, weakness or numbness.'}},
+        {t:{el:'Αυχενική Σπονδυλωσική Μυελοπάθεια',en:'Cervical Spondylotic Myelopathy'}, d:{el:'Προϊούσα πίεση του νωτιαίου μυελού από εκφυλιστικές οστεοφυτικές διαμορφώσεις και δισκοπάθεια, με διαταραχή βάδισης, αδεξιότητα των χεριών και δυσλειτουργία της κύστης.', en:'Progressive compression of the spinal cord from degenerative osteophytes and disc disease, resulting in gait disturbance, hand clumsiness and bladder dysfunction.'}},
+        {t:{el:'Ατλαντοαξονική Αστάθεια',en:'Atlantoaxial Instability'}, d:{el:'Αστάθεια μεταξύ του πρώτου και του δεύτερου αυχενικού σπονδύλου, συχνά σε έδαφος ρευματοειδούς αρθρίτιδας ή τραυματισμού, με κίνδυνο κάκωσης του νωτιαίου μυελού κατά την κίνηση του αυχένα.', en:'Instability between the C1 and C2 vertebrae, often associated with rheumatoid arthritis or trauma, risking spinal cord injury with neck movement.'}}
+      ],
+      x:{el:'Η θεραπεία εκτείνεται από τη φυσικοθεραπεία και τις επισκληρίδιες εγχύσεις κορτικοστεροειδών στις ήπιες περιπτώσεις, έως την πρόσθια αυχενική δισκεκτομή με σπονδυλοδεσία (ACDF) ή την αυχενική αρθροπλαστική σε ανθεκτικά συμπτώματα ή μυελοπάθεια.',
+         en:'Treatment ranges from physiotherapy and epidural steroid injections for mild cases to anterior cervical discectomy and fusion (ACDF) or cervical arthroplasty for refractory symptoms or myelopathy.'}
+    },
+    thoracic:{
+      kind:{el:'Σπονδυλική στήλη · Θ1–Θ12', en:'Spine Region · T1–T12'},
+      t:{el:'Θωρακική Μοίρα', en:'Thoracic Spine'},
+      d:{el:'Η θωρακική μοίρα συνδέεται με τον θωρακικό κλωβό και προσφέρει σταθερότητα στον κορμό. Είναι το λιγότερο ευκίνητο τμήμα και σπανιότερα προσβάλλεται από εκφυλιστική δισκοπάθεια, είναι όμως ευάλωτη σε κατάγματα, παραμορφώσεις και σπάνιες δισκοκήλες.',
+         en:'The thoracic spine connects to the rib cage and provides stability to the trunk. It is the least mobile spinal segment and the least commonly affected by degenerative disc disease, but it is vulnerable to fractures, deformity and rare disc herniations.'},
+      p:[
+        {t:{el:'Θωρακική Δισκοκήλη',en:'Thoracic Disc Herniation'}, d:{el:'Ασυνήθιστη αλλά σοβαρή. Η δισκοκήλη μπορεί να πιέσει τον νωτιαίο μυελό προκαλώντας μυελοπάθεια, πόνο στο θωρακικό τοίχωμα ή αδυναμία των κάτω άκρων.', en:'Uncommon but serious; a herniated thoracic disc can compress the spinal cord causing myelopathy, chest wall pain or lower extremity weakness.'}},
+        {t:{el:'Συμπιεστικά Κατάγματα Σπονδύλων',en:'Vertebral Compression Fractures'}, d:{el:'Οφείλονται συχνά σε οστεοπόρωση ή τραυματισμό. Εκδηλώνονται με οξύ πόνο στη μεσότητα της ράχης και μπορεί να οδηγήσουν σε κυφωτική παραμόρφωση και νευρολογική επιβάρυνση.', en:'Often caused by osteoporosis or trauma; they present with acute mid-back pain and may lead to kyphotic deformity and neurological compromise.'}},
+        {t:{el:'Όγκοι Θωρακικής Μοίρας',en:'Thoracic Spinal Tumours'}, d:{el:'Πρωτοπαθείς ή μεταστατικές βλάβες που προκαλούν προϊούσα οσφυαλγία, πίεση του νωτιαίου μυελού και, εάν δεν αντιμετωπιστούν, παραπληγία.', en:'Primary or metastatic lesions that can cause progressive back pain, spinal cord compression and paraplegia if left untreated.'}}
+      ],
+      x:{el:'Η αντιμετώπιση εξαρτάται από την αιτία: κυφοπλαστική ή σπονδυλοπλαστική για τα οστεοπορωτικά κατάγματα, ελάχιστα επεμβατικές θωρακοσκοπικές ή οπίσθιες προσπελάσεις για δισκοκήλες και αφαίρεση όγκων.',
+         en:'Management depends on aetiology: kyphoplasty or vertebroplasty for osteoporotic fractures, and minimally invasive thoracoscopic or posterior approaches for disc herniations and tumour resection.'}
+    },
+    lumbar:{
+      kind:{el:'Σπονδυλική στήλη · Ο1–Ο5', en:'Spine Region · L1–L5'},
+      t:{el:'Οσφυϊκή Μοίρα', en:'Lumbar Spine'},
+      d:{el:'Η οσφυϊκή μοίρα φέρει το μεγαλύτερο μέρος του βάρους του σώματος και είναι η συχνότερη εντόπιση εκφυλιστικής νόσου της σπονδυλικής στήλης. Κάτω από τον πρώτο οσφυϊκό σπόνδυλο φιλοξενεί την ιππουρίδα και αποτελεί την κύρια αιτία οσφυαλγίας παγκοσμίως.',
+         en:'The lumbar spine bears the majority of the body’s weight and is the most common site of degenerative spinal disease. It houses the cauda equina below L1 and is the primary source of lower back pain worldwide.'},
+      p:[
+        {t:{el:'Κήλη Μεσοσπονδυλίου Δίσκου Οσφύος',en:'Lumbar Disc Herniation'}, d:{el:'Η συχνότερη ένδειξη χειρουργείου σπονδυλικής στήλης. Το υλικό του δίσκου πιέζει τις νευρικές ρίζες και προκαλεί ισχιαλγία — αντανακλαστικό πόνο στο σκέλος, μούδιασμα ή αδυναμία.', en:'The most common indication for spinal surgery; herniated disc material compresses the nerve roots causing sciatica — radiating leg pain, numbness or weakness.'}},
+        {t:{el:'Στένωση Σπονδυλικού Σωλήνα Οσφύος',en:'Lumbar Spinal Stenosis'}, d:{el:'Στένωση του σπονδυλικού σωλήνα που προκαλεί νευρογενή διαλείπουσα χωλότητα — πόνο και βάρος στα σκέλη κατά τη βάδιση, που υποχωρεί με την καθιστή θέση ή την κάμψη προς τα εμπρός.', en:'Narrowing of the spinal canal causing neurogenic claudication — leg pain and heaviness with walking, relieved by sitting or bending forward.'}},
+        {t:{el:'Εκφυλιστική Σπονδυλολίσθηση',en:'Degenerative Spondylolisthesis'}, d:{el:'Ολίσθηση ενός σπονδύλου προς τα εμπρός σε σχέση με τον υποκείμενο, λόγω εκφύλισης των οπίσθιων αρθρώσεων, με οσφυαλγία και ριζοπάθεια.', en:'Forward slippage of one vertebra over another due to facet joint degeneration, causing back pain and radiculopathy.'}}
+      ],
+      x:{el:'Η μικροδισκεκτομή αποτελεί το χρυσό πρότυπο για τη δισκοκήλη. Η στένωση αντιμετωπίζεται με πεταλεκτομή ή ελάχιστα επεμβατική αποσυμπίεση. Οι τεχνικές σπονδυλοδεσίας (MIS-TLIF, XLIF) χρησιμοποιούνται όταν υπάρχει αστάθεια.',
+         en:'Microdiscectomy is the gold standard for disc herniation. Spinal stenosis is addressed with laminectomy or minimally invasive decompression. Fusion procedures (MIS-TLIF, XLIF) are used where there is instability.'}
+    },
+    sacral:{
+      kind:{el:'Σπονδυλική στήλη · Ι1–Ι5', en:'Spine Region · S1–S5'},
+      t:{el:'Ιερό Οστό &amp; Κόκκυγας', en:'Sacrum &amp; Coccyx'},
+      d:{el:'Το ιερό οστό αρθρώνεται με τη λεκάνη και μεταφέρει τα φορτία από τη σπονδυλική στήλη στα κάτω άκρα. Οι ιερές νευρικές ρίζες ελέγχουν τη λειτουργία της κύστης και του εντέρου.',
+         en:'The sacrum articulates with the pelvis and transmits loads from the spine to the lower limbs. The sacral nerve roots control bladder and bowel function.'},
+      p:[
+        {t:{el:'Κατάγματα Ιερού Οστού',en:'Sacral Fractures'}, d:{el:'Συνδέονται συχνά με τραυματισμό λεκάνης υψηλής ενέργειας ή με κατάγματα ανεπάρκειας σε οστεοπορωτικούς ασθενείς. Μπορεί να τραυματίσουν τις ιερές ρίζες με διαταραχή κύστης και εντέρου.', en:'Often associated with high-energy pelvic trauma or insufficiency fractures in osteoporotic patients; they may injure the sacral nerve roots causing bladder and bowel dysfunction.'}},
+        {t:{el:'Δυσλειτουργία Ιερολαγονίου Άρθρωσης',en:'Sacroiliac Joint Dysfunction'}, d:{el:'Πόνος από την ιερολαγόνιο άρθρωση που συχνά μιμείται δισκοπάθεια της οσφύος ή πάθηση του ισχίου, με ετερόπλευρο πόνο στη μέση και τον γλουτό.', en:'Pain arising from the SI joint, often mimicking lumbar disc disease or hip pathology, presenting as unilateral lower back and buttock pain.'}},
+        {t:{el:'Όγκοι Ιερού Οστού &amp; Χόρδωμα',en:'Sacral Tumours &amp; Chordoma'}, d:{el:'Πρωτοπαθείς οστικοί όγκοι του ιερού οστού, όπως το χόρδωμα, που εκδηλώνονται με εν τω βάθει πόνο και συχνά απαιτούν εκτεταμένη χειρουργική εκτομή.', en:'Primary bone tumours of the sacrum, such as chordoma, which present with deep sacral pain and may require extensive surgical resection.'}}
+      ],
+      x:{el:'Η αντιμετώπιση περιλαμβάνει διαδερμική ιεροπλαστική για τα κατάγματα ανεπάρκειας, σπονδυλοδεσία της ιερολαγονίου άρθρωσης σε ανθεκτική δυσλειτουργία και en-bloc εκτομή με αποκατάσταση για τους όγκους του ιερού οστού.',
+         en:'Management includes percutaneous sacroplasty for insufficiency fractures, SI joint fusion for refractory dysfunction, and en-bloc resection with reconstruction for sacral tumours.'}
+    },
+    frontal:{
+      kind:{el:'Εγκέφαλος · Περιοχή', en:'Brain Region'},
+      t:{el:'Μετωπιαίος Λοβός', en:'Frontal Lobe'},
+      d:{el:'Ο μετωπιαίος λοβός ελέγχει τις επιτελικές λειτουργίες, την εκούσια κίνηση, την προσωπικότητα και την παραγωγή του λόγου (περιοχή Broca). Είναι ο μεγαλύτερος λοβός του εγκεφάλου και ιδιαίτερα ευάλωτος στις συνέπειες χωροκατακτητικών βλαβών και κακώσεων.',
+         en:'The frontal lobe governs executive function, voluntary motor control, personality and language production (Broca’s area). It is the largest brain lobe and highly vulnerable to the effects of mass lesions and trauma.'},
+      p:[
+        {t:{el:'Γλοίωμα Μετωπιαίου Λοβού',en:'Frontal Lobe Glioma'}, d:{el:'Όγκοι από τα νευρογλοιακά κύτταρα του μετωπιαίου λοβού. Μπορεί να προκαλέσουν αλλαγές προσωπικότητας, διαταραχή των επιτελικών λειτουργιών, ετερόπλευρη ημιπάρεση ή επιληπτικές κρίσεις.', en:'Tumours arising from glial cells in the frontal lobe may cause personality change, executive dysfunction, contralateral hemiparesis or seizures.'}},
+        {t:{el:'Μηνιγγίωμα',en:'Meningioma'}, d:{el:'Καλοήθεις εξωαξονικοί όγκοι από τις μήνιγγες που καλύπτουν τον μετωπιαίο λοβό. Λόγω της αργής ανάπτυξής τους μπορεί να αποκτήσουν σημαντικό μέγεθος πριν εκδηλωθούν συμπτώματα.', en:'Benign extra-axial tumours arising from the meninges overlying the frontal lobe; they may reach considerable size before causing symptoms because they grow slowly.'}},
+        {t:{el:'Επιληψία Μετωπιαίου Λοβού',en:'Frontal Lobe Epilepsy'}, d:{el:'Κρίσεις με αφετηρία τον μετωπιαίο λοβό, συχνά νυκτερινές, με κινητικούς αυτοματισμούς. Σε φαρμακοανθεκτικές περιπτώσεις μπορεί να απαιτηθεί χειρουργική εκτομή.', en:'Seizures originating in the frontal lobe, often nocturnal, with motor automatisms; drug-refractory cases may require neurosurgical resection.'}}
+      ],
+      x:{el:'Χειρουργική εκτομή με τεχνικές κρανιοτομής σε εγρήγορση για τη διατήρηση των λειτουργικών περιοχών του φλοιού, σε συνδυασμό με νευροπλοήγηση και διεγχειρητικό νευροφυσιολογικό monitoring για ασφαλή αφαίρεση του όγκου.',
+         en:'Surgical resection guided by awake craniotomy techniques to preserve eloquent cortex, combined with neuronavigation and intraoperative neuromonitoring for safe tumour removal.'}
+    },
+    parietal:{
+      kind:{el:'Εγκέφαλος · Περιοχή', en:'Brain Region'},
+      t:{el:'Βρεγματικός Λοβός', en:'Parietal Lobe'},
+      d:{el:'Ο βρεγματικός λοβός ολοκληρώνει τις αισθητικές πληροφορίες, τη χωρική αντίληψη και την ανάγνωση και γραφή. Οι βλάβες του παράγουν χαρακτηριστικά ελλείμματα, όπως ημιχωρική παραμέληση και αισθητικές διαταραχές.',
+         en:'The parietal lobe integrates sensory information, spatial awareness and reading and writing. Damage to this region produces characteristic deficits including hemispatial neglect and sensory disturbance.'},
+      p:[
+        {t:{el:'Πολύμορφο Γλοιοβλάστωμα Βρεγματικού Λοβού',en:'Parietal Glioblastoma'}, d:{el:'Γλοιώματα υψηλού βαθμού κακοήθειας στην περιοχή αυτή, που εκδηλώνονται με ετερόπλευρη αισθητική απώλεια, χωρικό αποπροσανατολισμό και διαταραχές γραφής ή ανάγνωσης ανάλογα με το ημισφαίριο.', en:'High-grade gliomas in this region present with contralateral sensory loss, spatial disorientation and agraphia or alexia depending on the hemisphere involved.'}},
+        {t:{el:'Φλοιώδεις Μεταστάσεις',en:'Cortical Metastases'}, d:{el:'Δευτεροπαθείς όγκοι εγκεφάλου από καρκίνο πνεύμονα, μαστού, μελάνωμα ή νεφρού, που εμφανίζονται οξέως με εστιακά νευρολογικά ελλείμματα ή επιληπτικές κρίσεις.', en:'Secondary brain tumours from lung, breast, melanoma or renal cell carcinoma, presenting acutely with focal neurological deficits or seizures.'}},
+        {t:{el:'Αρτηριοφλεβώδης Δυσπλασία (AVM)',en:'Arteriovenous Malformation (AVM)'}, d:{el:'Παθολογικά συμπλέγματα αγγείων που παρακάμπτουν τη φυσιολογική αιματική ροή, με κίνδυνο ενδοκρανιακής αιμορραγίας και αιφνίδιου νευρολογικού ελλείμματος.', en:'Abnormal tangles of blood vessels that short-circuit normal blood flow, with a risk of intracranial haemorrhage causing sudden neurological deficit.'}}
+      ],
+      x:{el:'Μικροχειρουργική εκτομή με διεγχειρητικό monitoring, στερεοτακτική ακτινοχειρουργική (Gamma Knife) για βλάβες σε βάθος ή μικρού μεγέθους, και ενδαγγειακός εμβολισμός για τις αρτηριοφλεβώδεις δυσπλασίες.',
+         en:'Microsurgical resection with intraoperative monitoring, stereotactic radiosurgery (Gamma Knife) for deep or small lesions, and endovascular embolisation for AVMs.'}
+    },
+    temporal:{
+      kind:{el:'Εγκέφαλος · Περιοχή', en:'Brain Region'},
+      t:{el:'Κροταφικός Λοβός', en:'Temporal Lobe'},
+      d:{el:'Ο κροταφικός λοβός είναι υπεύθυνος για την ακουστική επεξεργασία, τη δημιουργία της μνήμης (ιππόκαμπος) και την κατανόηση του λόγου (περιοχή Wernicke στο επικρατούν ημισφαίριο). Είναι η πιο επιληπτογόνος περιοχή του εγκεφάλου.',
+         en:'The temporal lobe is responsible for auditory processing, memory formation (hippocampus) and language comprehension (Wernicke’s area on the dominant side). It is the most epileptogenic region of the brain.'},
+      p:[
+        {t:{el:'Κροταφική Επιληψία',en:'Temporal Lobe Epilepsy'}, d:{el:'Η συχνότερη μορφή εστιακής επιληψίας, συχνά με αιτία τη σκλήρυνση του ιπποκάμπου. Χαρακτηρίζεται από αίσθημα déjà vu, σύνθετες μερικές κρίσεις και αυτοματισμούς.', en:'The most common form of focal epilepsy, often caused by hippocampal sclerosis; it is characterised by déjà vu, complex partial seizures and automatisms.'}},
+        {t:{el:'Γλοίωμα Χαμηλού Βαθμού Κακοήθειας',en:'Low-Grade Glioma'}, d:{el:'Όγκοι αργής ανάπτυξης (βαθμού I–II) που εντοπίζονται συχνά στον κροταφικό λοβό και μπορεί να εκδηλωθούν με επιληψία χρόνια πριν προκαλέσουν σοβαρότερα ελλείμματα.', en:'Slow-growing tumours (grade I–II) frequently found in the temporal lobe, which may present with epilepsy years before causing more significant deficits.'}},
+        {t:{el:'Εγκεφαλίτιδα από Έρπητα',en:'Herpes Simplex Encephalitis'}, d:{el:'Ιογενής λοίμωξη με ιδιαίτερη προτίμηση στους κροταφικούς λοβούς, που προκαλεί αμνησία, διαταραχές συμπεριφοράς και κρίσεις. Αποτελεί νευροχειρουργικό επείγον εάν επιπλακεί με αιμορραγία ή οίδημα.', en:'A viral infection with a predilection for the temporal lobes, causing amnesia, behavioural change and seizures — a neurosurgical emergency if complicated by haemorrhage or oedema.'}}
+      ],
+      x:{el:'Κροταφική λοβεκτομή ή εκλεκτική αμυγδαλο-ιπποκαμπεκτομή για την ανθεκτική κροταφική επιληψία. Κρανιοτομή σε εγρήγορση για όγκους του επικρατούντος ημισφαιρίου, με διατήρηση της περιοχής Wernicke.',
+         en:'Temporal lobectomy or selective amygdalohippocampectomy for refractory temporal lobe epilepsy. Awake craniotomy for dominant hemisphere tumours, preserving Wernicke’s area.'}
+    },
+    cerebellum:{
+      kind:{el:'Εγκέφαλος · Περιοχή', en:'Brain Region'},
+      t:{el:'Παρεγκεφαλίδα', en:'Cerebellum'},
+      d:{el:'Η παρεγκεφαλίδα συντονίζει την κίνηση, την ισορροπία και τον λεπτό κινητικό έλεγχο, ενώ συμμετέχει και στην κινητική μάθηση. Οι βλάβες της προκαλούν χαρακτηριστικά σύστοιχη αταξία, δυσμετρία και νυσταγμό.',
+         en:'The cerebellum coordinates movement, balance and fine motor control, and plays a role in motor learning. Lesions characteristically produce ipsilateral ataxia, dysmetria and nystagmus.'},
+      p:[
+        {t:{el:'Αιμαγγειοβλάστωμα Παρεγκεφαλίδας',en:'Cerebellar Haemangioblastoma'}, d:{el:'Καλοήθεις αγγειακοί όγκοι, συχνά σε συνάφεια με τη νόσο Von Hippel-Lindau. Κυστικές βλάβες με τοιχωματικό οζίδιο που προκαλούν προϊούσα αταξία και κεφαλαλγία.', en:'Benign vascular tumours, often associated with Von Hippel-Lindau disease; cystic lesions with a mural nodule causing progressive ataxia and headache.'}},
+        {t:{el:'Μυελοβλάστωμα',en:'Medulloblastoma'}, d:{el:'Ο συχνότερος κακοήθης όγκος εγκεφάλου στα παιδιά, με εντόπιση στον οπίσθιο κρανιακό βόθρο. Προκαλεί κεφαλαλγία, εμέτους και παρεγκεφαλιδική αταξία.', en:'The most common malignant brain tumour in children, arising in the posterior fossa; it causes headache, vomiting and cerebellar ataxia.'}},
+        {t:{el:'Μεταστάσεις Οπίσθιου Κρανιακού Βόθρου',en:'Posterior Fossa Metastases'}, d:{el:'Συχνή εντόπιση δευτεροπαθών όγκων, που μπορεί να προκαλέσουν οξύ αποφρακτικό υδροκέφαλο πιέζοντας την τέταρτη κοιλία.', en:'A common site for secondary brain tumours, which may cause acute obstructive hydrocephalus by compressing the fourth ventricle.'}}
+      ],
+      x:{el:'Χειρουργική εκτομή μέσω υπινιακής κρανιοτομής, συχνά σε συνδυασμό με ακτινοθεραπεία και χημειοθεραπεία για τις κακοήθεις βλάβες. Τοποθέτηση εξωτερικής κοιλιακής παροχέτευσης ή κοιλιοπεριτοναϊκής βαλβίδας για τον συνοδό υδροκέφαλο.',
+         en:'Surgical resection via suboccipital craniotomy, often combined with radiation and chemotherapy for malignant lesions. EVD or VP shunt placement for associated hydrocephalus.'}
+    },
+    brainstem:{
+      kind:{el:'Εγκέφαλος · Περιοχή', en:'Brain Region'},
+      t:{el:'Εγκεφαλικό Στέλεχος', en:'Brainstem'},
+      d:{el:'Το εγκεφαλικό στέλεχος (μέσος εγκέφαλος, γέφυρα, προμήκης) ελέγχει ζωτικές λειτουργίες όπως το επίπεδο συνείδησης, την αναπνοή και την καρδιακή συχνότητα, και φιλοξενεί όλους τους πυρήνες των κρανιακών νεύρων. Είναι η πιο απαιτητική χειρουργικά περιοχή του εγκεφάλου.',
+         en:'The brainstem (midbrain, pons, medulla) controls vital functions including consciousness, respiration and heart rate, and houses all cranial nerve nuclei. It is the most surgically challenging brain region.'},
+      p:[
+        {t:{el:'Διάχυτο Γλοίωμα Γέφυρας (DIPG)',en:'Diffuse Intrinsic Pontine Glioma (DIPG)'}, d:{el:'Επιθετικός όγκος της γέφυρας που προσβάλλει κυρίως παιδιά. Προκαλεί παρέσεις κρανιακών νεύρων, σημεία μακρών οδών και αταξία, με δυσμενή πρόγνωση.', en:'An aggressive tumour of the pons primarily affecting children; it causes cranial nerve palsies, long tract signs and ataxia, with a poor prognosis.'}},
+        {t:{el:'Σηραγγώδες Αιμαγγείωμα Στελέχους',en:'Brainstem Cavernous Malformation'}, d:{el:'Αγγειακές βλάβες με τάση για επαναλαμβανόμενες μικρές αιμορραγίες, που προκαλούν προϊούσα βλάβη κρανιακών νεύρων και σημεία μακρών οδών με κάθε επεισόδιο.', en:'Vascular lesions prone to repeated small haemorrhages, causing progressive cranial nerve deficits and long tract signs with each bleed.'}},
+        {t:{el:'Νευραλγία Τριδύμου',en:'Trigeminal Neuralgia'}, d:{el:'Έντονος επεισοδιακός πόνος στο πρόσωπο από νευροαγγειακή σύγκρουση στη ρίζα του τριδύμου νεύρου, που αντιμετωπίζεται με μικροαγγειακή αποσυμπίεση (MVD).', en:'Severe episodic facial pain caused by neurovascular compression of the trigeminal nerve at the root entry zone, amenable to microvascular decompression (MVD).'}}
+      ],
+      x:{el:'Μικροαγγειακή αποσυμπίεση (MVD) για τη νευραλγία τριδύμου, στερεοτακτική ακτινοχειρουργική για μικρά σηραγγώδη αιμαγγειώματα σε λειτουργικές περιοχές, και στοχευμένη θεραπεία με καθοδήγηση βιοψίας για το DIPG.',
+         en:'Microvascular decompression (MVD) for trigeminal neuralgia, stereotactic radiosurgery for small cavernomas in eloquent areas, and biopsy-guided targeted therapy for DIPG.'}
+    }
+  };
+
+  var current = 'lumbar';
+  var detail = document.getElementById('atlasDetail');
+  function renderAtlas(){
+    var r = ATLAS[current]; if(!r || !detail) return;
+    var L = lang;
+    var html = '<span class="rgn">' + r.kind[L] + '</span><h3>' + r.t[L] + '</h3><p>' + r.d[L] + '</p>' +
+      '<div class="path-grid">' + r.p.map(function(x){
+        return '<div class="p"><h4>' + x.t[L] + '</h4><p>' + x.d[L] + '</p></div>';
+      }).join('') + '</div>' +
+      '<div class="tx"><span class="label">' + (L === 'el' ? 'Θεραπευτική προσέγγιση' : 'Treatment approach') + '</span><p>' + r.x[L] + '</p></div>';
+    detail.innerHTML = html;
+    document.querySelectorAll('[data-r]').forEach(function(e){ e.classList.toggle('on', e.getAttribute('data-r') === current); });
+  }
+  function pick(k){ if(ATLAS[k]){ current = k; renderAtlas(); } }
+  document.querySelectorAll('[data-r]').forEach(function(el){
+    el.addEventListener('click', function(){ pick(el.getAttribute('data-r')); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); pick(el.getAttribute('data-r')); }
+    });
+  });
+  renderAtlas();
+
+  /* ---------- lightbox ---------- */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+  function openLb(src, alt, cap){
+    lbImg.src = src; lbImg.alt = alt || ''; lbCap.textContent = cap || '';
+    lb.classList.add('on'); requestAnimationFrame(function(){ lb.classList.add('vis'); });
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(){
+    lb.classList.remove('vis');
+    setTimeout(function(){ lb.classList.remove('on'); lbImg.src = ''; }, 320);
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('img[data-lb]').forEach(function(im){
+    im.style.cursor = 'zoom-in';
+    im.addEventListener('click', function(){ openLb(im.currentSrc || im.src, im.alt, im.getAttribute('data-cap')); });
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ if(lb.classList.contains('on')) closeLb(); if(drawer.classList.contains('open')) closeDrawer(); }
+  });
+
+  /* ---------- booking form -> mailto ---------- */
+  var form = document.getElementById('bookForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = new FormData(form), g = function(k){ return (f.get(k) || '').toString().trim(); };
+    if(!g('first') || !g('last') || !g('phone')){
+      alert(lang === 'el' ? 'Συμπληρώστε όνομα, επώνυμο και τηλέφωνο.' : 'Please fill in your first name, last name and phone number.');
+      return;
+    }
+    var L = lang === 'el';
+    var body = [
+      (L ? 'Ονοματεπώνυμο: ' : 'Full name: ') + g('first') + ' ' + g('last'),
+      (L ? 'Τηλέφωνο / Viber: ' : 'Phone / Viber: ') + g('phone'),
+      'Email: ' + (g('email') || '—'),
+      (L ? 'Προτιμώμενη ημερομηνία: ' : 'Preferred date: ') + (g('date') || '—'),
+      (L ? 'Λόγος επίσκεψης: ' : 'Reason: ') + g('reason'),
+      '',
+      (L ? 'Μήνυμα:' : 'Message:'),
+      g('message') || '—'
+    ].join('\n');
+    var subject = L ? 'Αίτημα ραντεβού — ' + g('first') + ' ' + g('last')
+                    : 'Appointment request — ' + g('first') + ' ' + g('last');
+    window.location.href = 'mailto:veranissotiris@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+
+  /* ---------- misc ---------- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  try{
+    var saved = localStorage.getItem('veranis-lang');
+    if(saved === 'en') apply('en');
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
