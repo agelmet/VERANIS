@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/neural-pathways-hero.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070C12'/%3E%3Cpath d='M20 46V18l24 28V18' stroke='%234FC5B8' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2040%2040%27%3E%3Crect%20width%3D%2740%27%20height%3D%2740%27%20rx%3D%279%27%20fill%3D%27%23070C12%27%2F%3E%3Cg%20fill%3D%27%23FFFFFF%27%3E%3Crect%20x%3D%2718.5%27%20y%3D%2718%27%20width%3D%273%27%20height%3D%2716%27%20rx%3D%271.5%27%20opacity%3D%27.55%27%2F%3E%3Crect%20x%3D%2716%27%20y%3D%2720%27%20width%3D%278%27%20height%3D%272.5%27%20rx%3D%271.25%27%20opacity%3D%27.45%27%2F%3E%3Crect%20x%3D%2716%27%20y%3D%2724%27%20width%3D%278%27%20height%3D%272.5%27%20rx%3D%271.25%27%20opacity%3D%27.45%27%2F%3E%3Crect%20x%3D%2716%27%20y%3D%2728%27%20width%3D%278%27%20height%3D%272.5%27%20rx%3D%271.25%27%20opacity%3D%27.45%27%2F%3E%3Cpath%20d%3D%27M20%2017C20%2017%2010%2016%209%2010C8%205%2012%203%2015%204C15%204%2014%207%2016%209C16%209%2014%2010%2015%2012C16%2014%2018%2014%2020%2014Z%27%20opacity%3D%27.9%27%2F%3E%3Cpath%20d%3D%27M20%2017C20%2017%2030%2016%2031%2010C32%205%2028%203%2025%204C25%204%2026%207%2024%209C24%209%2026%2010%2025%2012C24%2014%2022%2014%2020%2014Z%27%20opacity%3D%27.9%27%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2720%27%20cy%3D%2717%27%20r%3D%271.8%27%20fill%3D%27%23D6A23F%27%2F%3E%3C%2Fsvg%3E">
 
 <style>
 /* ============================================================
@@ -159,12 +159,9 @@ section{position:relative}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:14px}
 
 .brand{display:flex;align-items:center;gap:13px;flex:none}
-.brand-mark{
-  width:38px;height:38px;border-radius:9px;flex:none;
-  background:linear-gradient(150deg,#0E6E66,#0B1119 70%);
-  display:grid;place-items:center;box-shadow:0 4px 14px -6px rgba(14,110,102,.7);
-}
-.brand-mark svg{width:21px;height:21px}
+.brand-mark{width:34px;height:44px;flex:none;display:block;color:#fff;transition:color .5s var(--ease)}
+.brand-mark svg{width:100%;height:100%;display:block}
+.hdr.stuck .brand-mark{color:var(--accent)}
 .brand-txt{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{font-family:var(--serif);font-size:19.5px;letter-spacing:-.005em;color:#fff;white-space:nowrap}
 .brand-role{font-size:8.8px;font-weight:600;letter-spacing:.23em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px}
@@ -405,6 +402,25 @@ section{position:relative}
 .quote .who .n{font-size:15px;font-weight:600;color:#fff;text-align:left}
 .quote .who .c{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-lite);margin-top:4px;text-align:left}
 
+/* review carousel */
+.rev-stage{display:grid;margin-top:6px}
+.rev{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease),visibility 0s linear .75s}
+.rev.on{opacity:1;visibility:visible;transform:none;
+  transition:opacity .75s var(--ease),transform .75s var(--ease),visibility 0s}
+.rev-ctl{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:40px}
+.rev-ctl[hidden]{display:none}
+.rev-nav{width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:50%;
+  display:grid;place-items:center;color:rgba(255,255,255,.8);
+  transition:border-color .35s,color .35s,background .35s,transform .35s var(--ease)}
+.rev-nav svg{width:17px;height:17px}
+.rev-nav:hover{border-color:var(--accent-lite);color:var(--accent-lite);background:rgba(79,197,184,.08);transform:translateY(-2px)}
+.rev-dots{display:flex;align-items:center;gap:8px}
+.rev-dot{width:7px;height:7px;border-radius:100px;background:rgba(255,255,255,.26);
+  transition:background .4s var(--ease),width .4s var(--ease)}
+.rev-dot.on{background:var(--accent-lite);width:24px}
+@media (prefers-reduced-motion:reduce){.rev,.rev.on{transition:none}}
+
 /* ============================================================
    PATIENT RESOURCES
    ============================================================ */
@@ -595,9 +611,7 @@ section{position:relative}
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#top" aria-label="Δρ. Βεράνης Σωτήρης — αρχική">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="7.6 2.6 24.8 32.6" fill="none" aria-hidden="true"><rect x="18.5" y="18" width="3" height="16" rx="1.5" fill="currentColor" opacity=".5"/><rect x="16" y="20" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="24" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="28" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><path d="M20 17C20 17 10 16 9 10C8 5 12 3 15 4C15 4 14 7 16 9C16 9 14 10 15 12C16 14 18 14 20 14Z" fill="currentColor" opacity=".85"/><path d="M20 17C20 17 30 16 31 10C32 5 28 3 25 4C25 4 26 7 24 9C24 9 26 10 25 12C24 14 22 14 20 14Z" fill="currentColor" opacity=".85"/><line x1="20" y1="4" x2="20" y2="17" stroke="currentColor" stroke-width=".8" opacity=".3"/><circle cx="20" cy="17" r="1.5" fill="#D6A23F"/></svg></span>
       <span class="brand-txt">
         <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
         <span class="brand-role" data-en="Neurosurgeon">Νευροχειρουργός</span>
@@ -633,7 +647,7 @@ section{position:relative}
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Μενού">
   <div class="drawer-top">
     <a class="brand" href="#top" data-close>
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="7.6 2.6 24.8 32.6" fill="none" aria-hidden="true"><rect x="18.5" y="18" width="3" height="16" rx="1.5" fill="currentColor" opacity=".5"/><rect x="16" y="20" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="24" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="28" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><path d="M20 17C20 17 10 16 9 10C8 5 12 3 15 4C15 4 14 7 16 9C16 9 14 10 15 12C16 14 18 14 20 14Z" fill="currentColor" opacity=".85"/><path d="M20 17C20 17 30 16 31 10C32 5 28 3 25 4C25 4 26 7 24 9C24 9 26 10 25 12C24 14 22 14 20 14Z" fill="currentColor" opacity=".85"/><line x1="20" y1="4" x2="20" y2="17" stroke="currentColor" stroke-width=".8" opacity=".3"/><circle cx="20" cy="17" r="1.5" fill="#D6A23F"/></svg></span>
       <span class="brand-txt">
         <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
         <span class="brand-role" data-en="Neurosurgeon">Νευροχειρουργός</span>
@@ -1109,21 +1123,23 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ══════════════════════════ PATIENT STORY ══════════════════════════ -->
-<section class="sect dark" id="stories" aria-labelledby="h-stories">
+<!-- ══════════════════════════ PATIENT REVIEWS ══════════════════════════ -->
+<section class="sect dark" id="reviews" aria-labelledby="h-reviews">
   <span class="sect-num" aria-hidden="true">08</span>
   <div class="wrap">
     <div class="quote rv">
-      <span class="eyebrow" style="justify-content:center" data-en="Patient Stories">Μαρτυρίες Ασθενών</span>
-      <h2 class="sr" id="h-stories" data-en="What our patients say">Τι λένε οι ασθενείς μας</h2>
+      <span class="eyebrow" style="justify-content:center" data-en="Patient Reviews">Κριτικές Ασθενών</span>
+      <h2 class="sr" id="h-reviews" data-en="What our patients say">Τι λένε οι ασθενείς μας</h2>
       <div class="mark" aria-hidden="true">&ldquo;</div>
-      <blockquote data-en="After years of debilitating back pain, Dr. Veranis performed a minimally invasive discectomy that gave me my life back. Within weeks I was walking without pain for the first time in years. His calm, thorough approach made me feel safe throughout the entire process.">Μετά από χρόνια εξουθενωτικού πόνου στη μέση, ο Δρ. Βεράνης πραγματοποίησε μια ελάχιστα επεμβατική δισκεκτομή που μου έδωσε πίσω τη ζωή μου. Μέσα σε λίγες εβδομάδες περπατούσα χωρίς πόνο για πρώτη φορά έπειτα από χρόνια. Η ήρεμη και μεθοδική του προσέγγιση με έκανε να νιώθω ασφαλής σε όλη τη διαδικασία.</blockquote>
-      <div class="who">
-        <span class="av" aria-hidden="true">ΕΠ</span>
-        <div>
-          <div class="n" data-en="Eleni Papadopoulou, 52">Ελένη Παπαδοπούλου, 52</div>
-          <div class="c" data-en="Lumbar disc herniation">Κήλη μεσοσπονδυλίου δίσκου οσφύος</div>
-        </div>
+      <div class="rev-stage" id="revStage" aria-live="polite"></div>
+      <div class="rev-ctl" id="revCtl">
+        <button class="rev-nav" type="button" id="revPrev" aria-label="Προηγούμενη κριτική">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="rev-dots" id="revDots" role="tablist" aria-label="Κριτικές"></div>
+        <button class="rev-nav" type="button" id="revNext" aria-label="Επόμενη κριτική">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -1573,7 +1589,7 @@ section{position:relative}
     <div class="ftr-grid">
       <div class="ftr-brand">
         <a class="brand" href="#top" aria-label="Επιστροφή στην αρχή">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 18V6l10 12V6" stroke="#4FC5B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="7.6 2.6 24.8 32.6" fill="none" aria-hidden="true"><rect x="18.5" y="18" width="3" height="16" rx="1.5" fill="currentColor" opacity=".5"/><rect x="16" y="20" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="24" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><rect x="16" y="28" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/><path d="M20 17C20 17 10 16 9 10C8 5 12 3 15 4C15 4 14 7 16 9C16 9 14 10 15 12C16 14 18 14 20 14Z" fill="currentColor" opacity=".85"/><path d="M20 17C20 17 30 16 31 10C32 5 28 3 25 4C25 4 26 7 24 9C24 9 26 10 25 12C24 14 22 14 20 14Z" fill="currentColor" opacity=".85"/><line x1="20" y1="4" x2="20" y2="17" stroke="currentColor" stroke-width=".8" opacity=".3"/><circle cx="20" cy="17" r="1.5" fill="#D6A23F"/></svg></span>
           <span class="brand-txt">
             <span class="brand-name" data-en="Dr. Veranis Sotiris">Δρ. Βεράνης Σωτήρης</span>
             <span class="brand-role" data-en="Neurosurgeon · Athens">Νευροχειρουργός · Αθήνα</span>
@@ -1647,6 +1663,7 @@ section{position:relative}
       b.classList.toggle('on', b.getAttribute('data-lang') === l);
     });
     renderAtlas();
+    if(typeof renderReviews === 'function'){ renderReviews(); }
     try{ localStorage.setItem('veranis-lang', l); }catch(e){}
   }
   collect();
@@ -1850,6 +1867,86 @@ section{position:relative}
     });
   });
   renderAtlas();
+
+  /* ---------- patient reviews carousel ----------
+     ΚΡΙΤΙΚΕΣ ΑΣΘΕΝΩΝ — add real reviews here, one object per review.
+     Shape:  { el:'ελληνικό κείμενο', en:'english text',
+                name:{el:'Όνομα Επώνυμο, 52', en:'Name Surname, 52'},
+                cond:{el:'πάθηση', en:'condition'}, initials:'ΟΕ' }
+     The arrows and dots appear automatically from the second review onward.  */
+  var REVIEWS = [
+    {
+      el:'Μετά από χρόνια εξουθενωτικού πόνου στη μέση, ο Δρ. Βεράνης πραγματοποίησε μια ελάχιστα επεμβατική δισκεκτομή που μου έδωσε πίσω τη ζωή μου. Μέσα σε λίγες εβδομάδες περπατούσα χωρίς πόνο για πρώτη φορά έπειτα από χρόνια. Η ήρεμη και μεθοδική του προσέγγιση με έκανε να νιώθω ασφαλής σε όλη τη διαδικασία.',
+      en:'After years of debilitating back pain, Dr. Veranis performed a minimally invasive discectomy that gave me my life back. Within weeks I was walking without pain for the first time in years. His calm, thorough approach made me feel safe throughout the entire process.',
+      name:{el:'Ελένη Παπαδοπούλου, 52', en:'Eleni Papadopoulou, 52'},
+      cond:{el:'Κήλη μεσοσπονδυλίου δίσκου οσφύος', en:'Lumbar disc herniation'},
+      initials:'ΕΠ'
+    }
+  ];
+
+  var stage = document.getElementById('revStage'),
+      dotsEl = document.getElementById('revDots'),
+      ctl = document.getElementById('revCtl'),
+      revIdx = 0, revTimer = null;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function renderReviews(){
+    if(!stage) return;
+    var L = lang;
+    stage.innerHTML = REVIEWS.map(function(r,i){
+      return '<div class="rev' + (i === revIdx ? ' on' : '') + '">' +
+               '<blockquote>' + r[L] + '</blockquote>' +
+               '<div class="who">' +
+                 '<span class="av" aria-hidden="true">' + (L === 'el' ? r.initials : (r.initialsEn || r.initials)) + '</span>' +
+                 '<div><div class="n">' + r.name[L] + '</div>' +
+                 '<div class="c">' + r.cond[L] + '</div></div>' +
+               '</div>' +
+             '</div>';
+    }).join('');
+    dotsEl.innerHTML = REVIEWS.map(function(r,i){
+      return '<button class="rev-dot' + (i === revIdx ? ' on' : '') + '" type="button" role="tab" data-i="' + i +
+             '" aria-selected="' + (i === revIdx) + '" aria-label="' +
+             (lang === 'el' ? 'Κριτική ' : 'Review ') + (i+1) + '"></button>';
+    }).join('');
+    ctl.hidden = REVIEWS.length < 2;
+  }
+  function showReview(i){
+    revIdx = (i + REVIEWS.length) % REVIEWS.length;
+    var slides = stage.querySelectorAll('.rev'), dots = dotsEl.querySelectorAll('.rev-dot');
+    slides.forEach(function(el,n){ el.classList.toggle('on', n === revIdx); });
+    dots.forEach(function(el,n){ el.classList.toggle('on', n === revIdx); el.setAttribute('aria-selected', String(n === revIdx)); });
+  }
+  function startReviews(){
+    if(reduceMotion || REVIEWS.length < 2) return;
+    stopReviews();
+    revTimer = setInterval(function(){ showReview(revIdx + 1); }, 7000);
+  }
+  function stopReviews(){ if(revTimer){ clearInterval(revTimer); revTimer = null; } }
+
+  renderReviews();
+  document.getElementById('revPrev').addEventListener('click', function(){ showReview(revIdx - 1); startReviews(); });
+  document.getElementById('revNext').addEventListener('click', function(){ showReview(revIdx + 1); startReviews(); });
+  dotsEl.addEventListener('click', function(e){
+    var d = e.target.closest('.rev-dot'); if(d){ showReview(+d.getAttribute('data-i')); startReviews(); }
+  });
+  var revSection = document.getElementById('reviews');
+  revSection.addEventListener('mouseenter', stopReviews);
+  revSection.addEventListener('mouseleave', startReviews);
+  revSection.addEventListener('focusin', stopReviews);
+  revSection.addEventListener('focusout', startReviews);
+  var tx = null;
+  revSection.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].clientX; stopReviews(); }, {passive:true});
+  revSection.addEventListener('touchend', function(e){
+    if(tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    if(Math.abs(dx) > 45) showReview(revIdx + (dx < 0 ? 1 : -1));
+    tx = null; startReviews();
+  }, {passive:true});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.isIntersecting ? startReviews() : stopReviews(); });
+    }, {threshold:.25}).observe(revSection);
+  } else { startReviews(); }
 
   /* ---------- lightbox ---------- */
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
