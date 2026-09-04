@@ -1,2 +1,6 @@
+# PREVIEW STATE — the GitHub Pages URL must not be indexed.
+# At go-live, switch to Allow + Sitemap, but KEEP the admin and guide disallowed:
+#   Disallow: /admin.html
+#   Disallow: /odigos.html
 User-agent: *
 Disallow: /

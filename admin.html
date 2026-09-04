@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--
+  Πίνακας διαχείρισης — Δρ. Βεράνης Σωτήρης
+  Advon Media · https://advonmedia.com
+
+  Ο κωδικός εισόδου απλώς κρύβει τον πίνακα. Η πραγματική ασφάλεια είναι το
+  GitHub token: χωρίς αυτό, κανείς δεν μπορεί να δημοσιεύσει αλλαγές.
+-->
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Διαχείριση · Δρ. Βεράνης Σωτήρης</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23070C12'/%3E%3Cg fill='%23FFFFFF'%3E%3Crect x='18.5' y='18' width='3' height='16' rx='1.5' opacity='.55'/%3E%3Crect x='16' y='20' width='8' height='2.5' rx='1.25' opacity='.45'/%3E%3Crect x='16' y='24' width='8' height='2.5' rx='1.25' opacity='.45'/%3E%3Crect x='16' y='28' width='8' height='2.5' rx='1.25' opacity='.45'/%3E%3C/g%3E%3Ccircle cx='20' cy='17' r='1.8' fill='%23D6A23F'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0B1119; --ink-2:#14202B; --deep:#070C12;
+  --bone:#F5F4F1; --paper:#fff;
+  --accent:#0E6E66; --accent-d:#0A544E; --accent-l:#4FC5B8;
+  --muted:#5B6B74; --muted-2:#8A98A0;
+  --line:rgba(11,17,25,.13); --line-s:rgba(11,17,25,.07);
+  --red:#B4472F; --ok:#1F7A56; --gold:#D6A23F;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --r:10px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;line-height:1.15}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:var(--accent)}
+input,textarea,select{font:inherit;width:100%;background:var(--bone);color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;padding:10px 12px;transition:border-color .2s,background .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--accent);background:var(--paper);box-shadow:0 0 0 3px rgba(14,110,102,.12)}
+textarea{resize:vertical;min-height:88px;line-height:1.6}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ---------- gate ---------- */
+.gate{position:fixed;inset:0;z-index:50;background:var(--deep);display:grid;place-items:center;padding:24px}
+.gate.off{display:none}
+.gate-card{background:var(--paper);border-radius:16px;padding:34px;width:min(420px,100%);text-align:center;
+  box-shadow:0 50px 100px -40px rgba(0,0,0,.8)}
+.gate-card .mark{width:44px;height:56px;margin:0 auto 16px;color:var(--accent)}
+.gate-card h1{font-size:27px;margin-bottom:6px}
+.gate-card p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.gate-card input{text-align:center;letter-spacing:.14em}
+.gate-note{font-size:12.4px;color:var(--muted-2);margin-top:16px;line-height:1.6}
+.gate-err{color:var(--red);font-size:13.5px;margin-top:12px;min-height:20px}
+
+/* ---------- shell ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(245,244,241,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+.brand .mark{width:26px;height:34px;color:var(--accent);flex:none}
+.brand b{font-family:var(--serif);font-size:19px;font-weight:600;display:block;line-height:1.1}
+.brand span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;padding:10px 16px;
+  font-size:13.5px;font-weight:600;border:1px solid transparent;transition:.2s;white-space:nowrap}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-d)}
+.btn.ghost{border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.danger{color:var(--red);border:1px solid rgba(180,71,47,.35)}
+.btn.danger:hover{background:rgba(180,71,47,.08)}
+.btn.sm{padding:6px 11px;font-size:12.5px;border-radius:7px}
+.btn[disabled]{opacity:.45;pointer-events:none}
+
+.wrap{max-width:1080px;margin:0 auto;padding:26px 20px 90px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{padding:10px 15px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--muted);border:1px solid transparent}
+.tabs button:hover{background:rgba(11,17,25,.05)}
+.tabs button.on{background:var(--ink);color:#fff}
+.panel{display:none}
+.panel.on{display:block}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px}
+.card > h3{font-size:20px;margin-bottom:4px}
+.card .hint{color:var(--muted);font-size:13.5px;margin:0 0 16px}
+.f{display:block;margin-bottom:14px}
+.f > span{display:block;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted-2);margin-bottom:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:4px;margin-right:6px;vertical-align:2px}
+.tag.el{background:rgba(14,110,102,.13);color:var(--accent-d)}
+.tag.en{background:rgba(11,17,25,.08);color:var(--muted)}
+
+.item{border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;background:var(--paper)}
+.item.nested{background:var(--bone);border-color:var(--line-s)}
+.item-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.item-head .n{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;
+  font-size:11.5px;font-weight:700;flex:none}
+.item-head .t{font-weight:600;font-size:15px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item-tools{display:flex;gap:5px;flex:none}
+.icb{width:30px;height:30px;border:1px solid var(--line);border-radius:7px;display:grid;place-items:center;color:var(--muted);transition:.2s}
+.icb:hover{border-color:var(--ink);color:var(--ink)}
+.icb.del:hover{border-color:var(--red);color:var(--red)}
+.icb svg{width:14px;height:14px}
+.addbar{margin-top:6px}
+.group-box{border:1px dashed var(--line);border-radius:var(--r);padding:16px;margin-bottom:16px;background:rgba(255,255,255,.6)}
+.group-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.group-title h4{margin:0;font-size:15px;font-weight:700;letter-spacing:.02em;flex:1}
+.empty{color:var(--muted-2);font-size:13.5px;padding:14px;text-align:center;border:1px dashed var(--line);border-radius:var(--r)}
+
+.status{border-radius:8px;padding:11px 14px;font-size:13.5px;margin-top:12px;display:none}
+.status.show{display:block}
+.status.ok{background:rgba(31,122,86,.1);color:var(--ok)}
+.status.err{background:rgba(180,71,47,.1);color:var(--red)}
+.status.busy{background:rgba(11,17,25,.06);color:var(--muted)}
+.callout{background:rgba(214,162,63,.1);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:13px 15px;font-size:13.5px;margin-bottom:16px}
+.savebar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);color:#fff;
+  padding:11px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.savebar .s{font-size:13px;color:rgba(255,255,255,.66);margin-right:auto}
+.savebar .btn.ghost{border-color:rgba(255,255,255,.3);color:#fff}
+.savebar .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+@media (max-width:720px){
+  .two{grid-template-columns:1fr}
+  .wrap{padding:18px 14px 110px}
+  .savebar .s{width:100%;margin-bottom:4px}
+}
+</style>
+</head>
+<body>
+
+<svg class="sr" aria-hidden="true"><symbol id="logo" viewBox="7.6 2.6 24.8 32.6">
+  <rect x="18.5" y="18" width="3" height="16" rx="1.5" fill="currentColor" opacity=".5"/>
+  <rect x="16" y="20" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/>
+  <rect x="16" y="24" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/>
+  <rect x="16" y="28" width="8" height="2.5" rx="1.25" fill="currentColor" opacity=".4"/>
+  <path d="M20 17C20 17 10 16 9 10C8 5 12 3 15 4C15 4 14 7 16 9C16 9 14 10 15 12C16 14 18 14 20 14Z" fill="currentColor" opacity=".85"/>
+  <path d="M20 17C20 17 30 16 31 10C32 5 28 3 25 4C25 4 26 7 24 9C24 9 26 10 25 12C24 14 22 14 20 14Z" fill="currentColor" opacity=".85"/>
+  <line x1="20" y1="4" x2="20" y2="17" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+  <circle cx="20" cy="17" r="1.5" fill="#D6A23F"/>
+</symbol></svg>
+
+<!-- ═══════════ GATE ═══════════ -->
+<div class="gate" id="gate">
+  <form class="gate-card" id="gateForm">
+    <svg class="mark"><use href="#logo"/></svg>
+    <h1>Διαχείριση ιστοσελίδας</h1>
+    <p>Δρ. Βεράνης Σωτήρης</p>
+    <label class="sr" for="pass">Κωδικός</label>
+    <input type="password" id="pass" placeholder="Κωδικός" autocomplete="current-password">
+    <div class="gate-err" id="gateErr"></div>
+    <button class="btn primary" type="submit" style="width:100%;margin-top:6px">Είσοδος</button>
+    <p class="gate-note">Ο κωδικός απλώς κρύβει τον πίνακα. Για να δημοσιευτεί οποιαδήποτε αλλαγή χρειάζεται και το προσωπικό σας κλειδί GitHub, που το έχετε μόνο εσείς.</p>
+  </form>
+</div>
+
+<!-- ═══════════ APP ═══════════ -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand">
+      <svg class="mark"><use href="#logo"/></svg>
+      <div><b>Διαχείριση</b><span>Δρ. Βεράνης Σωτήρης</span></div>
+    </div>
+    <a class="btn ghost" href="odigos.html" target="_blank" rel="noopener">Οδηγίες</a>
+    <a class="btn ghost" id="viewSite" href="index.html" target="_blank" rel="noopener">Δείτε τον ιστότοπο</a>
+    <button class="btn ghost" id="reloadBtn" type="button">Επαναφορά</button>
+    <button class="btn ghost" id="lockBtn" type="button">Κλείδωμα</button>
+  </header>
+
+  <div class="wrap">
+    <div class="tabs" id="tabs">
+      <button data-p="resources" class="on">Πόροι &amp; Οδηγοί</button>
+      <button data-p="reviews">Κριτικές</button>
+      <button data-p="faq">Συχνές Ερωτήσεις</button>
+      <button data-p="contact">Στοιχεία Επικοινωνίας</button>
+      <button data-p="texts">Κείμενα</button>
+      <button data-p="publish">Δημοσίευση</button>
+    </div>
+
+    <!-- ───── RESOURCES ───── -->
+    <section class="panel on" data-panel="resources">
+      <div class="callout">
+        Εδώ προσθέτετε τα έντυπα που δίνετε στους ασθενείς. Διαλέγετε <b>κατηγορία</b> (π.χ. Σπονδυλική στήλη),
+        μετά <b>ομάδα</b> (π.χ. Εκπαιδευτικά Φυλλάδια) και πατάτε «Προσθήκη εγγράφου».
+        Αν αφήσετε τα αγγλικά κενά, θα εμφανίζονται τα ελληνικά και στις δύο γλώσσες.
+      </div>
+      <div class="card">
+        <label class="f" style="margin:0">
+          <span>Κατηγορία</span>
+          <select id="catSel"></select>
+        </label>
+        <div class="addbar" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn ghost sm" id="addCat" type="button">+ Νέα κατηγορία</button>
+          <button class="btn ghost sm" id="renCat" type="button">Μετονομασία κατηγορίας</button>
+          <button class="btn danger sm" id="delCat" type="button">Διαγραφή κατηγορίας</button>
+        </div>
+      </div>
+      <div id="resBody"></div>
+      <div class="addbar"><button class="btn ghost" id="addGroup" type="button">+ Νέα ομάδα σε αυτή την κατηγορία</button></div>
+    </section>
+
+    <!-- ───── REVIEWS ───── -->
+    <section class="panel" data-panel="reviews">
+      <div class="callout">
+        Οι κριτικές από το Google. Αντιγράψτε το κείμενο ακριβώς όπως το έγραψε ο ασθενής.
+        Γράφουμε μόνο κριτικές που υπάρχουν πραγματικά στο προφίλ σας στο Google.
+      </div>
+      <div class="card">
+        <label class="f" style="margin:0"><span>Σύνδεσμος προφίλ Google</span>
+          <input type="text" data-path="reviewsMeta.profileUrl" placeholder="https://..."></label>
+      </div>
+      <div id="revBody"></div>
+      <div class="addbar"><button class="btn primary" id="addRev" type="button">+ Προσθήκη κριτικής</button></div>
+    </section>
+
+    <!-- ───── FAQ ───── -->
+    <section class="panel" data-panel="faq">
+      <div class="callout">Οι συχνές ερωτήσεις εμφανίζονται σε τρεις στήλες. Κάθε στήλη είναι μία ομάδα.</div>
+      <div id="faqBody"></div>
+      <div class="addbar"><button class="btn ghost" id="addFaqGroup" type="button">+ Νέα ομάδα ερωτήσεων</button></div>
+    </section>
+
+    <!-- ───── CONTACT ───── -->
+    <section class="panel" data-panel="contact">
+      <div class="callout">Αν αλλάξετε τηλέφωνο ή email, αλλάζει παντού στον ιστότοπο με μία κίνηση.</div>
+      <div class="card">
+        <h3>Τηλέφωνο &amp; email</h3>
+        <p class="hint">Το «τηλέφωνο για κλήση» είναι αυτό που καλείται όταν πατάει κάποιος το κουμπί — γράψτε το χωρίς κενά.</p>
+        <div class="two">
+          <label class="f"><span>Τηλέφωνο (όπως φαίνεται)</span><input type="text" data-path="contact.phone"></label>
+          <label class="f"><span>Τηλέφωνο για κλήση</span><input type="text" data-path="contact.phoneHref" placeholder="+306983517455"></label>
+        </div>
+        <label class="f"><span>Email</span><input type="text" data-path="contact.email"></label>
+      </div>
+      <div class="card">
+        <h3>Διεύθυνση</h3>
+        <p class="hint">Γράψτε την ίδια διεύθυνση, με τον ίδιο ακριβώς τρόπο, όπως και στο Google.</p>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Οδός &amp; περιοχή</span><input type="text" data-path="contact.addressLine1.el"></label>
+          <label class="f"><span><i class="tag en">EN</i>Οδός &amp; περιοχή</span><input type="text" data-path="contact.addressLine1.en"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Πόλη &amp; Τ.Κ.</span><input type="text" data-path="contact.addressLine2.el"></label>
+          <label class="f"><span><i class="tag en">EN</i>Πόλη &amp; Τ.Κ.</span><input type="text" data-path="contact.addressLine2.en"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Διεύθυνση σε μία γραμμή</span><input type="text" data-path="contact.addressShort.el"></label>
+          <label class="f"><span><i class="tag en">EN</i>Διεύθυνση σε μία γραμμή</span><input type="text" data-path="contact.addressShort.en"></label>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Ωράριο &amp; πρόσβαση</h3>
+        <p class="hint">Για αλλαγή γραμμής μέσα στο ωράριο γράψτε <code>&lt;br&gt;</code>.</p>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Ωράριο (αναλυτικό)</span><textarea data-path="contact.hours.el"></textarea></label>
+          <label class="f"><span><i class="tag en">EN</i>Ωράριο (αναλυτικό)</span><textarea data-path="contact.hours.en"></textarea></label>
+        </div>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Ωράριο (σύντομο)</span><input type="text" data-path="contact.hoursShort.el"></label>
+          <label class="f"><span><i class="tag en">EN</i>Ωράριο (σύντομο)</span><input type="text" data-path="contact.hoursShort.en"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Πώς θα έρθετε</span><textarea data-path="contact.access.el"></textarea></label>
+          <label class="f"><span><i class="tag en">EN</i>Πώς θα έρθετε</span><textarea data-path="contact.access.en"></textarea></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── TEXTS ───── -->
+    <section class="panel" data-panel="texts">
+      <div class="card">
+        <h3>Πρώτη οθόνη</h3>
+        <p class="hint">Η φράση κάτω από το όνομά σας, στην κορυφή της σελίδας.</p>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Εισαγωγική φράση</span><textarea data-path="hero.lede.el"></textarea></label>
+          <label class="f"><span><i class="tag en">EN</i>Εισαγωγική φράση</span><textarea data-path="hero.lede.en"></textarea></label>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Ο Χειρουργός</h3>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Πρώτη παράγραφος</span><textarea data-path="about.p1.el" style="min-height:150px"></textarea></label>
+          <label class="f"><span><i class="tag en">EN</i>Πρώτη παράγραφος</span><textarea data-path="about.p1.en" style="min-height:150px"></textarea></label>
+        </div>
+        <div class="two">
+          <label class="f"><span><i class="tag el">ΕΛ</i>Δεύτερη παράγραφος</span><textarea data-path="about.p2.el" style="min-height:150px"></textarea></label>
+          <label class="f"><span><i class="tag en">EN</i>Δεύτερη παράγραφος</span><textarea data-path="about.p2.en" style="min-height:150px"></textarea></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── PUBLISH ───── -->
+    <section class="panel" data-panel="publish">
+      <div class="card">
+        <h3>Δημοσίευση αλλαγών</h3>
+        <p class="hint">Δύο τρόποι. Ο δεύτερος είναι ο εύκολος και τον κάνετε μία φορά.</p>
+        <div class="callout">
+          <b>1 — Χειροκίνητα.</b> Πατήστε «Κατέβασμα αρχείου» και στείλτε το <code>content.json</code> στην Advon Media.
+        </div>
+        <div class="callout">
+          <b>2 — Απευθείας δημοσίευση.</b> Επικολλήστε παρακάτω το προσωπικό σας κλειδί GitHub και ο πίνακας
+          ανεβάζει μόνος του τις αλλαγές. Ο ιστότοπος ενημερώνεται σε ένα με δύο λεπτά.
+        </div>
+        <p class="hint">
+          Το κλειδί αποθηκεύεται μόνο σε αυτόν τον υπολογιστή, σε αυτόν τον browser. Δεν φεύγει πουθενά αλλού
+          εκτός από το GitHub και δεν γίνεται ποτέ μέρος του ιστότοπου. Όποιος το έχει μπορεί να αλλάξει τον
+          ιστότοπο — φυλάξτε το όπως έναν κωδικό και ακυρώστε το από το GitHub αν χάσετε τον υπολογιστή.
+        </p>
+        <div class="two">
+          <label class="f"><span>Λογαριασμός (owner)</span><input type="text" id="ghOwner" value="agelmet"></label>
+          <label class="f"><span>Αποθετήριο (repo)</span><input type="text" id="ghRepo" value="VERANIS"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span>Κλάδος (branch)</span><input type="text" id="ghBranch" value="main"></label>
+          <label class="f"><span>Αρχείο</span><input type="text" id="ghPath" value="content.json"></label>
+        </div>
+        <label class="f"><span>Κλειδί GitHub (fine-grained, Contents: read &amp; write)</span>
+          <input type="password" id="ghToken" placeholder="github_pat_… ή ghp_…" autocomplete="off"></label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" id="pubBtn" type="button">Δημοσίευση τώρα</button>
+          <button class="btn ghost" id="dlBtn" type="button">Κατέβασμα αρχείου</button>
+          <button class="btn ghost" id="forgetBtn" type="button">Διαγραφή κλειδιού</button>
+        </div>
+        <div class="status" id="pubMsg"></div>
+      </div>
+      <div class="card">
+        <h3>Κωδικός εισόδου</h3>
+        <p class="hint">Αλλάζει μόνο σε αυτόν τον browser.</p>
+        <label class="f"><span>Νέος κωδικός</span><input type="password" id="newPass" placeholder="Αφήστε το κενό για να μείνει ο ίδιος"></label>
+        <button class="btn ghost" id="savePass" type="button">Αποθήκευση κωδικού</button>
+        <div class="status" id="passMsg"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="savebar">
+    <span class="s" id="saveState">Οι αλλαγές κρατιούνται προσωρινά σε αυτόν τον υπολογιστή μέχρι να τις δημοσιεύσετε.</span>
+    <button class="btn ghost" id="discardBtn" type="button">Ακύρωση αλλαγών</button>
+    <button class="btn primary" id="goPublish" type="button">Δημοσίευση</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var LS = {pass:'veranis.admin.pass', draft:'veranis.admin.draft', token:'veranis.admin.token', gh:'veranis.admin.gh'};
+  var DEFAULT_PASS = 'veranis2026';
+  var DATA = null, dirty = false;
+
+  var store = {
+    get:function(k,d){ try{ var v = localStorage.getItem(k); return v === null ? d : v; }catch(e){ return d; } },
+    set:function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+    del:function(k){ try{ localStorage.removeItem(k); }catch(e){} }
+  };
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(t){ return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function pget(o,p){ return p.split('.').reduce(function(a,k){ return (a && a[k] !== undefined) ? a[k] : undefined; }, o); }
+  function pset(o,p,v){
+    var ks = p.split('.'), last = ks.pop();
+    var t = ks.reduce(function(a,k){ if(a[k] === undefined || a[k] === null) a[k] = {}; return a[k]; }, o);
+    t[last] = v;
+  }
+  function bi(el,en){ return {el: el || '', en: en || ''}; }
+  function markDirty(){
+    dirty = true;
+    $('saveState').textContent = 'Έχετε αλλαγές που δεν έχουν δημοσιευτεί ακόμη.';
+    try{ store.set(LS.draft, JSON.stringify(DATA)); }catch(e){}
+  }
+
+  /* ═══════════ gate ═══════════ */
+  $('gateForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var want = store.get(LS.pass, DEFAULT_PASS);
+    if($('pass').value === want){
+      $('gate').classList.add('off'); $('app').hidden = false; boot();
+    } else {
+      $('gateErr').textContent = 'Λάθος κωδικός.';
+      $('pass').value = ''; $('pass').focus();
+    }
+  });
+  $('lockBtn').addEventListener('click', function(){ location.reload(); });
+
+  /* ═══════════ tabs ═══════════ */
+  $('tabs').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-p]'); if(!b) return;
+    $('tabs').querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x === b); });
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('on', p.dataset.panel === b.dataset.p); });
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  $('goPublish').addEventListener('click', function(){
+    $('tabs').querySelector('[data-p="publish"]').click();
+  });
+
+  /* ═══════════ load ═══════════ */
+  function boot(){
+    var draft = store.get(LS.draft, null);
+    fetch('content.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if(draft){
+          try{
+            DATA = JSON.parse(draft);
+            $('saveState').textContent = 'Φορτώθηκε πρόχειρο με αλλαγές που δεν έχουν δημοσιευτεί.';
+          }catch(e){ DATA = j; }
+        } else { DATA = j; }
+        normalise(); renderAll();
+      })
+      .catch(function(){
+        if(draft){ try{ DATA = JSON.parse(draft); normalise(); renderAll(); return; }catch(e){} }
+        alert('Δεν βρέθηκε το αρχείο content.json. Επικοινωνήστε με την Advon Media.');
+      });
+    var gh = store.get(LS.gh, null);
+    if(gh){ try{ gh = JSON.parse(gh); ['Owner','Repo','Branch','Path'].forEach(function(k){
+      if(gh[k.toLowerCase()]) $('gh'+k).value = gh[k.toLowerCase()]; }); }catch(e){} }
+    $('ghToken').value = store.get(LS.token, '');
+  }
+  function normalise(){
+    DATA = DATA || {};
+    DATA.contact = DATA.contact || {}; DATA.hero = DATA.hero || {}; DATA.about = DATA.about || {};
+    DATA.reviews = DATA.reviews || []; DATA.reviewsMeta = DATA.reviewsMeta || {};
+    DATA.faq = DATA.faq || [];
+    DATA.resources = DATA.resources || {}; DATA.resources.categories = DATA.resources.categories || [];
+  }
+
+  /* ═══════════ simple bound inputs ═══════════ */
+  document.addEventListener('input', function(e){
+    var t = e.target, p = t.getAttribute && t.getAttribute('data-path');
+    if(!p || !DATA) return;
+    pset(DATA, p, t.type === 'number' ? (parseInt(t.value,10) || 0) : t.value);
+    markDirty();
+    var head = t.closest('.item') && t.closest('.item').querySelector('.t');
+    if(head && t.hasAttribute('data-title')) head.textContent = t.value || '—';
+  });
+  function fillBound(){
+    document.querySelectorAll('[data-path]').forEach(function(i){
+      if(i.closest('#resBody') || i.closest('#revBody') || i.closest('#faqBody')) return;
+      var v = pget(DATA, i.getAttribute('data-path'));
+      i.value = (v === undefined || v === null) ? '' : v;
+    });
+  }
+
+  /* ═══════════ shared bits ═══════════ */
+  var TOOLS = '<div class="item-tools">' +
+    '<button class="icb" data-act="up" type="button" title="Πάνω"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15l6-6 6 6"/></svg></button>' +
+    '<button class="icb" data-act="down" type="button" title="Κάτω"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>' +
+    '<button class="icb del" data-act="del" type="button" title="Διαγραφή"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></svg></button>' +
+    '</div>';
+  function move(arr,i,d){
+    var j = i + d; if(j < 0 || j >= arr.length) return false;
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t; return true;
+  }
+  function pair(label, path, kind, extra){
+    var tag = function(l,c){ return '<i class="tag ' + c + '">' + l + '</i>'; };
+    var f = function(l, c, p){
+      var inp = (kind === 'area')
+        ? '<textarea data-path="' + p + '"' + (extra||'') + '>' + esc(pget(DATA,p) || '') + '</textarea>'
+        : '<input type="text" data-path="' + p + '" value="' + esc(pget(DATA,p) || '') + '"' + (extra||'') + '>';
+      return '<label class="f"><span>' + tag(l,c) + esc(label) + '</span>' + inp + '</label>';
+    };
+    return '<div class="two">' + f('ΕΛ','el',path + '.el') + f('EN','en',path + '.en') + '</div>';
+  }
+
+  /* ═══════════ resources ═══════════ */
+  var ICONS = [
+    ['disc','Δίσκος'],['spine','Σπονδυλική στήλη'],['neck','Αυχένας'],['slip','Ολίσθηση'],
+    ['nerve','Νεύρο'],['clip','Έντυπο / λίστα'],['check','Λίστα ελέγχου'],['calendar','Ημερολόγιο'],
+    ['brain','Εγκέφαλος'],['nav','Νευροπλοήγηση'],['pituitary','Υπόφυση'],['hand','Χέρι / καρπός'],
+    ['face','Πρόσωπο'],['pill','Φάρμακο'],['heart','Καρδιά / φροντίδα']
+  ];
+  var curCat = 0;
+
+  function renderCatSel(){
+    var sel = $('catSel');
+    sel.innerHTML = DATA.resources.categories.map(function(c,i){
+      var n = (c.groups||[]).reduce(function(a,g){ return a + (g.docs||[]).length; }, 0);
+      return '<option value="' + i + '"' + (i === curCat ? ' selected' : '') + '>' +
+             esc(c.label && c.label.el || c.key) + ' (' + n + ')</option>';
+    }).join('');
+  }
+  function renderResources(){
+    renderCatSel();
+    var c = DATA.resources.categories[curCat];
+    var box = $('resBody');
+    if(!c){ box.innerHTML = '<div class="empty">Δεν υπάρχει κατηγορία. Πατήστε «Νέα κατηγορία».</div>'; return; }
+    box.innerHTML = (c.groups||[]).map(function(g, gi){
+      var docs = g.docs || [];
+      return '<div class="group-box" data-gi="' + gi + '">' +
+        '<div class="group-title"><h4>' + esc(g.label && g.label.el || 'Ομάδα') + ' · ' + docs.length + '</h4>' +
+          '<div class="item-tools">' +
+            '<button class="icb" data-gact="gup" type="button" title="Πάνω"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15l6-6 6 6"/></svg></button>' +
+            '<button class="icb" data-gact="gdown" type="button" title="Κάτω"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>' +
+            '<button class="icb del" data-gact="gdel" type="button" title="Διαγραφή ομάδας"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></svg></button>' +
+          '</div></div>' +
+        pair('Τίτλος ομάδας', 'resources.categories.' + curCat + '.groups.' + gi + '.label') +
+        docs.map(function(d, di){
+          var base = 'resources.categories.' + curCat + '.groups.' + gi + '.docs.' + di;
+          return '<div class="item nested" data-di="' + di + '">' +
+            '<div class="item-head"><span class="n">' + (di+1) + '</span>' +
+              '<span class="t">' + esc(d.title && d.title.el || 'Νέο έγγραφο') + '</span>' + TOOLS + '</div>' +
+            pair('Τίτλος', base + '.title') +
+            pair('Περιγραφή', base + '.desc', 'area') +
+            '<div class="two">' +
+              '<label class="f"><span>Σελίδες</span><input type="number" min="1" data-path="' + base + '.pages" value="' + esc(d.pages || 1) + '"></label>' +
+              '<label class="f"><span>Εικονίδιο</span><select data-path="' + base + '.icon">' +
+                ICONS.map(function(ic){ return '<option value="' + ic[0] + '"' + (d.icon === ic[0] ? ' selected' : '') + '>' + ic[1] + '</option>'; }).join('') +
+              '</select></label>' +
+            '</div></div>';
+        }).join('') +
+        '<div class="addbar"><button class="btn primary sm" data-gact="adddoc" type="button">+ Προσθήκη εγγράφου</button></div>' +
+      '</div>';
+    }).join('') || '<div class="empty">Δεν υπάρχει ομάδα σε αυτή την κατηγορία.</div>';
+  }
+  $('catSel').addEventListener('change', function(){ curCat = +this.value; renderResources(); });
+  $('addCat').addEventListener('click', function(){
+    var n = prompt('Όνομα νέας κατηγορίας (ελληνικά):'); if(!n) return;
+    var e = prompt('Το ίδιο στα αγγλικά (προαιρετικό):') || '';
+    var key = 'cat' + Date.now().toString(36);
+    DATA.resources.categories.push({key:key, label:bi(n,e), groups:[{label:bi('Εκπαιδευτικά Φυλλάδια','Patient Education Brochures'), docs:[]}]});
+    curCat = DATA.resources.categories.length - 1; markDirty(); renderResources();
+  });
+  $('renCat').addEventListener('click', function(){
+    var c = DATA.resources.categories[curCat]; if(!c) return;
+    var n = prompt('Νέο όνομα (ελληνικά):', c.label && c.label.el || ''); if(n === null) return;
+    var e = prompt('Νέο όνομα (αγγλικά):', c.label && c.label.en || '');
+    c.label = bi(n, e === null ? (c.label && c.label.en) : e); markDirty(); renderResources();
+  });
+  $('delCat').addEventListener('click', function(){
+    var c = DATA.resources.categories[curCat]; if(!c) return;
+    if(!confirm('Να διαγραφεί η κατηγορία «' + (c.label && c.label.el) + '» με όλα τα έγγραφά της;')) return;
+    DATA.resources.categories.splice(curCat,1); curCat = 0; markDirty(); renderResources();
+  });
+  $('addGroup').addEventListener('click', function(){
+    var c = DATA.resources.categories[curCat]; if(!c) return;
+    var n = prompt('Όνομα νέας ομάδας (ελληνικά):'); if(!n) return;
+    var e = prompt('Το ίδιο στα αγγλικά (προαιρετικό):') || '';
+    c.groups = c.groups || []; c.groups.push({label:bi(n,e), docs:[]});
+    markDirty(); renderResources();
+  });
+  $('resBody').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    var c = DATA.resources.categories[curCat];
+    var gbox = b.closest('.group-box'); if(!gbox) return;
+    var gi = +gbox.dataset.gi, g = c.groups[gi];
+    var act = b.dataset.gact;
+    if(act === 'adddoc'){
+      g.docs = g.docs || [];
+      g.docs.push({title:bi('Νέο έγγραφο',''), desc:bi('',''), pages:4, icon:'clip'});
+      markDirty(); renderResources(); return;
+    }
+    if(act === 'gup'){ if(move(c.groups, gi, -1)){ markDirty(); renderResources(); } return; }
+    if(act === 'gdown'){ if(move(c.groups, gi, 1)){ markDirty(); renderResources(); } return; }
+    if(act === 'gdel'){
+      if(confirm('Να διαγραφεί η ομάδα «' + (g.label && g.label.el) + '» με τα έγγραφά της;')){
+        c.groups.splice(gi,1); markDirty(); renderResources(); } return; }
+    var item = b.closest('.item'); if(!item) return;
+    var di = +item.dataset.di, a = b.dataset.act;
+    if(a === 'del'){ if(confirm('Να διαγραφεί το έγγραφο;')){ g.docs.splice(di,1); markDirty(); renderResources(); } }
+    else if(a === 'up'){ if(move(g.docs, di, -1)){ markDirty(); renderResources(); } }
+    else if(a === 'down'){ if(move(g.docs, di, 1)){ markDirty(); renderResources(); } }
+  });
+
+  /* ═══════════ reviews ═══════════ */
+  function renderReviews(){
+    $('revBody').innerHTML = DATA.reviews.map(function(r,i){
+      var base = 'reviews.' + i;
+      return '<div class="item" data-i="' + i + '">' +
+        '<div class="item-head"><span class="n">' + (i+1) + '</span>' +
+          '<span class="t">' + esc(r.name || 'Νέα κριτική') + '</span>' + TOOLS + '</div>' +
+        '<div class="two">' +
+          '<label class="f"><span>Όνομα ασθενούς</span><input type="text" data-title data-path="' + base + '.name" value="' + esc(r.name || '') + '"></label>' +
+          '<label class="f"><span>Αρχικά (στον κύκλο)</span><input type="text" maxlength="3" data-path="' + base + '.initials" value="' + esc(r.initials || '') + '"></label>' +
+        '</div>' +
+        pair('Πότε γράφτηκε', base + '.when') +
+        pair('Κείμενο κριτικής', base + '.text', 'area', ' style="min-height:150px"') +
+      '</div>';
+    }).join('') || '<div class="empty">Δεν υπάρχουν κριτικές ακόμη.</div>';
+  }
+  $('addRev').addEventListener('click', function(){
+    DATA.reviews.unshift({name:'', initials:'', when:bi('πριν από 1 μήνα','a month ago'), text:bi('',''), rating:5});
+    markDirty(); renderReviews(); window.scrollTo({top:0, behavior:'smooth'});
+  });
+  $('revBody').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-act]'); if(!b) return;
+    var i = +b.closest('.item').dataset.i, a = b.dataset.act;
+    if(a === 'del'){ if(confirm('Να διαγραφεί η κριτική;')){ DATA.reviews.splice(i,1); markDirty(); renderReviews(); } }
+    else if(a === 'up'){ if(move(DATA.reviews, i, -1)){ markDirty(); renderReviews(); } }
+    else if(a === 'down'){ if(move(DATA.reviews, i, 1)){ markDirty(); renderReviews(); } }
+  });
+
+  /* ═══════════ faq ═══════════ */
+  function renderFaq(){
+    $('faqBody').innerHTML = DATA.faq.map(function(g, gi){
+      return '<div class="group-box" data-gi="' + gi + '">' +
+        '<div class="group-title"><h4>' + esc(g.label && g.label.el || 'Ομάδα') + ' · ' + (g.items||[]).length + '</h4>' +
+          '<div class="item-tools">' +
+            '<button class="icb del" data-gact="gdel" type="button" title="Διαγραφή ομάδας"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></svg></button>' +
+          '</div></div>' +
+        pair('Τίτλος ομάδας', 'faq.' + gi + '.label') +
+        (g.items||[]).map(function(it, ii){
+          var base = 'faq.' + gi + '.items.' + ii;
+          return '<div class="item nested" data-di="' + ii + '">' +
+            '<div class="item-head"><span class="n">' + (ii+1) + '</span>' +
+              '<span class="t">' + esc(it.q && it.q.el || 'Νέα ερώτηση') + '</span>' + TOOLS + '</div>' +
+            pair('Ερώτηση', base + '.q') +
+            pair('Απάντηση', base + '.a', 'area', ' style="min-height:130px"') +
+          '</div>';
+        }).join('') +
+        '<div class="addbar"><button class="btn primary sm" data-gact="addq" type="button">+ Προσθήκη ερώτησης</button></div>' +
+      '</div>';
+    }).join('') || '<div class="empty">Δεν υπάρχουν ερωτήσεις ακόμη.</div>';
+  }
+  $('addFaqGroup').addEventListener('click', function(){
+    var n = prompt('Όνομα ομάδας (ελληνικά):'); if(!n) return;
+    var e = prompt('Το ίδιο στα αγγλικά (προαιρετικό):') || '';
+    DATA.faq.push({label:bi(n,e), items:[]}); markDirty(); renderFaq();
+  });
+  $('faqBody').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    var gbox = b.closest('.group-box'); if(!gbox) return;
+    var gi = +gbox.dataset.gi, g = DATA.faq[gi], act = b.dataset.gact;
+    if(act === 'addq'){ g.items = g.items || []; g.items.push({q:bi('Νέα ερώτηση',''), a:bi('','')}); markDirty(); renderFaq(); return; }
+    if(act === 'gdel'){ if(confirm('Να διαγραφεί η ομάδα με τις ερωτήσεις της;')){ DATA.faq.splice(gi,1); markDirty(); renderFaq(); } return; }
+    var item = b.closest('.item'); if(!item) return;
+    var ii = +item.dataset.di, a = b.dataset.act;
+    if(a === 'del'){ if(confirm('Να διαγραφεί η ερώτηση;')){ g.items.splice(ii,1); markDirty(); renderFaq(); } }
+    else if(a === 'up'){ if(move(g.items, ii, -1)){ markDirty(); renderFaq(); } }
+    else if(a === 'down'){ if(move(g.items, ii, 1)){ markDirty(); renderFaq(); } }
+  });
+
+  function renderAll(){ fillBound(); renderResources(); renderReviews(); renderFaq(); }
+
+  /* ═══════════ publish ═══════════ */
+  function msg(node, kind, text){
+    node.className = 'status show ' + kind; node.textContent = text;
+  }
+  function toB64(str){
+    var bytes = new TextEncoder().encode(str), bin = '';
+    for(var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+  function payload(){
+    DATA.updated = new Date().toISOString().slice(0,10);
+    return JSON.stringify(DATA, null, 1);
+  }
+  $('dlBtn').addEventListener('click', function(){
+    var blob = new Blob([payload()], {type:'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'content.json';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  $('forgetBtn').addEventListener('click', function(){
+    store.del(LS.token); $('ghToken').value = '';
+    msg($('pubMsg'), 'ok', 'Το κλειδί διαγράφηκε από αυτόν τον browser.');
+  });
+  $('pubBtn').addEventListener('click', async function(){
+    var owner = $('ghOwner').value.trim(), repo = $('ghRepo').value.trim(),
+        branch = $('ghBranch').value.trim() || 'main', path = $('ghPath').value.trim() || 'content.json',
+        token = $('ghToken').value.trim();
+    if(!owner || !repo || !token){ msg($('pubMsg'), 'err', 'Συμπληρώστε λογαριασμό, αποθετήριο και κλειδί.'); return; }
+    store.set(LS.token, token);
+    store.set(LS.gh, JSON.stringify({owner:owner, repo:repo, branch:branch, path:path}));
+    msg($('pubMsg'), 'busy', 'Γίνεται δημοσίευση…');
+    $('pubBtn').disabled = true;
+    var api = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path;
+    var head = {'Authorization':'Bearer ' + token, 'Accept':'application/vnd.github+json', 'X-GitHub-Api-Version':'2022-11-28'};
+    try{
+      var sha = null;
+      var cur = await fetch(api + '?ref=' + encodeURIComponent(branch), {headers:head});
+      if(cur.ok){ sha = (await cur.json()).sha; }
+      else if(cur.status !== 404){ throw new Error('GitHub ' + cur.status); }
+      var body = {message:'Ενημέρωση περιεχομένου από τον πίνακα διαχείρισης', content:toB64(payload()), branch:branch};
+      if(sha) body.sha = sha;
+      var put = await fetch(api, {method:'PUT', headers:head, body:JSON.stringify(body)});
+      if(!put.ok){
+        var t = await put.text();
+        throw new Error(put.status === 401 || put.status === 403
+          ? 'Το κλειδί δεν έχει δικαίωμα εγγραφής σε αυτό το αποθετήριο.'
+          : ('GitHub ' + put.status + ' — ' + t.slice(0,140)));
+      }
+      dirty = false; store.del(LS.draft);
+      $('saveState').textContent = 'Όλες οι αλλαγές δημοσιεύτηκαν.';
+      msg($('pubMsg'), 'ok', 'Έγινε! Ο ιστότοπος θα δείχνει τις αλλαγές σε ένα με δύο λεπτά. Ανανεώστε τη σελίδα με Ctrl+Shift+R (ή Cmd+Shift+R στο Mac).');
+    }catch(err){
+      msg($('pubMsg'), 'err', 'Δεν έγινε η δημοσίευση: ' + err.message);
+    }
+    $('pubBtn').disabled = false;
+  });
+
+  $('savePass').addEventListener('click', function(){
+    var v = $('newPass').value;
+    if(!v){ msg($('passMsg'), 'busy', 'Ο κωδικός έμεινε ο ίδιος.'); return; }
+    store.set(LS.pass, v); $('newPass').value = '';
+    msg($('passMsg'), 'ok', 'Ο κωδικός άλλαξε σε αυτόν τον browser.');
+  });
+
+  $('reloadBtn').addEventListener('click', function(){
+    if(dirty && !confirm('Θα χαθούν οι αλλαγές που δεν έχετε δημοσιεύσει. Να συνεχίσω;')) return;
+    store.del(LS.draft); location.reload();
+  });
+  $('discardBtn').addEventListener('click', function(){
+    if(!confirm('Να ακυρωθούν όλες οι αλλαγές που δεν έχουν δημοσιευτεί;')) return;
+    store.del(LS.draft); location.reload();
+  });
+  window.addEventListener('beforeunload', function(e){
+    if(dirty){ e.preventDefault(); e.returnValue = ''; }
+  });
+})();
+</script>
+</body>
+</html>

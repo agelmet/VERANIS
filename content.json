@@ -1,0 +1,753 @@
+{
+ "version": 1,
+ "updated": "2026-09-04",
+ "contact": {
+  "phone": "+30 698 351 7455",
+  "phoneHref": "+306983517455",
+  "email": "veranissotiris@gmail.com",
+  "addressLine1": {
+   "el": "Αλωπεκής 41, Κολωνάκι",
+   "en": "Alopekis 41, Kolonaki"
+  },
+  "addressLine2": {
+   "el": "Αθήνα 10676",
+   "en": "Athens 10676, Greece"
+  },
+  "hours": {
+   "el": "Δευτέρα – Παρασκευή: 15:00 – 21:00<br>Σάββατο: κατόπιν ραντεβού",
+   "en": "Monday – Friday: 15:00 – 21:00<br>Saturday: by appointment"
+  },
+  "hoursShort": {
+   "el": "Δευ – Παρ 15:00 – 21:00 · Σάβ κατόπιν ραντεβού",
+   "en": "Mon – Fri 15:00 – 21:00 · Sat by appointment"
+  },
+  "access": {
+   "el": "Κοντά στον σταθμό μετρό Ευαγγελισμός (Γραμμή 3). Υπάρχει στάθμευση επί της Αλωπεκής και στους γύρω δρόμους.",
+   "en": "Close to Evangelismos metro station (Line 3). Street parking is available on Alopekis and the surrounding streets."
+  },
+  "addressFull": {
+   "el": "Αλωπεκής 41, Κολωνάκι<br>Αθήνα 10676",
+   "en": "Alopekis 41, Kolonaki<br>Athens 10676, Greece"
+  },
+  "addressShort": {
+   "el": "Αλωπεκής 41, Κολωνάκι, Αθήνα",
+   "en": "Alopekis 41, Kolonaki, Athens"
+  },
+  "addressOneLine": {
+   "el": "Αλωπεκής 41, Κολωνάκι, Αθήνα 10676",
+   "en": "Alopekis 41, Kolonaki, Athens 10676"
+  }
+ },
+ "hero": {
+  "lede": {
+   "el": "Ακρίβεια, ενσυναίσθηση και αριστεία στη νευροχειρουργική φροντίδα. Με αφοσίωση στην αποκατάσταση της υγείας και της ποιότητας ζωής.",
+   "en": "Precision, compassion, and excellence in neurosurgical care. Dedicated to restoring health and quality of life."
+  }
+ },
+ "about": {
+  "p1": {
+   "el": "Ο Δρ. Βεράνης Σωτήρης είναι νευροχειρουργός με έδρα την Αθήνα και εμπειρία άνω των δύο δεκαετιών στη διάγνωση και την αντιμετώπιση σύνθετων νευρολογικών παθήσεων. Με σπουδές στην Ιατρική Σχολή του Πανεπιστημίου Αθηνών και μετεκπαίδευση σε κορυφαία ευρωπαϊκά κέντρα, συνδυάζει την τεχνική κατάρτιση με μια βαθιά ανθρωποκεντρική προσέγγιση.",
+   "en": "Dr. Veranis Sotiris is a neurosurgeon based in Athens with over two decades of experience in diagnosing and treating complex neurological conditions. Trained at the University of Athens and with advanced fellowships across leading European institutions, he combines technical expertise with a deeply patient-centred approach to care."
+  },
+  "p2": {
+   "el": "Το ιατρείο του στο Κολωνάκι είναι αφιερωμένο σε εξατομικευμένη, τεκμηριωμένη νευροχειρουργική φροντίδα — από ελάχιστα επεμβατικές τεχνικές σπονδυλικής στήλης έως σύνθετες επεμβάσεις όγκων εγκεφάλου — ώστε κάθε ασθενής να λαμβάνει το υψηλότερο επίπεδο θεραπείας σε ένα ζεστό, υποστηρικτικό περιβάλλον.",
+   "en": "His practice in Kolonaki is dedicated to personalised, evidence-based neurosurgical care — from minimally invasive spine procedures to complex brain tumour surgery — so that every patient receives the highest standard of treatment in a warm, supportive environment."
+  }
+ },
+ "reviewsMeta": {
+  "profileUrl": "https://www.google.com/maps/search/?api=1&query=%CE%92%CE%95%CE%A1%CE%91%CE%9D%CE%97%CE%A3%20%CE%A3%CE%A9%CE%A4%CE%97%CE%A1%CE%97%CE%A3%20%CE%9D%CE%95%CE%A5%CE%A1%CE%9F%CE%A7%CE%95%CE%99%CE%A1%CE%9F%CE%A5%CE%A1%CE%93%CE%9F%CE%A3%20%CE%91%CE%BB%CF%89%CF%80%CE%B5%CE%BA%CE%AE%CF%82%2041%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1"
+ },
+ "reviews": [
+  {
+   "name": "George Papageorgiou",
+   "initials": "GP",
+   "when": {
+    "el": "πριν από 1 μήνα",
+    "en": "a month ago"
+   },
+   "text": {
+    "el": "Δεν υπάρχουν λόγια που να μπορούν να εκφράσουν την ευγνωμοσύνη μας προς τον γιατρό κ. Βεράνη που ανέλαβε τον πατέρα μου, έναν άνθρωπο 82 ετών, σε μια τόσο δύσκολη και απαιτητική επέμβαση στη σπονδυλική στήλη.\nΑπό την πρώτη στιγμή μας ενέπνευσε απόλυτη εμπιστοσύνη. Με την εξαιρετική επιστημονική του κατάρτιση, τον υψηλό επαγγελματισμό και την εμπειρία του αντιμετώπισε με επιτυχία ένα ιδιαίτερα σοβαρό χειρουργείο. Όμως, αυτό που τον κάνει πραγματικά ξεχωριστό είναι η ανθρωπιά του.\nΣε κάθε μας αγωνία ήταν δίπλα μας με ειλικρινές ενδιαφέρον, υπομονή και σεβασμό. Δεν είδε απέναντι του απλώς έναν ασθενή, αλλά έναν άνθρωπο και μια οικογένεια που είχε ανάγκη από στήριξη και ελπίδα. Η ηρεμία, η καλοσύνη και η συνεχής παρουσία του μας έδωσαν δύναμη στις πιο δύσκολες στιγμές.\nΓιατρέ, σας ευχαριστούμε από καρδιάς. Προσωπικά δεν θα ξεχάσω ποτέ όσα κάνατε για τον πατέρα μου και για όλους εμάς. Είστε ένας σπουδαίος επιστήμονας, αλλά πάνω απ' όλα ένας σπουδαίος Άνθρωπος.\nΣας εύχομαι υγεία και δύναμη, ώστε να συνεχίσετε να χαρίζετε ελπίδα και ποιότητα ζωής σε ανθρώπους που σας εμπιστεύονται. Η ευγνωμοσύνη και η εκτίμηση μου θα σας συνοδεύουν πάντα 🙏",
+    "en": "There are no words that can express our gratitude to Dr. Veranis, who took on my father, an 82-year-old man, for such a difficult and demanding spinal operation.\nFrom the very first moment he inspired absolute confidence. With his outstanding scientific training, his high professionalism and his experience, he successfully handled a particularly serious operation. But what makes him truly exceptional is his humanity.\nThrough every worry we had he was beside us with sincere interest, patience and respect. He did not see merely a patient in front of him, but a person and a family in need of support and hope. His calm, his kindness and his constant presence gave us strength in the hardest moments.\nDoctor, we thank you from the bottom of our hearts. Personally I will never forget what you did for my father and for all of us. You are a great scientist, but above all a great human being.\nI wish you health and strength, so that you may keep giving hope and quality of life to the people who trust you. My gratitude and esteem will always be with you 🙏"
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Kostas Partsinevelos",
+   "initials": "KP",
+   "when": {
+    "el": "πριν από 4 μήνες",
+    "en": "4 months ago"
+   },
+   "text": {
+    "el": "Θέλω να ευχαριστήσω τον κύριο Βεράνη Σωτήριο. Μετά από επέμβαση δισκεκτομής όλα πήγαν μια χαρά, χωρίς πόνους, και την ίδια μέρα περπατούσα και είμαι καλά. Εξαιρετικός επιστήμονας, τα είχε φροντίσει όλα, και με τους ανθρώπους που συνεργάζεται. Και ό,τι χρειάστηκα, ό,τι απορία είχα, άμεση ανταπόκριση. Σας ευχαριστώ.",
+    "en": "I want to thank Dr. Sotiris Veranis. After a discectomy everything went perfectly, with no pain, and the same day I was walking and I am well. An excellent scientist — he had taken care of everything, together with the people he works with. And whatever I needed, whatever question I had, there was an immediate response. Thank you."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Paschalis Papadopoulos",
+   "initials": "PP",
+   "when": {
+    "el": "πριν από 5 μήνες",
+    "en": "5 months ago"
+   },
+   "text": {
+    "el": "Το ευχαριστώ είναι λίγο… Μεγάλος επιστήμονας, τεράστιος «γίγαντας» σαν άνθρωπος στην ψυχή! Τον 2ο του 2023, με τα μαγικά του χέρια, κατάφερα να ξεφορτωθώ μια κήλη που μου…",
+    "en": "Thank you is not enough… A great scientist, an enormous “giant” of a human being in spirit! In February 2023, with his magic hands, I managed to get rid of a herniated disc that…"
+   },
+   "rating": 5,
+   "truncated": true
+  },
+  {
+   "name": "Μιχάλης Χρηστίδης",
+   "initials": "ΜΧ",
+   "when": {
+    "el": "πριν από 7 μήνες",
+    "en": "7 months ago"
+   },
+   "text": {
+    "el": "Αισθάνομαι την ανάγκη να πω και δημόσια ένα μεγάλο ευχαριστώ στον νευροχειρουργό κύριο Σωτήριο Βεράνη.\nΣπάνιος άνθρωπος και λαμπρός επιστήμονας.\nΓιατρέ μου, ευχαριστώ τον Θεό που βρέθηκες στον δρόμο μου. Σ' ευχαριστώ για την καθοδήγηση, την συμπαράσταση, την κατανόηση, την επιτυχημένη επέμβαση και την καινούργια και ποιοτικά καλύτερη ζωή που μου πρόσφερες.",
+    "en": "I feel the need to say a big thank you publicly to the neurosurgeon Dr. Sotirios Veranis.\nA rare human being and a brilliant scientist.\nDoctor, I thank God that you crossed my path. Thank you for the guidance, the support, the understanding, the successful operation and the new, better quality of life you gave me."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Πηνελόπη Δέρβη",
+   "initials": "ΠΔ",
+   "when": {
+    "el": "πριν από 1 χρόνο",
+    "en": "a year ago"
+   },
+   "text": {
+    "el": "Ένα πολύ μεγάλο ευχαριστώ σε αυτόν τον υπέροχο άνθρωπο και επιστήμονα. Να είναι πάντα καλά και να συνεχίσει να βοηθάει έτσι όπως βοήθησε και εμένα. Με ανέλαβε μετά από καταστροφικό λάθος άλλου γιατρού, που θεωρώ πολύ δύσκολο. Τα 5 αστέρια είναι λίγα.",
+    "en": "A very big thank you to this wonderful person and scientist. May he always be well and continue helping the way he helped me. He took me on after another doctor's catastrophic mistake, which I consider very difficult. Five stars are not enough."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Eirini Mas",
+   "initials": "EM",
+   "when": {
+    "el": "πριν από 2 χρόνια",
+    "en": "2 years ago"
+   },
+   "text": {
+    "el": "Με τον κ. Βεράνη πραγματοποιήθηκε άμεσα ένα χειρουργείο λόγω σοβαρότητας (ιππουριδικής συνδρομής) με επιτυχία. Από την επόμενη κιόλας ημέρα αισθάνθηκα πολύ καλύτερα, χωρίς πόνους στη μέση και στα ισχία. Λαμπρός επιστήμονας, ο οποίος επιτυγχάνει άρτια αποτελέσματα!",
+    "en": "With Dr. Veranis an operation was carried out immediately because of its severity (cauda equina syndrome), and successfully. From the very next day I felt much better, with no pain in my lower back or hips. A brilliant scientist who achieves flawless results!"
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Θοδωρής Κολύβας",
+   "initials": "ΘΚ",
+   "when": {
+    "el": "πριν από 5 μήνες",
+    "en": "5 months ago"
+   },
+   "text": {
+    "el": "Εξαιρετικός γιατρός, δεν έχω λόγια.",
+    "en": "An excellent doctor — I have no words."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Στυλιανός Μπουμπουτέλος",
+   "initials": "ΣΜ",
+   "when": {
+    "el": "πριν από 7 μήνες",
+    "en": "7 months ago"
+   },
+   "text": {
+    "el": "Άνθρωπος με το Α κεφαλαίο και εξαιρετικός επιστήμων.",
+    "en": "A human being with a capital H, and an excellent scientist."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "GR PLK",
+   "initials": "GP",
+   "when": {
+    "el": "πριν από 6 χρόνια",
+    "en": "6 years ago"
+   },
+   "text": {
+    "el": "Καταρτισμένος επιστήμονας, ενημερώνει λεπτομερώς τον ασθενή για το πρόβλημα και τους τρόπους θεραπείας, ευγενής. Εμπνέει εμπιστοσύνη και οικειότητα.",
+    "en": "A well-trained scientist. He informs the patient in detail about the problem and the treatment options, and he is courteous. He inspires trust and puts you at ease."
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Κώστας",
+   "initials": "Κ",
+   "when": {
+    "el": "πριν από 1 χρόνο",
+    "en": "a year ago"
+   },
+   "text": {
+    "el": "Μετά από «περιήγηση» σε αρκετούς γιατρούς που όλοι μου συνέστησαν επέμβαση στη μέση, ο κύριος Βεράνης χρειάστηκε λίγα λεπτά εξέτασης για να εντοπίσει το πρόβλημα και με μια απλή, αναίμακτη και χωρίς πόνο διαδικασία αποκατέστησε την υγεία…",
+    "en": "After a “tour” of several doctors who all recommended surgery on my lower back, Dr. Veranis needed only a few minutes of examination to identify the problem, and with a simple, bloodless and painless procedure he restored my health…"
+   },
+   "rating": 5,
+   "truncated": true
+  },
+  {
+   "name": "Σαράντης Πλιάλης",
+   "initials": "ΣΠ",
+   "when": {
+    "el": "πριν από 1 χρόνο",
+    "en": "a year ago"
+   },
+   "text": {
+    "el": "Σπουδαίος επιστήμονας, αλλά κυρίως σπουδαίος Άνθρωπος!",
+    "en": "A great scientist, but above all a great human being!"
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Ζωή Αλεξάκη",
+   "initials": "ΖΑ",
+   "when": {
+    "el": "πριν από 2 χρόνια",
+    "en": "2 years ago"
+   },
+   "text": {
+    "el": "Λαμπρός επιστήμονας, μα πάνω από όλα άνθρωπος!",
+    "en": "A brilliant scientist, but above all a human being!"
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Βικτώρια Κούκη",
+   "initials": "ΒΚ",
+   "when": {
+    "el": "πριν από 11 μήνες",
+    "en": "11 months ago"
+   },
+   "text": {
+    "el": "Ο καλύτερος — αυτό τα λέει όλα!",
+    "en": "The best — that says it all!"
+   },
+   "rating": 5,
+   "truncated": false
+  },
+  {
+   "name": "Chris Sianos",
+   "initials": "CS",
+   "when": {
+    "el": "πριν από 3 χρόνια",
+    "en": "3 years ago"
+   },
+   "text": {
+    "el": "Ο καλύτερος γιατρός.",
+    "en": "The best doctor."
+   },
+   "rating": 5,
+   "truncated": false
+  }
+ ],
+ "resources": {
+  "categories": [
+   {
+    "key": "spine",
+    "label": {
+     "el": "Σπονδυλική στήλη",
+     "en": "Spine"
+    },
+    "groups": [
+     {
+      "label": {
+       "el": "Εκπαιδευτικά Φυλλάδια",
+       "en": "Patient Education Brochures"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Κήλη Μεσοσπονδυλίου Δίσκου — Οσφυϊκή & Αυχενική",
+         "en": "Disc Herniation — Lumbar & Cervical"
+        },
+        "desc": {
+         "el": "Κατανοητή παρουσίαση της κήλης μεσοσπονδυλίου δίσκου στην οσφυϊκή και την αυχενική μοίρα — αίτια, συμπτώματα, διαγνωστικός έλεγχος και επιλογές θεραπείας, από τη συντηρητική αντιμετώπιση έως τη χειρουργική επέμβαση.",
+         "en": "A patient-friendly overview of lumbar and cervical disc herniation — causes, symptoms, diagnostic workup, and treatment options including conservative management and surgery."
+        },
+        "pages": 8,
+        "icon": "disc"
+       },
+       {
+        "title": {
+         "el": "Στένωση Σπονδυλικού Σωλήνα",
+         "en": "Spinal Stenosis"
+        },
+        "desc": {
+         "el": "Αναλυτικός οδηγός για την παθοφυσιολογία της στένωσης, τη νευρογενή διαλείπουσα χωλότητα, τα απεικονιστικά ευρήματα και όλο το φάσμα της θεραπείας, από τη φυσικοθεραπεία έως την αποσυμπιεστική επέμβαση.",
+         "en": "Detailed guide on spinal stenosis pathophysiology, neurogenic claudication symptoms, imaging findings, and the full spectrum of treatment from physiotherapy to decompressive surgery."
+        },
+        "pages": 10,
+        "icon": "spine"
+       },
+       {
+        "title": {
+         "el": "Αυχενική Δισκοκήλη",
+         "en": "Cervical Disc Herniation"
+        },
+        "desc": {
+         "el": "Στοχευμένος οδηγός για τη δισκοκήλη της αυχενικής μοίρας — διάκριση ριζοπάθειας από μυελοπάθεια, ο ρόλος της μαγνητικής τομογραφίας στη διάγνωση και οι θεραπευτικές επιλογές, από το αυχενικό κολάρο έως την επέμβαση ACDF.",
+         "en": "Focused guide on herniated discs in the neck — explaining radiculopathy vs myelopathy symptoms, the role of MRI in diagnosis, and treatment options from collar immobilisation to ACDF surgery."
+        },
+        "pages": 8,
+        "icon": "neck"
+       },
+       {
+        "title": {
+         "el": "Σπονδυλολίσθηση",
+         "en": "Spondylolisthesis"
+        },
+        "desc": {
+         "el": "Ενημέρωση για τους βαθμούς ολίσθησης σπονδύλου (Meyerding I–IV), τη διάκριση εκφυλιστικής και ισθμικής μορφής, τη συντηρητική αντιμετώπιση με φυσικοθεραπεία και τις ενδείξεις για σταθεροποιητική επέμβαση.",
+         "en": "Patient education on vertebral slippage grades (Meyerding I–IV), degenerative vs isthmic types, the conservative physiotherapy approach, and when spinal stabilisation surgery is indicated."
+        },
+        "pages": 7,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Ισχιαλγία",
+         "en": "Sciatica"
+        },
+        "desc": {
+         "el": "Πλήρης οδηγός για τον ερεθισμό του ισχιακού νεύρου — διαφοροδιάγνωση δισκοκήλης και συνδρόμου απιοειδούς, ανατομία της οδού του πόνου, ηλεκτροφυσιολογικός έλεγχος, φυσικοθεραπεία, εγχύσεις και χειρουργείο.",
+         "en": "Comprehensive guide on sciatic nerve irritation — differentiating disc herniation from piriformis syndrome, pain pathway anatomy, nerve conduction studies, physiotherapy, injections, and surgery."
+        },
+        "pages": 6,
+        "icon": "nerve"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Προεγχειρητικοί Οδηγοί",
+       "en": "Pre-operative Preparation Guides"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Γενική Προεγχειρητική Προετοιμασία",
+         "en": "General Pre-operative Preparation"
+        },
+        "desc": {
+         "el": "Βασικές οδηγίες προετοιμασίας: πρωτόκολλα νηστείας, προσαρμογή της φαρμακευτικής αγωγής (αντιπηκτικά, αντιφλεγμονώδη), προαναισθητική εκτίμηση και τι πρέπει να έχετε μαζί σας την ημέρα του χειρουργείου.",
+         "en": "Essential preparation instructions covering fasting protocols, medication adjustments (anticoagulants, NSAIDs), the anaesthesia consultation, and what to bring to hospital on the day of surgery."
+        },
+        "pages": 6,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Προετοιμασία για Μικροδισκεκτομή",
+         "en": "Preparing for Microdiscectomy"
+        },
+        "desc": {
+         "el": "Ειδικά βήματα προετοιμασίας για ασθενείς που υποβάλλονται σε μικροδισκεκτομή: προετοιμασία εντέρου, φροντίδα του δέρματος, τι να περιμένετε ως προς την κινητοποίηση μετά την επέμβαση και οργάνωση του χώρου στο σπίτι.",
+         "en": "Specific preparation steps for patients undergoing microdiscectomy, including bowel preparation, skin care, post-operative mobility expectations, and home environment setup."
+        },
+        "pages": 4,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Προετοιμασία για ACDF",
+         "en": "Preparing for ACDF"
+        },
+        "desc": {
+         "el": "Βήμα προς βήμα προετοιμασία για πρόσθια αυχενική δισκεκτομή και σπονδυλοδεσία — προσαρμογή του αυχενικού κηδεμόνα, τι να περιμένετε στην κατάποση και τη φωνή, τοποθέτηση στο χειρουργείο και σχεδιασμός της διανυκτέρευσης.",
+         "en": "Step-by-step preparation for anterior cervical discectomy and fusion — neck brace fitting, swallowing and voice change expectations, theatre positioning, and overnight stay planning."
+        },
+        "pages": 5,
+        "icon": "neck"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Λίστες Ελέγχου Ανάκαμψης",
+       "en": "Post-operative Recovery Checklists"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Επέμβαση Οσφύος",
+         "en": "Lumbar Surgery Recovery — Week by Week"
+        },
+        "desc": {
+         "el": "Λίστα ελέγχου ανάρρωσης εβδομάδα προς εβδομάδα: φροντίδα του τραύματος, περιορισμοί δραστηριότητας, ορόσημα φυσικοθεραπείας, σημεία που απαιτούν άμεση επανεκτίμηση και οδηγίες επιστροφής στην εργασία.",
+         "en": "Week-by-week recovery checklist including wound care, activity restrictions, physiotherapy milestones, warning signs requiring urgent review, and return-to-work guidance."
+        },
+        "pages": 8,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Σπονδυλοδεσία — 12 Εβδομάδες",
+         "en": "Spinal Fusion Recovery — 12 Weeks"
+        },
+        "desc": {
+         "el": "Ολοκληρωμένο πρόγραμμα ανάρρωσης δώδεκα εβδομάδων: χρήση κηδεμόνα, περιορισμοί στην άρση βάρους, οδηγίες για την οδήγηση, βελτιστοποίηση της οστικής πώρωσης και μακροπρόθεσμες συστάσεις τρόπου ζωής.",
+         "en": "A comprehensive 12-week recovery plan covering brace use, lifting restrictions, driving guidelines, bone healing optimisation, and long-term lifestyle recommendations."
+        },
+        "pages": 10,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από ACDF",
+         "en": "Recovery after ACDF"
+        },
+        "desc": {
+         "el": "Αναλυτικός οδηγός ανάρρωσης μετά από πρόσθια αυχενική δισκεκτομή — χρήση αυχενικού κολάρου, διαχείριση δυσκολιών στην κατάποση, υγιεινή του τραύματος, περιορισμοί στην οδήγηση και εξέλιξη της φυσικοθεραπείας σε οκτώ εβδομάδες.",
+         "en": "Detailed recovery guide after anterior cervical discectomy — neck collar use, swallowing difficulty management, wound hygiene, driving restrictions, and physiotherapy progression over 8 weeks."
+        },
+        "pages": 7,
+        "icon": "neck"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "brain",
+    "label": {
+     "el": "Εγκέφαλος",
+     "en": "Brain"
+    },
+    "groups": [
+     {
+      "label": {
+       "el": "Εκπαιδευτικά Φυλλάδια",
+       "en": "Patient Education Brochures"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Νευροπλοήγηση Stealth Station 8 & Χαρτογράφηση Νευρικών Οδών",
+         "en": "Stealth Station 8 Neuronavigation & Fiber Tract Mapping"
+        },
+        "desc": {
+         "el": "Εις βάθος επεξήγηση του πώς η νευροπλοήγηση Medtronic Stealth Station 8 ενσωματώνει τη χαρτογράφηση νευρικών οδών (τρακτογραφία DTI) και τα δεδομένα λειτουργικής μαγνητικής, ώστε ο χειρουργός να κινείται γύρω από τις λειτουργικές περιοχές και τις οδούς της λευκής ουσίας, επιτυγχάνοντας μέγιστη ασφαλή αφαίρεση με διατήρηση της νευρολογικής λειτουργίας.",
+         "en": "An in-depth explanation of how Medtronic Stealth Station 8 neuronavigation integrates fiber tract mapping (DTI tractography) and functional MRI data to guide the surgeon around eloquent cortex and white matter pathways, enabling maximal safe resection with preserved neurological function."
+        },
+        "pages": 10,
+        "icon": "nav"
+       },
+       {
+        "title": {
+         "el": "Όγκοι Εγκεφάλου — Οδηγός Ασθενούς",
+         "en": "Brain Tumours — A Patient's Guide"
+        },
+        "desc": {
+         "el": "Προσιτή εξήγηση των πρωτοπαθών και δευτεροπαθών όγκων του εγκεφάλου, των συστημάτων διαβάθμισης (WHO I–IV), του ρόλου της μαγνητικής και της PET απεικόνισης, καθώς και επισκόπηση των χειρουργικών, ακτινοθεραπευτικών και χημειοθεραπευτικών επιλογών.",
+         "en": "An accessible explanation of primary and secondary brain tumours, grading systems (WHO I–IV), the role of MRI and PET imaging, and an overview of surgical, radiation and chemotherapy options."
+        },
+        "pages": 12,
+        "icon": "brain"
+       },
+       {
+        "title": {
+         "el": "Αδενώματα Υπόφυσης",
+         "en": "Pituitary Adenomas"
+        },
+        "desc": {
+         "el": "Οδηγός για τις λειτουργίες της υπόφυσης, τους τύπους αδενώματος (εκκριτικά και μη εκκριτικά), τις ορμονικές επιπτώσεις, τις διαταραχές των οπτικών πεδίων και τη διασφηνοειδική χειρουργική προσπέλαση.",
+         "en": "A guide covering the pituitary gland's functions, adenoma types (functioning vs non-functioning), hormonal effects, visual field disturbances, and the transsphenoidal surgical approach."
+        },
+        "pages": 8,
+        "icon": "pituitary"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Προεγχειρητικοί Οδηγοί",
+       "en": "Pre-operative Preparation Guides"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Προετοιμασία για Κρανιοτομή",
+         "en": "Preparing for Craniotomy"
+        },
+        "desc": {
+         "el": "Λίστα προετοιμασίας για ασθενείς που υποβάλλονται σε κρανιοτομή, με επεξήγηση του πώς οι προεγχειρητικές εξετάσεις λειτουργικής μαγνητικής και τρακτογραφίας DTI χρησιμοποιούνται για τον σχεδιασμό της ασφαλέστερης προσπέλασης με νευροπλοήγηση Stealth Station 8. Περιλαμβάνει πρωτόκολλα φαρμακευτικής αγωγής, οδηγίες για κορτικοστεροειδή και αντιεπιληπτικά, και τι να περιμένετε από τη νοσηλεία στη ΜΕΘ.",
+         "en": "A preparation checklist for craniotomy patients, including how pre-operative fMRI and DTI tractography scans are used to plan the safest surgical approach with Medtronic Stealth Station 8 neuronavigation. Covers medication protocols, steroid and anti-epileptic instructions, and ICU admission expectations."
+        },
+        "pages": 7,
+        "icon": "clip"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Λίστες Ελέγχου Ανάκαμψης",
+       "en": "Post-operative Recovery Checklists"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Κρανιοτομή",
+         "en": "Recovery after Craniotomy"
+        },
+        "desc": {
+         "el": "Ορόσημα ανάρρωσης από τη ΜΕΘ έως το εξιτήριο και μετά — φροντίδα του τραύματος, προφυλάξεις για επιληπτικές κρίσεις, περιορισμοί δραστηριότητας, διαχείριση της γνωσιακής κόπωσης και πρόγραμμα επανελέγχου με απεικόνιση.",
+         "en": "Recovery milestones from ICU through discharge and beyond — wound care, seizure precautions, activity restrictions, cognitive fatigue management, and the follow-up imaging schedule."
+        },
+        "pages": 10,
+        "icon": "clip"
+       },
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Διασφηνοειδική Επέμβαση",
+         "en": "Recovery after Transsphenoidal Surgery"
+        },
+        "desc": {
+         "el": "Ειδικές οδηγίες μετά από διασφηνοειδική επέμβαση: φροντίδα του ρινικού επιπωματισμού, παρακολούθηση της πρόσληψης υγρών για άποιο διαβήτη, πρωτόκολλα ορμονικής υποκατάστασης και ενδοκρινολογική παρακολούθηση.",
+         "en": "Specific guidance after transsphenoidal surgery covering nasal packing care, fluid intake monitoring for diabetes insipidus, hormone replacement protocols, and endocrinology follow-up."
+        },
+        "pages": 6,
+        "icon": "pituitary"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "nerve",
+    "label": {
+     "el": "Νεύρα",
+     "en": "Nerve"
+    },
+    "groups": [
+     {
+      "label": {
+       "el": "Εκπαιδευτικά Φυλλάδια",
+       "en": "Patient Education Brochures"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Σύνδρομο Καρπιαίου Σωλήνα",
+         "en": "Carpal Tunnel Syndrome"
+        },
+        "desc": {
+         "el": "Πλήρης επισκόπηση της πίεσης του μέσου νεύρου στον καρπό — παράγοντες κινδύνου, ηλεκτροδιαγνωστικός έλεγχος (NCS/EMG), επιλογές νάρθηκα και έγχυσης κορτικοστεροειδούς, και η επέμβαση αποδέσμευσης του καρπιαίου σωλήνα.",
+         "en": "A complete overview of median nerve compression at the wrist — risk factors, electrodiagnostic testing (NCS/EMG), splinting and steroid injection options, and carpal tunnel release surgery."
+        },
+        "pages": 6,
+        "icon": "hand"
+       },
+       {
+        "title": {
+         "el": "Νευραλγία Τριδύμου",
+         "en": "Trigeminal Neuralgia"
+        },
+        "desc": {
+         "el": "Οδηγός για την ανατομία του τριδύμου νεύρου, τους εκλυτικούς παράγοντες και τα χαρακτηριστικά του πόνου, τη φαρμακευτική αντιμετώπιση (καρβαμαζεπίνη) και τις χειρουργικές επιλογές, όπως η μικροαγγειακή αποσυμπίεση (MVD).",
+         "en": "A patient guide explaining trigeminal nerve anatomy, triggers and pain characteristics, medical management (carbamazepine), and surgical options including microvascular decompression (MVD)."
+        },
+        "pages": 8,
+        "icon": "face"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Προεγχειρητικοί Οδηγοί",
+       "en": "Pre-operative Preparation Guides"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Προετοιμασία για Αποσυμπίεση Περιφερικού Νεύρου",
+         "en": "Preparing for Nerve Decompression"
+        },
+        "desc": {
+         "el": "Οδηγίες πριν από επέμβαση αποσυμπίεσης ή αποκατάστασης περιφερικού νεύρου: είδος αναισθησίας (τοπική ή γενική), χρήση ίσχαιμης περίδεσης, τοποθέτηση του άκρου και αναμενόμενη διάρκεια της επέμβασης.",
+         "en": "Pre-surgery instructions for patients undergoing nerve decompression or repair, covering anaesthesia type (local vs general), tourniquet use, limb positioning, and expected procedure duration."
+        },
+        "pages": 4,
+        "icon": "nerve"
+       },
+       {
+        "title": {
+         "el": "Προετοιμασία για Μικροαγγειακή Αποσυμπίεση (MVD)",
+         "en": "Preparing for MVD Surgery"
+        },
+        "desc": {
+         "el": "Αναλυτικός οδηγός προετοιμασίας για επέμβαση MVD, με τις ιδιαιτερότητες της κρανιοτομής οπίσθιου κρανιακού βόθρου, επεξήγηση της παρακολούθησης της ακοής και του προσωπικού νεύρου, και τι να περιμένετε από την παραμονή στη ΜΕΘ.",
+         "en": "A detailed preparation guide for MVD surgery including posterior fossa craniotomy specifics, an explanation of hearing and facial nerve monitoring, and ICU stay expectations."
+        },
+        "pages": 6,
+        "icon": "clip"
+       }
+      ]
+     },
+     {
+      "label": {
+       "el": "Λίστες Ελέγχου Ανάκαμψης",
+       "en": "Post-operative Recovery Checklists"
+      },
+      "docs": [
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Αποδέσμευση Καρπιαίου Σωλήνα",
+         "en": "Recovery after Carpal Tunnel Release"
+        },
+        "desc": {
+         "el": "Πρόγραμμα ανάρρωσης ημέρα προς ημέρα: αλλαγές επιδέσμων, ανύψωση του χεριού, ασκήσεις ενδυνάμωσης της λαβής, περιορισμοί στην οδήγηση και αναμενόμενο χρονοδιάγραμμα υποχώρησης των συμπτωμάτων.",
+         "en": "A day-by-day recovery plan covering dressing changes, hand elevation, grip strengthening exercises, driving restrictions, and the expected timeline for symptom resolution."
+        },
+        "pages": 4,
+        "icon": "hand"
+       },
+       {
+        "title": {
+         "el": "Ανάρρωση μετά από Μικροαγγειακή Αποσυμπίεση",
+         "en": "Recovery after MVD"
+        },
+        "desc": {
+         "el": "Οδηγίες ανάρρωσης μετά από μικροαγγειακή αποσυμπίεση: φροντίδα του τραύματος της κρανιοτομής, παρακολούθηση της ακοής, διαχείριση του πόνου, ορόσημα επανέναρξης δραστηριοτήτων και μακροπρόθεσμα αποτελέσματα.",
+         "en": "Recovery guidance after microvascular decompression covering craniotomy wound care, hearing monitoring, pain management, activity resumption milestones, and long-term outcomes."
+        },
+        "pages": 6,
+        "icon": "heart"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "faq": [
+  {
+   "label": {
+    "el": "Γενικά",
+    "en": "General"
+   },
+   "items": [
+    {
+     "q": {
+      "el": "Πότε πρέπει να επισκεφθώ νευροχειρουργό;",
+      "en": "When should I see a neurosurgeon?"
+     },
+     "a": {
+      "el": "Καλό είναι να απευθυνθείτε σε νευροχειρουργό εάν έχετε επίμονες ή έντονες κεφαλαλγίες, μούδιασμα ή αδυναμία στα άκρα, πόνο στον αυχένα ή τη μέση που δεν υποχωρεί με συντηρητική αγωγή, διαταραχές όρασης, δυσκολία στη βάδιση, ή εάν μια μαγνητική ή αξονική τομογραφία ανέδειξε βλάβη, όγκο ή δομική ανωμαλία στον εγκέφαλο ή τη σπονδυλική στήλη.",
+      "en": "You should consult a neurosurgeon if you experience persistent or severe headaches, numbness or weakness in your limbs, neck or back pain that does not respond to conservative treatment, changes in vision, difficulty walking, or if an MRI or CT scan has revealed a lesion, tumour or structural abnormality in the brain or spine."
+     }
+    },
+    {
+     "q": {
+      "el": "Χρειάζομαι παραπεμπτικό για να κλείσω ραντεβού;",
+      "en": "Do I need a referral to book an appointment?"
+     },
+     "a": {
+      "el": "Δεν απαιτείται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας με το ιατρείο για να κλείσετε ραντεβού. Εάν έχετε ήδη πρόσφατες απεικονιστικές εξετάσεις (μαγνητική, αξονική) ή νευρολογικές γνωματεύσεις, παρακαλούμε να τις φέρετε στην πρώτη επίσκεψη — βοηθούν σημαντικά στην εκτίμηση.",
+      "en": "No referral is required. You are welcome to contact the practice directly to schedule a consultation. If you already have recent imaging (MRI, CT) or neurological reports, please bring them to your first visit — they greatly assist the evaluation."
+     }
+    },
+    {
+     "q": {
+      "el": "Τι να περιμένω στην πρώτη μου επίσκεψη;",
+      "en": "What should I expect during my first consultation?"
+     },
+     "a": {
+      "el": "Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας.",
+      "en": "Your first visit typically lasts 30 to 45 minutes. Dr. Veranis will review your medical history, discuss your symptoms in detail, perform a full neurological examination and study any imaging you bring. You will leave with a clear explanation of the findings and an outlined treatment plan."
+     }
+    }
+   ]
+  },
+  {
+   "label": {
+    "el": "Χειρουργείο & Θεραπεία",
+    "en": "Surgery & Treatment"
+   },
+   "items": [
+    {
+     "q": {
+      "el": "Χρειάζεται πάντα χειρουργείο;",
+      "en": "Is surgery always necessary?"
+     },
+     "a": {
+      "el": "Σε καμία περίπτωση. Πολλές νευρολογικές παθήσεις ανταποκρίνονται πολύ καλά σε συντηρητική αντιμετώπιση, όπως φυσικοθεραπεία, φαρμακευτική αγωγή ή στοχευμένες εγχύσεις. Το χειρουργείο προτείνεται μόνο όταν έχουν εξαντληθεί οι μη χειρουργικές επιλογές ή όταν υπάρχει σαφής ιατρική ένδειξη, όπως πίεση νεύρου που προκαλεί προϊούσα αδυναμία.",
+      "en": "Not at all. Many neurological conditions respond well to conservative management, including physiotherapy, medication or targeted injections. Surgery is recommended only when non-surgical options have been exhausted, or when there is a clear medical indication such as nerve compression causing progressive weakness."
+     }
+    },
+    {
+     "q": {
+      "el": "Τι είναι η ελάχιστα επεμβατική νευροχειρουργική;",
+      "en": "What is minimally invasive neurosurgery?"
+     },
+     "a": {
+      "el": "Οι ελάχιστα επεμβατικές τεχνικές αξιοποιούν μικρές τομές και εξειδικευμένα εργαλεία για την προσπέλαση του εγκεφάλου ή της σπονδυλικής στήλης με ελάχιστη διατάραξη των γύρω ιστών. Τα οφέλη περιλαμβάνουν μικρότερη απώλεια αίματος, συντομότερη νοσηλεία, λιγότερο μετεγχειρητικό πόνο και ταχύτερη επιστροφή στην καθημερινότητα σε σχέση με την κλασική ανοικτή χειρουργική.",
+      "en": "Minimally invasive techniques use small incisions and specialised instruments to reach the brain or spine with minimal disruption to the surrounding tissue. The benefits include reduced blood loss, shorter hospital stays, less post-operative pain and a faster return to daily activity compared with traditional open surgery."
+     }
+    },
+    {
+     "q": {
+      "el": "Πώς προετοιμάζομαι για επέμβαση σπονδυλικής στήλης ή εγκεφάλου;",
+      "en": "How do I prepare for spinal or brain surgery?"
+     },
+     "a": {
+      "el": "Η προετοιμασία διαφέρει ανάλογα με την επέμβαση, αλλά γενικά περιλαμβάνει προεγχειρητικές αιματολογικές και απεικονιστικές εξετάσεις, διακοπή ορισμένων φαρμάκων (όπως τα αντιπηκτικά) σύμφωνα με τις οδηγίες, νηστεία πριν από την επέμβαση και οργάνωση υποστήριξης στο σπίτι μετά. Ο Δρ. Βεράνης θα σας δώσει εξατομικευμένη λίστα προεγχειρητικού ελέγχου.",
+      "en": "Preparation varies by procedure, but generally includes pre-operative blood tests and imaging, stopping certain medications (such as blood thinners) as advised, fasting before the procedure, and arranging support at home afterwards. Dr. Veranis will provide you with a personalised pre-operative checklist."
+     }
+    }
+   ]
+  },
+  {
+   "label": {
+    "el": "Ανάρρωση",
+    "en": "Recovery"
+   },
+   "items": [
+    {
+     "q": {
+      "el": "Πόσο διαρκεί η ανάρρωση μετά από επέμβαση σπονδυλικής στήλης;",
+      "en": "How long is recovery after spine surgery?"
+     },
+     "a": {
+      "el": "Η ανάρρωση εξαρτάται από το είδος και την έκταση της επέμβασης. Οι ασθενείς που υποβάλλονται σε ελάχιστα επεμβατική δισκεκτομή συχνά επιστρέφουν σπίτι την ίδια ή την επόμενη ημέρα και επανέρχονται σε ήπια δραστηριότητα μέσα σε δύο έως τέσσερις εβδομάδες. Οι πιο σύνθετες σπονδυλοδεσίες μπορεί να χρειαστούν έξι έως δώδεκα εβδομάδες για πλήρη ανάρρωση. Ο Δρ. Βεράνης θα σας δώσει χρονοδιάγραμμα προσαρμοσμένο στη δική σας περίπτωση.",
+      "en": "Recovery depends on the type and extent of the procedure. Patients who have a minimally invasive discectomy often return home the same day or the next morning and resume light activity within two to four weeks. More complex fusion procedures may require six to twelve weeks for full recovery. Dr. Veranis will give you a timeline specific to your case."
+     }
+    },
+    {
+     "q": {
+      "el": "Πότε μπορώ να επιστρέψω στη δουλειά μου;",
+      "en": "When can I return to work?"
+     },
+     "a": {
+      "el": "Ο χρόνος επιστροφής στην εργασία διαφέρει σημαντικά. Για γραφειακή ή καθιστική εργασία, οι ασθενείς συνήθως επιστρέφουν μέσα σε δύο έως τέσσερις εβδομάδες μετά από ελάχιστα επεμβατική επέμβαση. Η χειρωνακτική εργασία μπορεί να απαιτήσει έξι έως δώδεκα εβδομάδες. Το εξατομικευμένο πλάνο λαμβάνει υπόψη το επάγγελμά σας, την επέμβαση και τη γενική σας κατάσταση.",
+      "en": "Return-to-work timelines vary widely. For desk-based or sedentary work, patients often return within two to four weeks following a minimally invasive procedure. Physical or manual work may require six to twelve weeks. Your individual plan takes into account your occupation, the procedure and your overall health."
+     }
+    },
+    {
+     "q": {
+      "el": "Θα χρειαστώ φυσικοθεραπεία μετά την επέμβαση;",
+      "en": "Will I need physiotherapy after surgery?"
+     },
+     "a": {
+      "el": "Στις περισσότερες περιπτώσεις, ναι. Η μετεγχειρητική φυσικοθεραπεία αποτελεί σημαντικό μέρος της ανάρρωσης, ιδίως μετά από επεμβάσεις σπονδυλικής στήλης. Αποκαθιστά τη μυϊκή ισχύ, την ευλυγισία και τη λειτουργικότητα και μειώνει τον κίνδυνο υποτροπής. Ο Δρ. Βεράνης συνεργάζεται στενά με έμπειρους φυσικοθεραπευτές και θα σας παραπέμψει αναλόγως.",
+      "en": "In most cases, yes. Post-operative physiotherapy is an important part of recovery, particularly after spine surgery. It restores strength, flexibility and function, and reduces the risk of recurrence. Dr. Veranis works closely with experienced physiotherapists and will provide the appropriate referrals."
+     }
+    }
+   ]
+  }
+ ]
+}

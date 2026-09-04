@@ -404,24 +404,52 @@ section{position:relative}
 .quote .who .n{font-size:15px;font-weight:600;color:#fff;text-align:left}
 .quote .who .c{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-lite);margin-top:4px;text-align:left}
 
-/* review carousel */
-.rev-stage{display:grid;margin-top:6px}
-.rev{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(14px);
-  transition:opacity .75s var(--ease),transform .75s var(--ease),visibility 0s linear .75s}
-.rev.on{opacity:1;visibility:visible;transform:none;
-  transition:opacity .75s var(--ease),transform .75s var(--ease),visibility 0s}
-.rev-ctl{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:40px}
-.rev-ctl[hidden]{display:none}
+/* google review wall */
+.gcard{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;
+  border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:18px 22px;background:rgba(255,255,255,.035)}
+.glogo{width:34px;height:34px;flex:none;display:grid;place-items:center;background:#fff;border-radius:50%;padding:6px}
+.glogo svg{width:100%;height:100%}
+.gmeta{flex:1 1 auto;min-width:0}
+.rstars{display:inline-flex;gap:3px}
+.rstars svg{width:15px;height:15px;fill:#F5B301}
+.gsub{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:5px}
+.gsub b{color:#fff;font-weight:600}
+.gbtn{flex:none;padding:12px 20px;font-size:11px}
+.gnote{margin-top:16px;color:rgba(255,255,255,.5);font-size:13px;max-width:64ch}
+
+.rw{margin-top:46px}
+.rw-viewport{overflow:hidden}
+.rw-track{display:flex;gap:20px;transition:transform .75s var(--ease);will-change:transform}
+@media (prefers-reduced-motion:reduce){.rw-track{transition:none}}
+.rcard{flex:0 0 calc((100% - 40px)/3);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);
+  border-radius:4px;padding:24px;display:flex;flex-direction:column;transition:border-color .4s,background .4s}
+.rcard:hover{background:rgba(255,255,255,.07);border-color:rgba(79,197,184,.4)}
+.rcard-top{display:flex;align-items:center;gap:12px}
+.rav{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--accent),var(--ink-2));color:#fff;font-size:13px;font-weight:600;letter-spacing:.03em}
+.rname{font-size:14.6px;font-weight:600;color:#fff;line-height:1.3}
+.rwhen{font-size:11.5px;color:rgba(255,255,255,.45);margin-top:2px}
+.rcard-top .gmark{width:19px;height:19px;flex:none;margin-left:auto;opacity:.9}
+.rcard .rstars{margin:14px 0 12px}
+.rtext{font-size:14.4px;line-height:1.75;color:rgba(255,255,255,.72);white-space:pre-line;flex:1}
+.rtext.clamp{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden}
+.rmore{margin-top:12px;align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--accent-lite);border-bottom:1px solid transparent;transition:border-color .3s}
+.rmore:hover{border-bottom-color:var(--accent-lite)}
+.rsrc{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);
+  display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.rsrc svg{width:13px;height:13px;flex:none}
+
+.rw-ctl{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:34px}
+.rw-ctl[hidden]{display:none}
+.rw-count{font-family:var(--serif);font-size:17px;color:rgba(255,255,255,.6);letter-spacing:.05em;min-width:76px;text-align:center}
 .rev-nav{width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:50%;
   display:grid;place-items:center;color:rgba(255,255,255,.8);
   transition:border-color .35s,color .35s,background .35s,transform .35s var(--ease)}
 .rev-nav svg{width:17px;height:17px}
 .rev-nav:hover{border-color:var(--accent-lite);color:var(--accent-lite);background:rgba(79,197,184,.08);transform:translateY(-2px)}
-.rev-dots{display:flex;align-items:center;gap:8px}
-.rev-dot{width:7px;height:7px;border-radius:100px;background:rgba(255,255,255,.26);
-  transition:background .4s var(--ease),width .4s var(--ease)}
-.rev-dot.on{background:var(--accent-lite);width:24px}
-@media (prefers-reduced-motion:reduce){.rev,.rev.on{transition:none}}
+@media (max-width:1080px){.rcard{flex:0 0 calc((100% - 20px)/2)}}
+@media (max-width:700px){.rcard{flex:0 0 100%}.gbtn{width:100%}}
 
 /* ============================================================
    PATIENT RESOURCES
@@ -604,7 +632,7 @@ section{position:relative}
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Physician", "name": "Δρ. Βεράνης Σωτήρης — Νευροχειρουργός", "alternateName": "Dr. Veranis Sotiris — Neurosurgeon", "medicalSpecialty": "Neurologic", "image": "assets/veranis-sotiris-neurosurgeon-athens.jpg?v=2", "telephone": "+306983517455", "email": "veranissotiris@gmail.com", "priceRange": "€€", "availableLanguage": ["el", "en"], "address": {"@type": "PostalAddress", "streetAddress": "Αλωπεκής 41", "addressLocality": "Αθήνα", "addressRegion": "Αττική", "postalCode": "10676", "addressCountry": "GR"}, "geo": {"@type": "GeoCoordinates", "latitude": 37.9765, "longitude": 23.744}, "areaServed": [{"@type": "Place", "name": "Κολωνάκι"}, {"@type": "Place", "name": "Αθήνα"}, {"@type": "Place", "name": "Αττική"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "15:00", "closes": "21:00"}], "employee": {"@type": "Person", "name": "Σωτήρης Βεράνης", "alternateName": "Sotiris Veranis", "jobTitle": "Νευροχειρουργός", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Ιατρική Σχολή, Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών"}, "knowsLanguage": ["el", "en"], "knowsAbout": ["Χειρουργική όγκων εγκεφάλου", "Ελάχιστα επεμβατική χειρουργική σπονδυλικής στήλης", "Χειρουργική υπόφυσης", "Χειρουργική περιφερικών νεύρων", "Νευροπλοήγηση"], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Τίτλος Ιατρικής Ειδικότητας Νευροχειρουργικής"}}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "el", "mainEntity": [{"@type": "Question", "name": "Πότε πρέπει να επισκεφθώ νευροχειρουργό;", "acceptedAnswer": {"@type": "Answer", "text": "Καλό είναι να απευθυνθείτε σε νευροχειρουργό εάν έχετε επίμονες ή έντονες κεφαλαλγίες, μούδιασμα ή αδυναμία στα άκρα, πόνο στον αυχένα ή τη μέση που δεν υποχωρεί με συντηρητική αγωγή, διαταραχές όρασης, δυσκολία στη βάδιση, ή εάν μια μαγνητική ή αξονική τομογραφία ανέδειξε βλάβη, όγκο ή δομική ανωμαλία στον εγκέφαλο ή τη σπονδυλική στήλη."}}, {"@type": "Question", "name": "Χρειάζομαι παραπεμπτικό για να κλείσω ραντεβού;", "acceptedAnswer": {"@type": "Answer", "text": "Δεν απαιτείται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας με το ιατρείο για να κλείσετε ραντεβού. Εάν έχετε ήδη πρόσφατες απεικονιστικές εξετάσεις (μαγνητική, αξονική) ή νευρολογικές γνωματεύσεις, παρακαλούμε να τις φέρετε στην πρώτη επίσκεψη — βοηθούν σημαντικά στην εκτίμηση."}}, {"@type": "Question", "name": "Τι να περιμένω στην πρώτη μου επίσκεψη;", "acceptedAnswer": {"@type": "Answer", "text": "Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας."}}, {"@type": "Question", "name": "Χρειάζεται πάντα χειρουργείο;", "acceptedAnswer": {"@type": "Answer", "text": "Σε καμία περίπτωση. Πολλές νευρολογικές παθήσεις ανταποκρίνονται πολύ καλά σε συντηρητική αντιμετώπιση, όπως φυσικοθεραπεία, φαρμακευτική αγωγή ή στοχευμένες εγχύσεις. Το χειρουργείο προτείνεται μόνο όταν έχουν εξαντληθεί οι μη χειρουργικές επιλογές ή όταν υπάρχει σαφής ιατρική ένδειξη, όπως πίεση νεύρου που προκαλεί προϊούσα αδυναμία."}}, {"@type": "Question", "name": "Τι είναι η ελάχιστα επεμβατική νευροχειρουργική;", "acceptedAnswer": {"@type": "Answer", "text": "Οι ελάχιστα επεμβατικές τεχνικές αξιοποιούν μικρές τομές και εξειδικευμένα εργαλεία για την προσπέλαση του εγκεφάλου ή της σπονδυλικής στήλης με ελάχιστη διατάραξη των γύρω ιστών. Τα οφέλη περιλαμβάνουν μικρότερη απώλεια αίματος, συντομότερη νοσηλεία, λιγότερο μετεγχειρητικό πόνο και ταχύτερη επιστροφή στην καθημερινότητα σε σχέση με την κλασική ανοικτή χειρουργική."}}, {"@type": "Question", "name": "Πώς προετοιμάζομαι για επέμβαση σπονδυλικής στήλης ή εγκεφάλου;", "acceptedAnswer": {"@type": "Answer", "text": "Η προετοιμασία διαφέρει ανάλογα με την επέμβαση, αλλά γενικά περιλαμβάνει προεγχειρητικές αιματολογικές και απεικονιστικές εξετάσεις, διακοπή ορισμένων φαρμάκων (όπως τα αντιπηκτικά) σύμφωνα με τις οδηγίες, νηστεία πριν από την επέμβαση και οργάνωση υποστήριξης στο σπίτι μετά. Ο Δρ. Βεράνης θα σας δώσει εξατομικευμένη λίστα προεγχειρητικού ελέγχου."}}, {"@type": "Question", "name": "Πόσο διαρκεί η ανάρρωση μετά από επέμβαση σπονδυλικής στήλης;", "acceptedAnswer": {"@type": "Answer", "text": "Η ανάρρωση εξαρτάται από το είδος και την έκταση της επέμβασης. Οι ασθενείς που υποβάλλονται σε ελάχιστα επεμβατική δισκεκτομή συχνά επιστρέφουν σπίτι την ίδια ή την επόμενη ημέρα και επανέρχονται σε ήπια δραστηριότητα μέσα σε δύο έως τέσσερις εβδομάδες. Οι πιο σύνθετες σπονδυλοδεσίες μπορεί να χρειαστούν έξι έως δώδεκα εβδομάδες για πλήρη ανάρρωση. Ο Δρ. Βεράνης θα σας δώσει χρονοδιάγραμμα προσαρμοσμένο στη δική σας περίπτωση."}}, {"@type": "Question", "name": "Πότε μπορώ να επιστρέψω στη δουλειά μου;", "acceptedAnswer": {"@type": "Answer", "text": "Ο χρόνος επιστροφής στην εργασία διαφέρει σημαντικά. Για γραφειακή ή καθιστική εργασία, οι ασθενείς συνήθως επιστρέφουν μέσα σε δύο έως τέσσερις εβδομάδες μετά από ελάχιστα επεμβατική επέμβαση. Η χειρωνακτική εργασία μπορεί να απαιτήσει έξι έως δώδεκα εβδομάδες. Το εξατομικευμένο πλάνο λαμβάνει υπόψη το επάγγελμά σας, την επέμβαση και τη γενική σας κατάσταση."}}, {"@type": "Question", "name": "Θα χρειαστώ φυσικοθεραπεία μετά την επέμβαση;", "acceptedAnswer": {"@type": "Answer", "text": "Στις περισσότερες περιπτώσεις, ναι. Η μετεγχειρητική φυσικοθεραπεία αποτελεί σημαντικό μέρος της ανάρρωσης, ιδίως μετά από επεμβάσεις σπονδυλικής στήλης. Αποκαθιστά τη μυϊκή ισχύ, την ευλυγισία και τη λειτουργικότητα και μειώνει τον κίνδυνο υποτροπής. Ο Δρ. Βεράνης συνεργάζεται στενά με έμπειρους φυσικοθεραπευτές και θα σας παραπέμψει αναλόγως."}}]}</script>
+<script type="application/ld+json" id="faqSchema">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "el", "mainEntity": [{"@type": "Question", "name": "Πότε πρέπει να επισκεφθώ νευροχειρουργό;", "acceptedAnswer": {"@type": "Answer", "text": "Καλό είναι να απευθυνθείτε σε νευροχειρουργό εάν έχετε επίμονες ή έντονες κεφαλαλγίες, μούδιασμα ή αδυναμία στα άκρα, πόνο στον αυχένα ή τη μέση που δεν υποχωρεί με συντηρητική αγωγή, διαταραχές όρασης, δυσκολία στη βάδιση, ή εάν μια μαγνητική ή αξονική τομογραφία ανέδειξε βλάβη, όγκο ή δομική ανωμαλία στον εγκέφαλο ή τη σπονδυλική στήλη."}}, {"@type": "Question", "name": "Χρειάζομαι παραπεμπτικό για να κλείσω ραντεβού;", "acceptedAnswer": {"@type": "Answer", "text": "Δεν απαιτείται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας με το ιατρείο για να κλείσετε ραντεβού. Εάν έχετε ήδη πρόσφατες απεικονιστικές εξετάσεις (μαγνητική, αξονική) ή νευρολογικές γνωματεύσεις, παρακαλούμε να τις φέρετε στην πρώτη επίσκεψη — βοηθούν σημαντικά στην εκτίμηση."}}, {"@type": "Question", "name": "Τι να περιμένω στην πρώτη μου επίσκεψη;", "acceptedAnswer": {"@type": "Answer", "text": "Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας."}}, {"@type": "Question", "name": "Χρειάζεται πάντα χειρουργείο;", "acceptedAnswer": {"@type": "Answer", "text": "Σε καμία περίπτωση. Πολλές νευρολογικές παθήσεις ανταποκρίνονται πολύ καλά σε συντηρητική αντιμετώπιση, όπως φυσικοθεραπεία, φαρμακευτική αγωγή ή στοχευμένες εγχύσεις. Το χειρουργείο προτείνεται μόνο όταν έχουν εξαντληθεί οι μη χειρουργικές επιλογές ή όταν υπάρχει σαφής ιατρική ένδειξη, όπως πίεση νεύρου που προκαλεί προϊούσα αδυναμία."}}, {"@type": "Question", "name": "Τι είναι η ελάχιστα επεμβατική νευροχειρουργική;", "acceptedAnswer": {"@type": "Answer", "text": "Οι ελάχιστα επεμβατικές τεχνικές αξιοποιούν μικρές τομές και εξειδικευμένα εργαλεία για την προσπέλαση του εγκεφάλου ή της σπονδυλικής στήλης με ελάχιστη διατάραξη των γύρω ιστών. Τα οφέλη περιλαμβάνουν μικρότερη απώλεια αίματος, συντομότερη νοσηλεία, λιγότερο μετεγχειρητικό πόνο και ταχύτερη επιστροφή στην καθημερινότητα σε σχέση με την κλασική ανοικτή χειρουργική."}}, {"@type": "Question", "name": "Πώς προετοιμάζομαι για επέμβαση σπονδυλικής στήλης ή εγκεφάλου;", "acceptedAnswer": {"@type": "Answer", "text": "Η προετοιμασία διαφέρει ανάλογα με την επέμβαση, αλλά γενικά περιλαμβάνει προεγχειρητικές αιματολογικές και απεικονιστικές εξετάσεις, διακοπή ορισμένων φαρμάκων (όπως τα αντιπηκτικά) σύμφωνα με τις οδηγίες, νηστεία πριν από την επέμβαση και οργάνωση υποστήριξης στο σπίτι μετά. Ο Δρ. Βεράνης θα σας δώσει εξατομικευμένη λίστα προεγχειρητικού ελέγχου."}}, {"@type": "Question", "name": "Πόσο διαρκεί η ανάρρωση μετά από επέμβαση σπονδυλικής στήλης;", "acceptedAnswer": {"@type": "Answer", "text": "Η ανάρρωση εξαρτάται από το είδος και την έκταση της επέμβασης. Οι ασθενείς που υποβάλλονται σε ελάχιστα επεμβατική δισκεκτομή συχνά επιστρέφουν σπίτι την ίδια ή την επόμενη ημέρα και επανέρχονται σε ήπια δραστηριότητα μέσα σε δύο έως τέσσερις εβδομάδες. Οι πιο σύνθετες σπονδυλοδεσίες μπορεί να χρειαστούν έξι έως δώδεκα εβδομάδες για πλήρη ανάρρωση. Ο Δρ. Βεράνης θα σας δώσει χρονοδιάγραμμα προσαρμοσμένο στη δική σας περίπτωση."}}, {"@type": "Question", "name": "Πότε μπορώ να επιστρέψω στη δουλειά μου;", "acceptedAnswer": {"@type": "Answer", "text": "Ο χρόνος επιστροφής στην εργασία διαφέρει σημαντικά. Για γραφειακή ή καθιστική εργασία, οι ασθενείς συνήθως επιστρέφουν μέσα σε δύο έως τέσσερις εβδομάδες μετά από ελάχιστα επεμβατική επέμβαση. Η χειρωνακτική εργασία μπορεί να απαιτήσει έξι έως δώδεκα εβδομάδες. Το εξατομικευμένο πλάνο λαμβάνει υπόψη το επάγγελμά σας, την επέμβαση και τη γενική σας κατάσταση."}}, {"@type": "Question", "name": "Θα χρειαστώ φυσικοθεραπεία μετά την επέμβαση;", "acceptedAnswer": {"@type": "Answer", "text": "Στις περισσότερες περιπτώσεις, ναι. Η μετεγχειρητική φυσικοθεραπεία αποτελεί σημαντικό μέρος της ανάρρωσης, ιδίως μετά από επεμβάσεις σπονδυλικής στήλης. Αποκαθιστά τη μυϊκή ισχύ, την ευλυγισία και τη λειτουργικότητα και μειώνει τον κίνδυνο υποτροπής. Ο Δρ. Βεράνης συνεργάζεται στενά με έμπειρους φυσικοθεραπευτές και θα σας παραπέμψει αναλόγως."}}]}</script>
 </head>
 <body id="top">
 <a class="skip" href="#main" data-el="Μετάβαση στο περιεχόμενο" data-en="Skip to content">Μετάβαση στο περιεχόμενο</a>
@@ -670,11 +698,11 @@ section{position:relative}
   </nav>
   <div class="drawer-foot">
     <a class="btn btn-glow" href="#booking" data-close data-en="Book Appointment">Κλείστε Ραντεβού</a>
-    <a class="btn btn-ghost-d" href="tel:+306983517455">+30 698 351 7455</a>
+    <a class="btn btn-ghost-d" href="tel:+306983517455" data-c-tel><span data-c="contact.phone">+30 698 351 7455</span></a>
   </div>
   <div class="drawer-meta">
-    <span data-en="Alopekis 41, Kolonaki, Athens 10676">Αλωπεκής 41, Κολωνάκι, Αθήνα 10676</span><br>
-    <a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a>
+    <span data-c="contact.addressOneLine" data-en="Alopekis 41, Kolonaki, Athens 10676">Αλωπεκής 41, Κολωνάκι, Αθήνα 10676</span><br>
+    <a href="mailto:veranissotiris@gmail.com" data-c-mail><span data-c="contact.email">veranissotiris@gmail.com</span></a>
   </div>
 </div>
 
@@ -709,7 +737,7 @@ section{position:relative}
       <div>
         <span class="eyebrow" data-en="Private Practice Neurosurgery · Athens">Ιδιωτικό Ιατρείο Νευροχειρουργικής · Αθήνα</span>
         <h1 class="h-xl" id="h1"><span data-en="Dr. Veranis">Δρ. Βεράνης</span><em data-en="Sotiris">Σωτήρης</em></h1>
-        <p class="lede" data-en="Precision, compassion, and excellence in neurosurgical care. Dedicated to restoring health and quality of life.">Ακρίβεια, ενσυναίσθηση και αριστεία στη νευροχειρουργική φροντίδα. Με αφοσίωση στην αποκατάσταση της υγείας και της ποιότητας ζωής.</p>
+        <p class="lede" data-c="hero.lede" data-en="Precision, compassion, and excellence in neurosurgical care. Dedicated to restoring health and quality of life.">Ακρίβεια, ενσυναίσθηση και αριστεία στη νευροχειρουργική φροντίδα. Με αφοσίωση στην αποκατάσταση της υγείας και της ποιότητας ζωής.</p>
         <div class="hero-cta">
           <a class="btn btn-glow" href="#booking" data-en="Schedule a Consultation">Κλείστε Ραντεβού</a>
           <a class="btn btn-ghost-d" href="#about" data-en="Learn More">Μάθετε Περισσότερα</a>
@@ -767,8 +795,8 @@ section{position:relative}
         <span class="eyebrow" data-en="About the Surgeon">Ο Χειρουργός</span>
         <h2 class="h-lg" id="h-about" style="margin-top:22px" data-en="A commitment to neurological excellence">Μια δέσμευση στη νευροχειρουργική αριστεία</h2>
         <div style="margin-top:26px">
-          <p class="lede" data-en="Dr. Veranis Sotiris is a neurosurgeon based in Athens with over two decades of experience in diagnosing and treating complex neurological conditions. Trained at the University of Athens and with advanced fellowships across leading European institutions, he combines technical expertise with a deeply patient-centred approach to care.">Ο Δρ. Βεράνης Σωτήρης είναι νευροχειρουργός με έδρα την Αθήνα και εμπειρία άνω των δύο δεκαετιών στη διάγνωση και την αντιμετώπιση σύνθετων νευρολογικών παθήσεων. Με σπουδές στην Ιατρική Σχολή του Πανεπιστημίου Αθηνών και μετεκπαίδευση σε κορυφαία ευρωπαϊκά κέντρα, συνδυάζει την τεχνική κατάρτιση με μια βαθιά ανθρωποκεντρική προσέγγιση.</p>
-          <p class="lede" style="margin-top:20px" data-en="His practice in Kolonaki is dedicated to personalised, evidence-based neurosurgical care — from minimally invasive spine procedures to complex brain tumour surgery — so that every patient receives the highest standard of treatment in a warm, supportive environment.">Το ιατρείο του στο Κολωνάκι είναι αφιερωμένο σε εξατομικευμένη, τεκμηριωμένη νευροχειρουργική φροντίδα — από ελάχιστα επεμβατικές τεχνικές σπονδυλικής στήλης έως σύνθετες επεμβάσεις όγκων εγκεφάλου — ώστε κάθε ασθενής να λαμβάνει το υψηλότερο επίπεδο θεραπείας σε ένα ζεστό, υποστηρικτικό περιβάλλον.</p>
+          <p class="lede" data-c="about.p1" data-en="Dr. Veranis Sotiris is a neurosurgeon based in Athens with over two decades of experience in diagnosing and treating complex neurological conditions. Trained at the University of Athens and with advanced fellowships across leading European institutions, he combines technical expertise with a deeply patient-centred approach to care.">Ο Δρ. Βεράνης Σωτήρης είναι νευροχειρουργός με έδρα την Αθήνα και εμπειρία άνω των δύο δεκαετιών στη διάγνωση και την αντιμετώπιση σύνθετων νευρολογικών παθήσεων. Με σπουδές στην Ιατρική Σχολή του Πανεπιστημίου Αθηνών και μετεκπαίδευση σε κορυφαία ευρωπαϊκά κέντρα, συνδυάζει την τεχνική κατάρτιση με μια βαθιά ανθρωποκεντρική προσέγγιση.</p>
+          <p class="lede" data-c="about.p2" style="margin-top:20px" data-en="His practice in Kolonaki is dedicated to personalised, evidence-based neurosurgical care — from minimally invasive spine procedures to complex brain tumour surgery — so that every patient receives the highest standard of treatment in a warm, supportive environment.">Το ιατρείο του στο Κολωνάκι είναι αφιερωμένο σε εξατομικευμένη, τεκμηριωμένη νευροχειρουργική φροντίδα — από ελάχιστα επεμβατικές τεχνικές σπονδυλικής στήλης έως σύνθετες επεμβάσεις όγκων εγκεφάλου — ώστε κάθε ασθενής να λαμβάνει το υψηλότερο επίπεδο θεραπείας σε ένα ζεστό, υποστηρικτικό περιβάλλον.</p>
         </div>
 
         <div class="stats">
@@ -1079,29 +1107,29 @@ section{position:relative}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
             <div>
               <span class="label" data-en="Address">Διεύθυνση</span>
-              <address class="t"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Alopekis 41, Kolonaki<br>Athens 10676, Greece">Αλωπεκής 41, Κολωνάκι<br>Αθήνα 10676</a></address>
+              <address class="t"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-c="contact.addressFull" data-en="Alopekis 41, Kolonaki<br>Athens 10676, Greece">Αλωπεκής 41, Κολωνάκι<br>Αθήνα 10676</a></address>
             </div>
           </div>
           <div class="info">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
             <div>
               <span class="label" data-en="Office hours">Ώρες Ιατρείου</span>
-              <div class="t" data-en="Monday – Friday: 15:00 – 21:00<br>Saturday: by appointment">Δευτέρα – Παρασκευή: 15:00 – 21:00<br>Σάββατο: κατόπιν ραντεβού</div>
+              <div class="t" data-c="contact.hours" data-en="Monday – Friday: 15:00 – 21:00<br>Saturday: by appointment">Δευτέρα – Παρασκευή: 15:00 – 21:00<br>Σάββατο: κατόπιν ραντεβού</div>
             </div>
           </div>
           <div class="info">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 18h16M6 18V9l6-4 6 4v9"/><path d="M10 18v-4h4v4"/></svg>
             <div>
               <span class="label" data-en="Getting here">Πρόσβαση</span>
-              <div class="t" data-en="Close to Evangelismos metro station (Line 3). Street parking is available on Alopekis and the surrounding streets.">Κοντά στον σταθμό μετρό Ευαγγελισμός (Γραμμή 3). Υπάρχει στάθμευση επί της Αλωπεκής και στους γύρω δρόμους.</div>
+              <div class="t" data-c="contact.access" data-en="Close to Evangelismos metro station (Line 3). Street parking is available on Alopekis and the surrounding streets.">Κοντά στον σταθμό μετρό Ευαγγελισμός (Γραμμή 3). Υπάρχει στάθμευση επί της Αλωπεκής και στους γύρω δρόμους.</div>
             </div>
           </div>
         </div>
 
         <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px">
-          <a class="btn btn-solid" href="tel:+306983517455">
+          <a class="btn btn-solid" href="tel:+306983517455" data-c-tel>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
-            +30 698 351 7455
+            <span data-c="contact.phone">+30 698 351 7455</span>
           </a>
           <a class="btn btn-ghost" href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Get directions">Οδηγίες Πρόσβασης</a>
         </div>
@@ -1125,21 +1153,32 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ══════════════════════════ PATIENT REVIEWS ══════════════════════════ -->
+<!-- ══════════════════════════ PATIENT REVIEWS (Google) ══════════════════════════ -->
 <section class="sect dark" id="reviews" aria-labelledby="h-reviews">
   <span class="sect-num" aria-hidden="true">08</span>
   <div class="wrap">
-    <div class="quote rv">
-      <span class="eyebrow" style="justify-content:center" data-en="Patient Reviews">Κριτικές Ασθενών</span>
-      <h2 class="sr" id="h-reviews" data-en="What our patients say">Τι λένε οι ασθενείς μας</h2>
-      <div class="mark" aria-hidden="true">&ldquo;</div>
-      <div class="rev-stage" id="revStage" aria-live="polite"></div>
-      <div class="rev-ctl" id="revCtl">
-        <button class="rev-nav" type="button" id="revPrev" aria-label="Προηγούμενη κριτική">
+    <div class="sect-head rv" style="max-width:860px">
+      <span class="eyebrow" data-en="Patient Reviews">Κριτικές Ασθενών</span>
+      <h2 class="h-lg" id="h-reviews" data-en="What our patients say">Τι λένε οι ασθενείς μας</h2>
+      <div class="gcard">
+        <span class="glogo" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.65l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.11a6.6 6.6 0 0 1 0-4.22V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.84Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51Z"/></svg></span>
+        <div class="gmeta">
+          <span class="rstars" role="img" aria-label="5 στα 5 αστέρια"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg></span>
+          <div class="gsub"><b id="gCount">14</b> <span data-en="five-star reviews on Google">κριτικές με 5/5 αστέρια στο Google</span></div>
+        </div>
+        <a class="btn btn-ghost-d gbtn" id="gLink" href="#" target="_blank" rel="noopener" data-en="See them on Google">Δείτε τις στο Google</a>
+      </div>
+      <p class="small gnote" data-en="Every review below is published on the practice&#39;s Google profile — open the link above to read them at the source.">Κάθε κριτική παρακάτω είναι δημοσιευμένη στο προφίλ Google του ιατρείου — ανοίξτε τον σύνδεσμο για να τις δείτε στην πηγή τους.</p>
+    </div>
+
+    <div class="rw rv">
+      <div class="rw-viewport"><div class="rw-track" id="revTrack"></div></div>
+      <div class="rw-ctl" id="revCtl">
+        <button class="rev-nav" type="button" id="revPrev" aria-label="Προηγούμενες κριτικές">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
         </button>
-        <div class="rev-dots" id="revDots" role="tablist" aria-label="Κριτικές"></div>
-        <button class="rev-nav" type="button" id="revNext" aria-label="Επόμενη κριτική">
+        <span class="rw-count" id="revCount" aria-live="polite">01 / 01</span>
+        <button class="rev-nav" type="button" id="revNext" aria-label="Επόμενες κριτικές">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
         </button>
       </div>
@@ -1432,7 +1471,7 @@ section{position:relative}
         <h3 data-en="Need a specific document?">Χρειάζεστε κάποιο συγκεκριμένο έγγραφο;</h3>
         <p data-en="Contact the clinic directly and our team will send the relevant guide to your email within 24 hours.">Επικοινωνήστε απευθείας με το ιατρείο και θα σας αποστείλουμε τον σχετικό οδηγό στο email σας μέσα σε 24 ώρες.</p>
       </div>
-      <a class="btn btn-glow" href="mailto:veranissotiris@gmail.com" data-en="Email the clinic">Στείλτε μας Email</a>
+      <a class="btn btn-glow" href="mailto:veranissotiris@gmail.com" data-c-mail data-en="Email the clinic">Στείλτε μας Email</a>
     </div>
   </div>
 </section>
@@ -1514,19 +1553,19 @@ section{position:relative}
         <div class="contact-lines">
           <div class="cline">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg></span>
-            <div><span class="label" data-en="Mobile &amp; Viber">Κινητό &amp; Viber</span><div class="v"><a href="tel:+306983517455">+30 698 351 7455</a></div></div>
+            <div><span class="label" data-en="Mobile &amp; Viber">Κινητό &amp; Viber</span><div class="v"><a href="tel:+306983517455" data-c-tel><span data-c="contact.phone">+30 698 351 7455</span></a></div></div>
           </div>
           <div class="cline">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span>
-            <div><span class="label">Email</span><div class="v"><a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a></div></div>
+            <div><span class="label">Email</span><div class="v"><a href="mailto:veranissotiris@gmail.com" data-c-mail><span data-c="contact.email">veranissotiris@gmail.com</span></a></div></div>
           </div>
           <div class="cline">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-            <div><span class="label" data-en="Address">Διεύθυνση</span><div class="v"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-en="Alopekis 41, Kolonaki, Athens">Αλωπεκής 41, Κολωνάκι, Αθήνα</a></div></div>
+            <div><span class="label" data-en="Address">Διεύθυνση</span><div class="v"><a href="https://maps.google.com/?q=Alopekis+41,+Kolonaki,+Athens+10676" target="_blank" rel="noopener" data-c="contact.addressShort" data-en="Alopekis 41, Kolonaki, Athens">Αλωπεκής 41, Κολωνάκι, Αθήνα</a></div></div>
           </div>
           <div class="cline">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-            <div><span class="label" data-en="Office hours">Ώρες Ιατρείου</span><div class="v" style="font-size:15px" data-en="Mon – Fri 15:00 – 21:00 · Sat by appointment">Δευ – Παρ 15:00 – 21:00 · Σάβ κατόπιν ραντεβού</div></div>
+            <div><span class="label" data-en="Office hours">Ώρες Ιατρείου</span><div class="v" style="font-size:15px" data-c="contact.hoursShort" data-en="Mon – Fri 15:00 – 21:00 · Sat by appointment">Δευ – Παρ 15:00 – 21:00 · Σάβ κατόπιν ραντεβού</div></div>
           </div>
         </div>
       </div>
@@ -1554,26 +1593,6 @@ section{position:relative}
               <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" autocomplete="email">
             </div>
-          </div>
-          <div class="frow">
-            <div class="field">
-              <label for="f-date" data-en="Preferred date">Προτιμώμενη ημερομηνία</label>
-              <input id="f-date" name="date" type="date">
-            </div>
-            <div class="field">
-              <label for="f-reason" data-en="Reason for consultation">Λόγος επίσκεψης</label>
-              <select id="f-reason" name="reason">
-                <option data-en="Spine — back or neck pain">Σπονδυλική στήλη — πόνος μέσης ή αυχένα</option>
-                <option data-en="Brain — tumour or lesion">Εγκέφαλος — όγκος ή βλάβη</option>
-                <option data-en="Peripheral nerve">Περιφερικό νεύρο</option>
-                <option data-en="Second opinion">Δεύτερη γνώμη</option>
-                <option data-en="Other">Άλλο</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-msg" data-en="Message">Μήνυμα</label>
-            <textarea id="f-msg" name="message" rows="4"></textarea>
           </div>
           <button class="btn btn-glow" type="submit" data-en="Send request">Αποστολή Αιτήματος</button>
           <p class="form-note" data-en="Your request opens in your email app. We typically respond within 24 hours.">Το αίτημά σας ανοίγει στην εφαρμογή email σας. Απαντάμε συνήθως μέσα σε 24 ώρες.</p>
@@ -1615,10 +1634,10 @@ section{position:relative}
       <div>
         <h4 data-en="Clinic">Ιατρείο</h4>
         <address>
-          <span data-en="Alopekis 41, Kolonaki">Αλωπεκής 41, Κολωνάκι</span><br>
-          <span data-en="Athens 10676, Greece">Αθήνα 10676</span><br>
-          <a href="tel:+306983517455">+30 698 351 7455</a><br>
-          <a href="mailto:veranissotiris@gmail.com">veranissotiris@gmail.com</a>
+          <span data-c="contact.addressLine1" data-en="Alopekis 41, Kolonaki">Αλωπεκής 41, Κολωνάκι</span><br>
+          <span data-c="contact.addressLine2" data-en="Athens 10676, Greece">Αθήνα 10676</span><br>
+          <a href="tel:+306983517455" data-c-tel><span data-c="contact.phone">+30 698 351 7455</span></a><br>
+          <a href="mailto:veranissotiris@gmail.com" data-c-mail><span data-c="contact.email">veranissotiris@gmail.com</span></a>
         </address>
       </div>
     </div>
@@ -1630,7 +1649,7 @@ section{position:relative}
   </div>
 </footer>
 
-<a class="fab" href="tel:+306983517455" aria-label="Καλέστε το ιατρείο">
+<a class="fab" href="tel:+306983517455" data-c-tel aria-label="Καλέστε το ιατρείο">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
   <span data-en="Call">Κλήση</span>
 </a>
@@ -1665,7 +1684,7 @@ section{position:relative}
       b.classList.toggle('on', b.getAttribute('data-lang') === l);
     });
     renderAtlas();
-    if(typeof renderReviews === 'function'){ renderReviews(); }
+    if(typeof renderAll === 'function' && CONTENT){ renderAll(); }
     try{ localStorage.setItem('veranis-lang', l); }catch(e){}
   }
   collect();
@@ -1689,42 +1708,46 @@ section{position:relative}
   drawer.querySelectorAll('[data-close]').forEach(function(a){ a.addEventListener('click', closeDrawer); });
 
   /* ---------- reveal ---------- */
-  var rv = document.querySelectorAll('.rv');
+  var io = null;
   if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
+    io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
-    rv.forEach(function(el){ io.observe(el); });
-  } else {
-    rv.forEach(function(el){ el.classList.add('in'); });
   }
-
-  /* ---------- FAQ ---------- */
-  document.querySelectorAll('.qa').forEach(function(qa){
-    var btn = qa.querySelector('button'), ans = qa.querySelector('.ans');
-    btn.addEventListener('click', function(){
-      var open = qa.getAttribute('data-open') === '1';
-      qa.setAttribute('data-open', open ? '0' : '1');
-      btn.setAttribute('aria-expanded', String(!open));
-      ans.style.height = open ? '0px' : (ans.scrollHeight + 'px');
+  function observeReveal(root){
+    (root || document).querySelectorAll('.rv').forEach(function(el){
+      if(el.classList.contains('in')) return;
+      if(io) io.observe(el); else el.classList.add('in');
     });
+  }
+  observeReveal();
+
+  /* ---------- FAQ (delegated) ---------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('.qa > button') : null;
+    if(!btn) return;
+    var qa = btn.parentElement, ans = qa.querySelector('.ans');
+    var open = qa.getAttribute('data-open') === '1';
+    qa.setAttribute('data-open', open ? '0' : '1');
+    btn.setAttribute('aria-expanded', String(!open));
+    ans.style.height = open ? '0px' : (ans.scrollHeight + 'px');
   });
   window.addEventListener('resize', function(){
     document.querySelectorAll('.qa[data-open="1"] .ans').forEach(function(a){ a.style.height = a.scrollHeight + 'px'; });
   });
 
-  /* ---------- resource tabs ---------- */
-  document.querySelectorAll('.tab').forEach(function(t){
-    t.addEventListener('click', function(){
-      var k = t.getAttribute('data-tab');
-      document.querySelectorAll('.tab').forEach(function(x){
-        var on = x === t;
-        x.classList.toggle('on', on);
-        x.setAttribute('aria-selected', String(on));
-      });
-      document.querySelectorAll('.res-panel').forEach(function(p){ p.hidden = (p.id !== 'panel-' + k); });
-      document.querySelectorAll('#panel-' + k + ' .rv').forEach(function(el){ el.classList.add('in'); });
+  /* ---------- resource tabs (delegated) ---------- */
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('.tab') : null;
+    if(!t) return;
+    var k = t.getAttribute('data-tab');
+    document.querySelectorAll('.tab').forEach(function(x){
+      var on = x === t;
+      x.classList.toggle('on', on);
+      x.setAttribute('aria-selected', String(on));
     });
+    document.querySelectorAll('.res-panel').forEach(function(pn){ pn.hidden = (pn.id !== 'panel-' + k); });
+    document.querySelectorAll('#panel-' + k + ' .rv').forEach(function(el){ el.classList.add('in'); });
   });
 
   /* ---------- anatomical atlas ---------- */
@@ -1870,85 +1893,257 @@ section{position:relative}
   });
   renderAtlas();
 
-  /* ---------- patient reviews carousel ----------
-     ΚΡΙΤΙΚΕΣ ΑΣΘΕΝΩΝ — add real reviews here, one object per review.
-     Shape:  { el:'ελληνικό κείμενο', en:'english text',
-                name:{el:'Όνομα Επώνυμο, 52', en:'Name Surname, 52'},
-                cond:{el:'πάθηση', en:'condition'}, initials:'ΟΕ' }
-     The arrows and dots appear automatically from the second review onward.  */
-  var REVIEWS = [
-    {
-      el:'Μετά από χρόνια εξουθενωτικού πόνου στη μέση, ο Δρ. Βεράνης πραγματοποίησε μια ελάχιστα επεμβατική δισκεκτομή που μου έδωσε πίσω τη ζωή μου. Μέσα σε λίγες εβδομάδες περπατούσα χωρίς πόνο για πρώτη φορά έπειτα από χρόνια. Η ήρεμη και μεθοδική του προσέγγιση με έκανε να νιώθω ασφαλής σε όλη τη διαδικασία.',
-      en:'After years of debilitating back pain, Dr. Veranis performed a minimally invasive discectomy that gave me my life back. Within weeks I was walking without pain for the first time in years. His calm, thorough approach made me feel safe throughout the entire process.',
-      name:{el:'Ελένη Παπαδοπούλου, 52', en:'Eleni Papadopoulou, 52'},
-      cond:{el:'Κήλη μεσοσπονδυλίου δίσκου οσφύος', en:'Lumbar disc herniation'},
-      initials:'ΕΠ'
-    }
-  ];
+  /* ==========================================================
+     CONTENT LAYER — everything below is rendered from content.json,
+     which the practice edits through admin.html. The static markup in
+     this file stays as the fallback if content.json cannot be loaded.
+     ========================================================== */
+  var CONTENT = null;
 
-  var stage = document.getElementById('revStage'),
-      dotsEl = document.getElementById('revDots'),
+  function T(v){
+    if(v === null || v === undefined) return '';
+    if(typeof v === 'string') return v;
+    return (lang === 'el') ? (v.el || v.en || '') : (v.en || v.el || '');
+  }
+  function esc(t){
+    return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  var DOC_ICONS = {
+    disc:'<circle cx="12" cy="12" r="7.5"/><ellipse cx="12" cy="12" rx="7.5" ry="3"/>',
+    spine:'<path d="M12 3v18"/><path d="M8 6h8M8 10h8M8 14h8M8 18h8"/>',
+    neck:'<path d="M9 3c0 3-2 4-2 7s2 4 2 7"/><path d="M15 3c0 3 2 4 2 7s-2 4-2 7"/><path d="M7 21h10"/>',
+    slip:'<rect x="4" y="5" width="12" height="5" rx="1.5"/><rect x="8" y="14" width="12" height="5" rx="1.5"/>',
+    nerve:'<path d="M3 6c5 0 4 12 9 12s7-6 9-6"/><circle cx="3" cy="6" r="1.5"/><circle cx="21" cy="12" r="1.5"/>',
+    clip:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+    check:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12.5l2.6 2.6L16 9.5"/>',
+    calendar:'<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+    brain:'<path d="M12 4a4 4 0 0 0-4 4 3.4 3.4 0 0 0-1.3 6.2A3.4 3.4 0 0 0 9 20a3 3 0 0 0 3-1.6 3 3 0 0 0 3 1.6 3.4 3.4 0 0 0 2.3-5.8A3.4 3.4 0 0 0 16 8a4 4 0 0 0-4-4Z"/><path d="M12 8v10"/>',
+    nav:'<circle cx="12" cy="12" r="8"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11Z"/>',
+    pituitary:'<path d="M5 8a7 7 0 0 1 14 0c0 3-2 4.5-2 7a5 5 0 0 1-10 0c0-2.5-2-4-2-7Z"/><circle cx="12" cy="13" r="2"/>',
+    hand:'<path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V12m0-1V4.5a1.5 1.5 0 0 1 3 0V12m0-1V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a5 5 0 0 1-5-5v-3l-1.5-2a1.6 1.6 0 0 1 2.4-2L8 12"/>',
+    face:'<circle cx="12" cy="12" r="8.5"/><path d="M9 10h.01M15 10h.01M8.5 15c2 1.6 5 1.6 7 0"/>',
+    pill:'<rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M8.5 8.5 15.5 15.5"/>',
+    heart:'<path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.6-7 9-7 9Z"/>'
+  };
+  var GMARK = '<svg class="gmark" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/>' +
+    '<path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.65l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"/>' +
+    '<path fill="#FBBC05" d="M5.84 14.11a6.6 6.6 0 0 1 0-4.22V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.84Z"/>' +
+    '<path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51Z"/></svg>';
+  var STARS = '<span class="rstars" role="img" aria-label="5/5">' +
+    new Array(6).join('<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.5 5.16 5.7.82-4.12 4 .97 5.66L10 14.56 4.95 17.2l.97-5.66-4.12-4 5.7-.82z"/></svg>') + '</span>';
+
+  /* ---------- google reviews ---------- */
+  var track = document.getElementById('revTrack'),
       ctl = document.getElementById('revCtl'),
-      revIdx = 0, revTimer = null;
+      countEl = document.getElementById('revCount'),
+      viewport = track ? track.parentElement : null,
+      page = 0, pages = 1, perView = 3, revTimer = null;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function renderReviews(){
-    if(!stage) return;
-    var L = lang;
-    stage.innerHTML = REVIEWS.map(function(r,i){
-      return '<div class="rev' + (i === revIdx ? ' on' : '') + '">' +
-               '<blockquote>' + r[L] + '</blockquote>' +
-               '<div class="who">' +
-                 '<span class="av" aria-hidden="true">' + (L === 'el' ? r.initials : (r.initialsEn || r.initials)) + '</span>' +
-                 '<div><div class="n">' + r.name[L] + '</div>' +
-                 '<div class="c">' + r.cond[L] + '</div></div>' +
-               '</div>' +
-             '</div>';
+    if(!track) return;
+    var list = (CONTENT && CONTENT.reviews) || [];
+    track.innerHTML = list.map(function(r){
+      var body = T(r.text);
+      return '<article class="rcard">' +
+        '<div class="rcard-top">' +
+          '<span class="rav" aria-hidden="true">' + esc(r.initials || '') + '</span>' +
+          '<div><div class="rname">' + esc(r.name || '') + '</div>' +
+          '<div class="rwhen">' + esc(T(r.when)) + '</div></div>' + GMARK +
+        '</div>' + STARS +
+        '<p class="rtext clamp">' + esc(body) + '</p>' +
+        '<button class="rmore" type="button" hidden>' + (lang === 'el' ? 'Περισσότερα' : 'Read more') + '</button>' +
+        '<div class="rsrc">' + GMARK + (lang === 'el' ? 'Κριτική στο Google · 5/5' : 'Review on Google · 5/5') + '</div>' +
+      '</article>';
     }).join('');
-    dotsEl.innerHTML = REVIEWS.map(function(r,i){
-      return '<button class="rev-dot' + (i === revIdx ? ' on' : '') + '" type="button" role="tab" data-i="' + i +
-             '" aria-selected="' + (i === revIdx) + '" aria-label="' +
-             (lang === 'el' ? 'Κριτική ' : 'Review ') + (i+1) + '"></button>';
-    }).join('');
-    ctl.hidden = REVIEWS.length < 2;
+    // only offer "read more" where the text is actually clipped
+    requestAnimationFrame(function(){
+      track.querySelectorAll('.rcard').forEach(function(c){
+        var t = c.querySelector('.rtext'), b = c.querySelector('.rmore');
+        if(t.scrollHeight - t.clientHeight > 4) b.hidden = false;
+      });
+    });
+    var g = document.getElementById('gCount'); if(g) g.textContent = list.length;
+    var link = document.getElementById('gLink');
+    if(link && CONTENT && CONTENT.reviewsMeta && CONTENT.reviewsMeta.profileUrl) link.href = CONTENT.reviewsMeta.profileUrl;
+    page = 0; layoutReviews();
   }
-  function showReview(i){
-    revIdx = (i + REVIEWS.length) % REVIEWS.length;
-    var slides = stage.querySelectorAll('.rev'), dots = dotsEl.querySelectorAll('.rev-dot');
-    slides.forEach(function(el,n){ el.classList.toggle('on', n === revIdx); });
-    dots.forEach(function(el,n){ el.classList.toggle('on', n === revIdx); el.setAttribute('aria-selected', String(n === revIdx)); });
+  function layoutReviews(){
+    if(!track) return;
+    var n = track.children.length;
+    perView = window.innerWidth <= 700 ? 1 : (window.innerWidth <= 1080 ? 2 : 3);
+    pages = Math.max(1, Math.ceil(n / perView));
+    if(page > pages - 1) page = pages - 1;
+    if(page < 0) page = 0;
+    var step = viewport.clientWidth + 20;
+    track.style.transform = 'translate3d(' + (-page * step) + 'px,0,0)';
+    if(countEl) countEl.textContent = ('0' + (page+1)).slice(-2) + ' / ' + ('0' + pages).slice(-2);
+    if(ctl) ctl.hidden = pages < 2;
   }
-  function startReviews(){
-    if(reduceMotion || REVIEWS.length < 2) return;
-    stopReviews();
-    revTimer = setInterval(function(){ showReview(revIdx + 1); }, 7000);
-  }
+  function goPage(i){ page = (i + pages) % pages; layoutReviews(); }
+  function startReviews(){ if(reduceMotion || pages < 2) return; stopReviews(); revTimer = setInterval(function(){ goPage(page+1); }, 7000); }
   function stopReviews(){ if(revTimer){ clearInterval(revTimer); revTimer = null; } }
 
-  renderReviews();
-  document.getElementById('revPrev').addEventListener('click', function(){ showReview(revIdx - 1); startReviews(); });
-  document.getElementById('revNext').addEventListener('click', function(){ showReview(revIdx + 1); startReviews(); });
-  dotsEl.addEventListener('click', function(e){
-    var d = e.target.closest('.rev-dot'); if(d){ showReview(+d.getAttribute('data-i')); startReviews(); }
-  });
-  var revSection = document.getElementById('reviews');
-  revSection.addEventListener('mouseenter', stopReviews);
-  revSection.addEventListener('mouseleave', startReviews);
-  revSection.addEventListener('focusin', stopReviews);
-  revSection.addEventListener('focusout', startReviews);
-  var tx = null;
-  revSection.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].clientX; stopReviews(); }, {passive:true});
-  revSection.addEventListener('touchend', function(e){
-    if(tx === null) return;
-    var dx = e.changedTouches[0].clientX - tx;
-    if(Math.abs(dx) > 45) showReview(revIdx + (dx < 0 ? 1 : -1));
-    tx = null; startReviews();
-  }, {passive:true});
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){ e.isIntersecting ? startReviews() : stopReviews(); });
-    }, {threshold:.25}).observe(revSection);
-  } else { startReviews(); }
+  if(track){
+    document.getElementById('revPrev').addEventListener('click', function(){ goPage(page-1); startReviews(); });
+    document.getElementById('revNext').addEventListener('click', function(){ goPage(page+1); startReviews(); });
+    track.addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('.rmore') : null;
+      if(!b) return;
+      var t = b.parentElement.querySelector('.rtext');
+      var open = !t.classList.contains('clamp');
+      t.classList.toggle('clamp', open);
+      b.textContent = open ? (lang === 'el' ? 'Περισσότερα' : 'Read more') : (lang === 'el' ? 'Λιγότερα' : 'Show less');
+    });
+    var sec = document.getElementById('reviews');
+    sec.addEventListener('mouseenter', stopReviews);
+    sec.addEventListener('mouseleave', startReviews);
+    sec.addEventListener('focusin', stopReviews);
+    sec.addEventListener('focusout', startReviews);
+    var tx = null;
+    sec.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].clientX; stopReviews(); }, {passive:true});
+    sec.addEventListener('touchend', function(e){
+      if(tx === null) return;
+      var dx = e.changedTouches[0].clientX - tx;
+      if(Math.abs(dx) > 45) goPage(page + (dx < 0 ? 1 : -1));
+      tx = null; startReviews();
+    }, {passive:true});
+    window.addEventListener('resize', layoutReviews);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ e.isIntersecting ? startReviews() : stopReviews(); });
+      }, {threshold:.2}).observe(sec);
+    }
+  }
+
+  /* ---------- patient resources ---------- */
+  function renderResources(){
+    var cats = CONTENT && CONTENT.resources && CONTENT.resources.categories;
+    if(!cats || !cats.length) return;
+    var tabsEl = document.querySelector('#resources .tabs');
+    var host = tabsEl ? tabsEl.parentElement : null;
+    if(!host) return;
+
+    var totals = {broch:0, pre:0, rec:0};
+    cats.forEach(function(c){
+      (c.groups || []).forEach(function(g, gi){
+        var n = (g.docs || []).length;
+        if(gi === 0) totals.broch += n; else if(gi === 1) totals.pre += n; else totals.rec += n;
+      });
+    });
+
+    tabsEl.innerHTML = cats.map(function(c, i){
+      var n = (c.groups || []).reduce(function(a, g){ return a + (g.docs || []).length; }, 0);
+      return '<button class="tab' + (i === 0 ? ' on' : '') + '" role="tab" id="tab-' + esc(c.key) +
+             '" aria-controls="panel-' + esc(c.key) + '" aria-selected="' + (i === 0) +
+             '" data-tab="' + esc(c.key) + '" type="button"><span>' + esc(T(c.label)) +
+             '</span><span class="c">' + n + '</span></button>';
+    }).join('');
+
+    host.querySelectorAll('.res-panel').forEach(function(el){ el.remove(); });
+    var frag = '';
+    cats.forEach(function(c, i){
+      frag += '<div class="res-panel" id="panel-' + esc(c.key) + '" role="tabpanel" aria-labelledby="tab-' +
+              esc(c.key) + '"' + (i === 0 ? '' : ' hidden') + '>';
+      (c.groups || []).forEach(function(g){
+        var docs = g.docs || [];
+        if(!docs.length) return;
+        var cls = 'doc-grid' + (docs.length === 1 ? ' one' : (docs.length === 2 ? ' two' : ''));
+        frag += '<div class="res-group rv"><span class="label">' + esc(T(g.label)) + '</span><div class="' + cls + '">';
+        docs.forEach(function(d){
+          var title = T(d.title);
+          var subj = encodeURIComponent((lang === 'el' ? 'Αίτημα εντύπου: ' : 'Document request: ') + title);
+          frag += '<article class="doc">' +
+            '<div class="doc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">' +
+              (DOC_ICONS[d.icon] || DOC_ICONS.clip) + '</svg></div>' +
+            '<h4>' + esc(title) + '</h4>' +
+            '<p>' + esc(T(d.desc)) + '</p>' +
+            '<div class="doc-foot"><span class="pg">' + esc(d.pages || '') + ' ' +
+              (lang === 'el' ? 'σελίδες' : 'pages') + '</span>' +
+            '<a href="mailto:' + esc(mailTo()) + '?subject=' + subj + '">' +
+              (lang === 'el' ? 'Ζητήστε το' : 'Request guide') +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>' +
+            '</div></article>';
+        });
+        frag += '</div></div>';
+      });
+      frag += '</div>';
+    });
+    tabsEl.insertAdjacentHTML('afterend', frag);
+
+    var chips = document.querySelectorAll('#resources .res-stats .chip b');
+    if(chips.length === 3){ chips[0].textContent = totals.broch; chips[1].textContent = totals.pre; chips[2].textContent = totals.rec; }
+    observeReveal(document.getElementById('resources'));
+    document.querySelectorAll('#resources .res-panel:not([hidden]) .rv').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- FAQ ---------- */
+  function renderFaq(){
+    var groups = CONTENT && CONTENT.faq;
+    if(!groups || !groups.length) return;
+    var grid = document.querySelector('#faq .faq-grid');
+    if(!grid) return;
+    grid.innerHTML = groups.map(function(g){
+      return '<div class="faq-col"><span class="label">' + esc(T(g.label)) + '</span>' +
+        (g.items || []).map(function(it){
+          return '<div class="qa" data-open="0"><button type="button" aria-expanded="false"><span>' +
+            esc(T(it.q)) + '</span><span class="pm" aria-hidden="true"></span></button>' +
+            '<div class="ans"><p>' + esc(T(it.a)) + '</p></div></div>';
+        }).join('') + '</div>';
+    }).join('');
+    observeReveal(document.getElementById('faq'));
+    grid.classList.add('in');
+    syncFaqSchema(groups);
+  }
+  function syncFaqSchema(groups){
+    var node = document.getElementById('faqSchema');
+    if(!node) return;
+    var items = [];
+    groups.forEach(function(g){ (g.items || []).forEach(function(it){
+      items.push({'@type':'Question', name: it.q.el || it.q.en,
+                  acceptedAnswer:{'@type':'Answer', text: it.a.el || it.a.en}});
+    }); });
+    node.textContent = JSON.stringify({'@context':'https://schema.org','@type':'FAQPage','inLanguage':'el','mainEntity':items});
+  }
+
+  /* ---------- simple bound strings ---------- */
+  function pathGet(o, path){
+    return path.split('.').reduce(function(a, k){ return (a && a[k] !== undefined) ? a[k] : undefined; }, o);
+  }
+  function mailTo(){
+    return (CONTENT && CONTENT.contact && CONTENT.contact.email) || 'veranissotiris@gmail.com';
+  }
+  function applyContent(){
+    if(!CONTENT) return;
+    document.querySelectorAll('[data-c]').forEach(function(el){
+      var v = pathGet(CONTENT, el.getAttribute('data-c'));
+      if(v === undefined) return;
+      el.innerHTML = T(v);
+    });
+    var c = CONTENT.contact || {};
+    if(c.phoneHref){
+      document.querySelectorAll('a[data-c-tel]').forEach(function(a){ a.href = 'tel:' + c.phoneHref; });
+    }
+    if(c.email){
+      document.querySelectorAll('a[data-c-mail]').forEach(function(a){
+        var base = 'mailto:' + c.email, q = a.getAttribute('data-c-mail');
+        a.href = q ? base + q : base;
+      });
+    }
+  }
+
+  function renderAll(){ applyContent(); renderReviews(); renderResources(); renderFaq(); }
+
+  /* ---------- load content.json ---------- */
+  (function(){
+    var url = 'content.json?t=' + Math.floor(Date.now() / 60000);
+    fetch(url, {cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ CONTENT = j; renderAll(); })
+      .catch(function(){ /* keep the static markup already in the page */ });
+  })();
 
   /* ---------- lightbox ---------- */
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
@@ -1985,16 +2180,11 @@ section{position:relative}
     var body = [
       (L ? 'Ονοματεπώνυμο: ' : 'Full name: ') + g('first') + ' ' + g('last'),
       (L ? 'Τηλέφωνο / Viber: ' : 'Phone / Viber: ') + g('phone'),
-      'Email: ' + (g('email') || '—'),
-      (L ? 'Προτιμώμενη ημερομηνία: ' : 'Preferred date: ') + (g('date') || '—'),
-      (L ? 'Λόγος επίσκεψης: ' : 'Reason: ') + g('reason'),
-      '',
-      (L ? 'Μήνυμα:' : 'Message:'),
-      g('message') || '—'
+      'Email: ' + (g('email') || '—')
     ].join('\n');
     var subject = L ? 'Αίτημα ραντεβού — ' + g('first') + ' ' + g('last')
                     : 'Appointment request — ' + g('first') + ' ' + g('last');
-    window.location.href = 'mailto:veranissotiris@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:' + mailTo() + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 
   /* ---------- misc ---------- */
