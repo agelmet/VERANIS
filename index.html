@@ -594,6 +594,41 @@ section{position:relative}
 .form .btn{width:100%;margin-top:8px}
 .form-note{font-size:12.4px;color:var(--muted-2);margin-top:16px;text-align:center}
 .dark .form-note{color:rgba(255,255,255,.42)}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none}
+
+/* inline validation — no browser popups */
+.field.err input,.field.err textarea{border-color:#E2725B!important;background:rgba(226,114,91,.05)}
+.dark .field.err input,.dark .field.err textarea{background:rgba(226,114,91,.09)}
+.field .fe{display:none;font-size:11.8px;line-height:1.45;color:#E2725B;margin-top:6px}
+.field.err .fe{display:block}
+
+/* submit button states */
+#bookBtn{position:relative}
+#bookBtn .bs{display:none;width:15px;height:15px;border-radius:50%;border:2px solid rgba(6,35,31,.28);border-top-color:#06231F;animation:bsp .7s linear infinite}
+#bookBtn.busy{pointer-events:none;opacity:.85}
+#bookBtn.busy .bs{display:block}
+@keyframes bsp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){#bookBtn .bs{animation:none}}
+
+/* form-level alert */
+.form-alert{margin-top:16px;padding:13px 16px;border-radius:3px;font-size:13.6px;line-height:1.6;
+  background:rgba(226,114,91,.1);border:1px solid rgba(226,114,91,.32);color:#F0B4A5;display:none}
+.form-alert.on{display:block}
+.form-alert a{color:var(--accent-lite);text-decoration:underline}
+
+/* success panel */
+.form.sent > h3,.form.sent > .small,.form.sent > form{display:none}
+.form-done{text-align:center;padding:clamp(6px,1vw,14px) 0 4px;animation:fdIn .7s var(--ease) both}
+@keyframes fdIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.form-done{animation:none}}
+.fd-ic{width:58px;height:58px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(79,197,184,.14);border:1px solid rgba(79,197,184,.45);color:var(--accent-lite)}
+.fd-ic svg{width:26px;height:26px}
+.form-done h3{font-size:clamp(23px,2.6vw,30px);color:#fff}
+.form-done p{margin-top:14px;font-size:14.8px;line-height:1.75;color:rgba(255,255,255,.68);max-width:44ch;margin-inline:auto}
+.fd-act{margin-top:26px;display:flex;flex-wrap:wrap;gap:11px;justify-content:center}
+.fd-act .btn{width:auto;margin-top:0;padding:13px 22px;font-size:11.5px}
+@media (max-width:520px){.fd-act{flex-direction:column}.fd-act .btn{width:100%}}
 
 /* ============================================================
    FOOTER
@@ -1751,30 +1786,50 @@ section{position:relative}
       <div class="form rv">
         <h3 data-en="Request an appointment">Αίτημα ραντεβού</h3>
         <p class="small" data-en="Fill in the form below and we will confirm your appointment within 24 hours.">Συμπληρώστε τη φόρμα και θα επιβεβαιώσουμε το ραντεβού σας μέσα σε 24 ώρες.</p>
-        <form id="bookForm" novalidate>
+        <form id="bookForm" action="https://formspree.io/f/xyeydvvv" method="POST" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+          <input type="hidden" name="_subject" id="f-subject" value="Αίτημα ραντεβού από την ιστοσελίδα">
+          <input type="hidden" name="Γλώσσα φόρμας" id="f-lang" value="Ελληνικά">
           <div class="frow">
             <div class="field">
               <label for="f-first" data-en="First name">Όνομα</label>
-              <input id="f-first" name="first" type="text" autocomplete="given-name" required>
+              <input id="f-first" name="Όνομα" type="text" autocomplete="given-name" required>
+              <span class="fe" data-en="Please fill in your first name.">Συμπληρώστε το όνομά σας.</span>
             </div>
             <div class="field">
               <label for="f-last" data-en="Last name">Επώνυμο</label>
-              <input id="f-last" name="last" type="text" autocomplete="family-name" required>
+              <input id="f-last" name="Επώνυμο" type="text" autocomplete="family-name" required>
+              <span class="fe" data-en="Please fill in your last name.">Συμπληρώστε το επώνυμό σας.</span>
             </div>
           </div>
           <div class="frow">
             <div class="field">
               <label for="f-phone" data-en="Phone / Viber">Τηλέφωνο / Viber</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+              <input id="f-phone" name="Τηλέφωνο" type="tel" autocomplete="tel" required>
+              <span class="fe" data-en="Please fill in a phone number we can reach you on.">Συμπληρώστε ένα τηλέφωνο επικοινωνίας.</span>
             </div>
             <div class="field">
               <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" autocomplete="email">
+              <span class="fe" data-en="Please check the email address.">Ελέγξτε τη διεύθυνση email.</span>
             </div>
           </div>
-          <button class="btn btn-glow" type="submit" data-en="Send request">Αποστολή Αιτήματος</button>
-          <p class="form-note" data-en="Your request opens in your email app. We typically respond within 24 hours.">Το αίτημά σας ανοίγει στην εφαρμογή email σας. Απαντάμε συνήθως μέσα σε 24 ώρες.</p>
+          <button class="btn btn-glow" id="bookBtn" type="submit"><span class="bl" data-en="Send request">Αποστολή Αιτήματος</span><span class="bs" aria-hidden="true"></span></button>
+          <div class="form-alert" id="bookErr" role="alert"></div>
+          <p class="form-note" data-en="Your details are sent straight to the practice. We typically respond within 24 hours.">Τα στοιχεία σας αποστέλλονται απευθείας στο ιατρείο. Απαντάμε συνήθως μέσα σε 24 ώρες.</p>
         </form>
+        <div class="form-done" id="bookDone" role="status" hidden>
+          <span class="fd-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <h3 data-en="Your request has been sent">Το αίτημά σας στάλθηκε</h3>
+          <p data-en="Thank you. The practice has received your details and will contact you to confirm your appointment, usually within 24 hours.">Σας ευχαριστούμε. Το ιατρείο έλαβε τα στοιχεία σας και θα επικοινωνήσει μαζί σας για να επιβεβαιώσει το ραντεβού, συνήθως μέσα σε 24 ώρες.</p>
+          <div class="fd-act">
+            <a class="btn btn-ghost-d" href="tel:+306983517455" data-c-tel>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
+              <span data-en="Call the practice">Καλέστε το ιατρείο</span>
+            </a>
+            <button class="btn btn-ghost-d" type="button" id="bookAgain" data-en="Send another request">Νέο αίτημα</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2392,6 +2447,7 @@ section{position:relative}
       el.innerHTML = T(v);
     });
     var c = CONTENT.contact || {};
+    if(c.formEndpoint && form){ FORM_ENDPOINT = c.formEndpoint; form.setAttribute('action', c.formEndpoint); }
     if(c.phoneHref){
       document.querySelectorAll('a[data-c-tel]').forEach(function(a){ a.href = 'tel:' + c.phoneHref; });
     }
@@ -2444,25 +2500,102 @@ section{position:relative}
     if(e.key === 'Escape'){ if(lb.classList.contains('on')) closeLb(); if(rModal && rModal.classList.contains('on')) closeReview(); if(drawer.classList.contains('open')) closeDrawer(); }
   });
 
-  /* ---------- booking form -> mailto ---------- */
-  var form = document.getElementById('bookForm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = new FormData(form), g = function(k){ return (f.get(k) || '').toString().trim(); };
-    if(!g('first') || !g('last') || !g('phone')){
-      alert(lang === 'el' ? 'Συμπληρώστε όνομα, επώνυμο και τηλέφωνο.' : 'Please fill in your first name, last name and phone number.');
-      return;
-    }
-    var L = lang === 'el';
-    var body = [
-      (L ? 'Ονοματεπώνυμο: ' : 'Full name: ') + g('first') + ' ' + g('last'),
-      (L ? 'Τηλέφωνο / Viber: ' : 'Phone / Viber: ') + g('phone'),
-      'Email: ' + (g('email') || '—')
-    ].join('\n');
-    var subject = L ? 'Αίτημα ραντεβού — ' + g('first') + ' ' + g('last')
-                    : 'Appointment request — ' + g('first') + ' ' + g('last');
-    window.location.href = 'mailto:' + mailTo() + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
+  /* ---------- booking form -> Formspree (no page leave, no popups) ---------- */
+  var form = document.getElementById('bookForm'),
+      bookBtn = document.getElementById('bookBtn'),
+      bookErr = document.getElementById('bookErr'),
+      bookDone = document.getElementById('bookDone'),
+      FORM_ENDPOINT = form ? form.getAttribute('action') : '';
+
+  function fieldOf(id){ var el = document.getElementById(id); return el ? el.closest('.field') : null; }
+  function setErr(id, on){ var f = fieldOf(id); if(f) f.classList.toggle('err', !!on); }
+  function clearErrors(){
+    ['f-first','f-last','f-phone','f-email'].forEach(function(id){ setErr(id, false); });
+    if(bookErr){ bookErr.classList.remove('on'); bookErr.innerHTML = ''; }
+  }
+  function showFormAlert(html){
+    if(!bookErr) return;
+    bookErr.innerHTML = html;
+    bookErr.classList.add('on');
+  }
+  function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+  if(form){
+    /* clear a field's error as soon as the visitor fixes it */
+    form.addEventListener('input', function(e){
+      var f = e.target.closest ? e.target.closest('.field') : null;
+      if(f) f.classList.remove('err');
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      clearErrors();
+
+      var L = lang === 'el';
+      var first = val('f-first'), last = val('f-last'), phone = val('f-phone'), email = val('f-email');
+      var bad = null;
+      if(!first){ setErr('f-first', true); bad = bad || 'f-first'; }
+      if(!last){ setErr('f-last', true); bad = bad || 'f-last'; }
+      if(!phone || phone.replace(/[^0-9]/g, '').length < 8){ setErr('f-phone', true); bad = bad || 'f-phone'; }
+      if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ setErr('f-email', true); bad = bad || 'f-email'; }
+      if(bad){
+        var el = document.getElementById(bad);
+        if(el){ el.focus({preventScroll:true}); el.scrollIntoView({block:'center', behavior:'smooth'}); }
+        return;
+      }
+
+      /* subject line + language marker for the practice's inbox */
+      var subj = document.getElementById('f-subject'), lg = document.getElementById('f-lang');
+      if(subj) subj.value = (L ? 'Αίτημα ραντεβού — ' : 'Appointment request — ') + first + ' ' + last;
+      if(lg) lg.value = L ? 'Ελληνικά' : 'Αγγλικά (English)';
+
+      if(bookBtn) bookBtn.classList.add('busy');
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {'Accept': 'application/json'}
+      })
+      .then(function(r){
+        if(r.ok) return {ok:true};
+        return r.json().catch(function(){ return {}; }).then(function(j){
+          var d = (j && j.errors && j.errors.length) ? j.errors.map(function(x){ return x.message; }).join(' ') : '';
+          throw new Error(d || ('HTTP ' + r.status));
+        });
+      })
+      .then(function(){
+        form.hidden = true;
+        var card = form.closest('.form'); if(card) card.classList.add('sent');
+        if(bookDone){
+          bookDone.hidden = false;
+          bookDone.scrollIntoView({block:'center', behavior:'smooth'});
+          var h = bookDone.querySelector('h3'); if(h) h.setAttribute('tabindex', '-1'), h.focus({preventScroll:true});
+        }
+        form.reset();
+      })
+      .catch(function(){
+        var c = (CONTENT && CONTENT.contact) || {};
+        var mail = mailTo(), tel = c.phoneHref || '+306983517455', telTxt = c.phone || '+30 698 351 7455';
+        var links = '<a href="tel:' + esc(tel) + '">' + esc(telTxt) + '</a> · <a href="mailto:' + esc(mail) + '">' + esc(mail) + '</a>';
+        showFormAlert(L
+          ? 'Η αποστολή δεν ολοκληρώθηκε. Δοκιμάστε ξανά σε λίγο ή επικοινωνήστε απευθείας: ' + links
+          : 'Your request could not be sent. Please try again shortly, or contact the practice directly: ' + links);
+      })
+      .then(function(){ if(bookBtn) bookBtn.classList.remove('busy'); });
+    });
+  }
+
+  var bookAgain = document.getElementById('bookAgain');
+  if(bookAgain){
+    bookAgain.addEventListener('click', function(){
+      if(bookDone) bookDone.hidden = true;
+      if(form){
+        form.hidden = false; clearErrors();
+        var card = form.closest('.form'); if(card) card.classList.remove('sent');
+      }
+      var f = document.getElementById('f-first'); if(f) f.focus();
+    });
+  }
 
   /* ==========================================================
      ELEVATION LAYER — cursor, progress, hero field, spotlight, counters
