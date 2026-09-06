@@ -1,0 +1,9 @@
+{
+  "name": "veranis-neurosurgery",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Δρ. Βεράνης Σωτήρης — site + admin publishing functions (Netlify)",
+  "dependencies": {
+    "@netlify/blobs": "^11.0.3"
+  }
+}

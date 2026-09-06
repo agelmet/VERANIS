@@ -2407,10 +2407,18 @@ section{position:relative}
 
   /* ---------- load content.json ---------- */
   (function(){
-    var url = 'content.json?t=' + Math.floor(Date.now() / 60000);
-    fetch(url, {cache:'no-cache'})
-      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(j){ CONTENT = j; renderAll(); })
+    /* 1) live content published from admin.html (Netlify function, instant) — 2) content.json in the repo */
+    var fallback = 'content.json?t=' + Math.floor(Date.now() / 60000);
+    function load(url){
+      return fetch(url, {cache:'no-store'}).then(function(r){
+        if(!r.ok) throw new Error(r.status);
+        var ct = r.headers.get('content-type') || '';
+        if(ct.indexOf('json') === -1) throw new Error('not json');
+        return r.json();
+      });
+    }
+    load('/api/content').catch(function(){ return load(fallback); })
+      .then(function(j){ if(j && j.reviews){ CONTENT = j; renderAll(); } })
       .catch(function(){ /* keep the static markup already in the page */ });
   })();
 
@@ -2617,9 +2625,15 @@ section{position:relative}
     if(!d) return;
     if(d.type === 'veranis-preview-go'){
       var tgt = document.getElementById(d.id || 'top');
+      if(d.tab){ var tb = document.querySelector('.tab[data-tab="' + d.tab + '"]'); if(tb && !tb.classList.contains('on')) tb.click(); }
+      if(typeof d.review === 'number' && rcar){
+        var lst = reviewList(); if(lst.length){ var n = Math.min(perPage(), lst.length); rIdx = Math.floor(d.review / n); paintPage(); restartTimer(); }
+      }
+      if(d.region && ATLAS[d.region]) pick(d.region);
       if(tgt) tgt.scrollIntoView({behavior:'smooth', block:'start'});
       return;
     }
+    if(d.type === 'veranis-preview-lang'){ apply(d.lang === 'en' ? 'en' : 'el'); return; }
     if(d.type !== 'veranis-preview' || !d.content) return;
     try{ CONTENT = d.content; renderAll(); }catch(err){}
   });
