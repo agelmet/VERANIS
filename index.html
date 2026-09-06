@@ -2731,19 +2731,29 @@ section{position:relative}
       var raw = m[1], sep = raw.indexOf('.') > -1 ? '.' : (raw.indexOf(',') > -1 ? ',' : '');
       var target = parseInt(raw.replace(/[.,]/g, ''), 10), suffix = m[2] || '', done = false;
       function fmt(n){ var t = String(n); return sep ? t.replace(/\B(?=(\d{3})+(?!\d))/g, sep) : t; }
+      function finish(){ el.textContent = raw + suffix; }
       function run(){
         if(done) return; done = true;
-        if(rm){ return; }
+        /* a hidden tab throttles requestAnimationFrame, which would freeze the number
+           mid-count — show the real figure straight away in that case */
+        if(rm || document.hidden){ finish(); return; }
         var t0 = null, dur = 1700;
         function step(ts){
+          if(document.hidden){ finish(); return; }
           if(!t0) t0 = ts;
           var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 4);
           el.textContent = fmt(Math.round(target * e)) + suffix;
-          if(p < 1) requestAnimationFrame(step); else el.textContent = raw + suffix;
+          if(p < 1) requestAnimationFrame(step); else finish();
         }
         el.textContent = fmt(0) + suffix;
         requestAnimationFrame(step);
+        /* belt and braces: never leave a half-counted number on screen */
+        setTimeout(finish, dur + 400);
+        document.addEventListener('visibilitychange', function once(){
+          if(document.hidden){ finish(); document.removeEventListener('visibilitychange', once); }
+        });
       }
+      el.__count = run;
       if(el.closest('.hero-side')){ setTimeout(run, 900); return; }
       if('IntersectionObserver' in window){
         var o = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ run(); o.disconnect(); } }); }, {threshold:.4});
