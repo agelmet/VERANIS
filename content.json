@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-04",
+ "updated": "2026-09-06",
  "contact": {
   "phone": "+30 698 351 7455",
   "phoneHref": "+306983517455",
@@ -329,6 +329,18 @@
         },
         "pages": 6,
         "icon": "nerve"
+       },
+       {
+        "title": {
+         "el": "Νέο έντυπο",
+         "en": ""
+        },
+        "desc": {
+         "el": "",
+         "en": ""
+        },
+        "pages": 4,
+        "icon": "clip"
        }
       ]
      },
@@ -631,6 +643,22 @@
       ]
      }
     ]
+   },
+   {
+    "key": "catmtof1fjy",
+    "label": {
+     "el": "Νέα κατηγορία",
+     "en": ""
+    },
+    "groups": [
+     {
+      "label": {
+       "el": "Εκπαιδευτικά Φυλλάδια",
+       "en": "Patient Education Brochures"
+      },
+      "docs": []
+     }
+    ]
    }
   ]
  },
@@ -669,6 +697,16 @@
      "a": {
       "el": "Η πρώτη επίσκεψη διαρκεί συνήθως 30 έως 45 λεπτά. Ο Δρ. Βεράνης θα μελετήσει το ιατρικό σας ιστορικό, θα συζητήσει αναλυτικά τα συμπτώματά σας, θα πραγματοποιήσει πλήρη νευρολογική εξέταση και θα εξετάσει τις απεικονιστικές εξετάσεις που θα φέρετε. Θα φύγετε με σαφή εξήγηση των ευρημάτων και ένα σχεδιασμένο πλάνο θεραπείας.",
       "en": "Your first visit typically lasts 30 to 45 minutes. Dr. Veranis will review your medical history, discuss your symptoms in detail, perform a full neurological examination and study any imaging you bring. You will leave with a clear explanation of the findings and an outlined treatment plan."
+     }
+    },
+    {
+     "q": {
+      "el": "Test erwtisis",
+      "en": ""
+     },
+     "a": {
+      "el": "απαντηση εδω\n",
+      "en": ""
      }
     }
    ]
