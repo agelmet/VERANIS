@@ -1921,7 +1921,7 @@ section{position:relative}
 
     <div class="ftr-bot">
       <span>&copy; <span id="yr">2026</span> <span data-en="Dr. Veranis Sotiris. All rights reserved.">Δρ. Βεράνης Σωτήρης. Με την επιφύλαξη παντός δικαιώματος.</span></span>
-      <span><span data-en="Designed by">Σχεδιασμός από</span> <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a> <span aria-hidden="true">·</span> <a href="privacy.html" data-en="Privacy policy">Πολιτική απορρήτου</a></span>
+      <span><span data-en="Designed by">Σχεδιασμός από</span> <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a></span>
     </div>
   </div>
 </footer>
@@ -2836,7 +2836,7 @@ section{position:relative}
 
 <script id="advon-consent">/* advon-consent · nothing from Google, Mux, YouTube… loads until the visitor says so (GDPR / ePrivacy). Advon Media, Sept 2026 */
 (function () {
-  var KEY = 'advon-consent', PRIV = 'privacy.html', YEAR = 365 * 864e5;
+  var KEY = 'advon-consent', PRIV = '', YEAR = 365 * 864e5;
   function get() { try { var c = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; return (c.t && Date.now() - c.t > YEAR) ? {} : c; } catch (e) { return {}; } }
   function put(c) { c.t = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
   var C = get();
@@ -2897,7 +2897,7 @@ section{position:relative}
       '@media (max-height:250px){p,small{display:none}svg{width:26px;height:26px}}@media (max-height:170px){h2{display:none}}</style></head><body><div class="c">' +
       '<svg viewBox="0 0 24 24" aria-hidden="true">' + icon + '</svg><h2>' + esc(w[0]) + '</h2><p>' + esc(w[1].replace('%p', p)) + '</p>' +
       '<div class="b"><button type="button" id="y">' + esc(w[2]) + '</button>' + (link ? '<a class="o" href="' + esc(link) + '" rel="noopener">' + esc(w[3].replace('%p', p)) + ' ↗</a>' : '') + '</div>' +
-      '<small>' + esc(L.remember) + ' <a href="' + esc(new URL(PRIV, location.href).href) + '" target="_top">' + esc(L.privacy) + '</a></small></div>' +
+      '<small>' + esc(L.remember) + (PRIV ? ' <a href="' + esc(new URL(PRIV, location.href).href) + '" target="_top">' + esc(L.privacy) + '</a>' : '') + '</small></div>' +
       '<script>document.getElementById("y").onclick=function(){parent.advonConsent.allow("' + k + '")}<\/script></body></html>';
     f.setAttribute('srcdoc', doc);
     if (!f.getAttribute('title')) f.setAttribute('title', w[0]);
@@ -2936,7 +2936,7 @@ section{position:relative}
     }
     box.setAttribute('aria-label', L.boxT);
     box.innerHTML = '<p class="advon-ck-t">' + esc(L.boxT) + '</p><p class="advon-ck-p">' + esc(L.boxP.replace('%s', names.join(en() ? ' and ' : ' και ')).replace('%c', who.join(en() ? ' and ' : ' και ')))
-      + ' <a href="' + esc(PRIV) + '">' + esc(L.more) + '</a></p><div class="advon-ck-b"><button type="button" data-a="0">' + esc(L.no) + '</button><button type="button" data-a="1">' + esc(L.yes) + '</button></div>';
+      + (PRIV ? ' <a href="' + esc(PRIV) + '">' + esc(L.more) + '</a>' : '') + '</p><div class="advon-ck-b"><button type="button" data-a="0">' + esc(L.no) + '</button><button type="button" data-a="1">' + esc(L.yes) + '</button></div>';
     box.hidden = false;
     [].forEach.call(box.querySelectorAll('button'), function (b) {
       b.onclick = function () { var yes = b.getAttribute('data-a') === '1'; C.stats = yes ? 1 : 0; put(C); box.hidden = true; if (yes) loadTrackers(); else { clearCookies(); if (window.__advonTR) location.reload(); } };
