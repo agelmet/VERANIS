@@ -2897,7 +2897,7 @@ section{position:relative}
       '@media (max-height:250px){p,small{display:none}svg{width:26px;height:26px}}@media (max-height:170px){h2{display:none}}</style></head><body><div class="c">' +
       '<svg viewBox="0 0 24 24" aria-hidden="true">' + icon + '</svg><h2>' + esc(w[0]) + '</h2><p>' + esc(w[1].replace('%p', p)) + '</p>' +
       '<div class="b"><button type="button" id="y">' + esc(w[2]) + '</button>' + (link ? '<a class="o" href="' + esc(link) + '" rel="noopener">' + esc(w[3].replace('%p', p)) + ' ↗</a>' : '') + '</div>' +
-      '<small>' + esc(L.remember) + (PRIV ? ' <a href="' + esc(new URL(PRIV, location.href).href) + '" target="_top">' + esc(L.privacy) + '</a>' : '') + '</small></div>' +
+      '<small>' + esc(L.remember) + ' <a href="' + esc(new URL(PRIV, location.href).href) + '" target="_top">' + esc(L.privacy) + '</a></small></div>' +
       '<script>document.getElementById("y").onclick=function(){parent.advonConsent.allow("' + k + '")}<\/script></body></html>';
     f.setAttribute('srcdoc', doc);
     if (!f.getAttribute('title')) f.setAttribute('title', w[0]);
@@ -2924,22 +2924,31 @@ section{position:relative}
     var h = location.hostname, ds = ['', h, '.' + h, '.' + h.split('.').slice(-2).join('.')];
     document.cookie.split(';').forEach(function (c) { var n = c.split('=')[0].trim(); if (/^(_ga|_gid|_gcl|_fbp|_fbc)/.test(n)) ds.forEach(function (d) { document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : ''); }); });
   }
+  /* ── one cookie box (Angelo, 25 Sept 2026): «Αποδοχή» loads the map / video / statistics at once and on every later visit;
+        «Απόρριψη» keeps the page as it is (the map card stays, one click still loads it) ── */
+  function kindsHere() { var k = {}; frames().forEach(function (f) { k[f.getAttribute('data-advon-kind') || 'other'] = 1; }); return k; }
+  function decided() { return C.all === 1 || C.all === 0 || (!frames().length && (C.stats === 1 || C.stats === 0)); }
+  function acceptAll() { var k = kindsHere(); for (var x in k) C[x] = 1; C.all = 1; if (TR.length) C.stats = 1; put(C); frames().forEach(load); if (TR.length) loadTrackers(); }
+  function rejectAll() { var had = !!window.__advonTR; C.all = 0; C.stats = 0; put(C); clearCookies(); if (had) location.reload(); }
   function showBox() {
-    if (!TR.length) return;
-    var L = t(), names = [], who = [];
-    if (TR.some(function (i) { return /^(G|UA|GTM)-/.test(i); })) names.push('Google Analytics');
-    if (TR.some(function (i) { return /^(AW|DC)-/.test(i); })) names.push(en() ? 'Google Ads conversion measurement' : 'τη μέτρηση διαφημίσεων της Google');
-    if (TR.some(function (i) { return /^FB-/.test(i); })) names.push(en() ? 'the Meta pixel' : 'το pixel της Meta');
-    if (TR.some(function (i) { return !/^FB-/.test(i); })) who.push('Google'); if (TR.some(function (i) { return /^FB-/.test(i); })) who.push('Meta');
-    if (!box) {
-      box = document.createElement('div'); box.className = 'advon-ck'; box.setAttribute('role', 'region'); document.body.appendChild(box);
-    }
-    box.setAttribute('aria-label', L.boxT);
-    box.innerHTML = '<p class="advon-ck-t">' + esc(L.boxT) + '</p><p class="advon-ck-p">' + esc(L.boxP.replace('%s', names.join(en() ? ' and ' : ' και ')).replace('%c', who.join(en() ? ' and ' : ' και ')))
-      + (PRIV ? ' <a href="' + esc(PRIV) + '">' + esc(L.more) + '</a>' : '') + '</p><div class="advon-ck-b"><button type="button" data-a="0">' + esc(L.no) + '</button><button type="button" data-a="1">' + esc(L.yes) + '</button></div>';
+    var k = kindsHere(); if (!TR.length && !Object.keys(k).length) return;
+    var L = t(), E = en(), show = [], who = {};
+    if (k.map) show.push(E ? 'the Google map' : 'ο χάρτης της Google');
+    if (k.video) { var vp = frames('video').map(function (f) { return f.getAttribute('data-advon-provider') || ''; }).filter(Boolean); show.push((E ? 'the video' : 'το βίντεο') + (vp.length ? ' (' + vp[0] + ')' : '')); }
+    if (k.booking || k.other) show.push(E ? 'the embedded calendar' : 'το ενσωματωμένο ημερολόγιο');
+    if (TR.length) { if (TR.some(function (i) { return !/^FB-/.test(i); })) who.Google = 1; if (TR.some(function (i) { return /^FB-/.test(i); })) who.Meta = 1; }
+    function and(a) { return a.length > 1 ? a.slice(0, -1).join(', ') + (E ? ' and ' : ' και ') + a[a.length - 1] : (a[0] || ''); }
+    var n = show.length, st = TR.length ? (E ? 'for visitor statistics (' : 'για στατιστικά επισκεψιμότητας (') + and(Object.keys(who)) + ')' : '';
+    var txt = E
+      ? 'We use third-party cookies only ' + (n ? 'to show ' + and(show) : '') + (n && st ? ' and ' : '') + st + '. “Accept” ' + (n ? 'shows ' + (n > 1 ? 'them' : 'it') + ' straight away' : 'turns them on') + '; with “Reject” the page works normally.'
+      : 'Χρησιμοποιούμε cookies τρίτων μόνο ' + (n ? 'για να εμφανίζ' + (n > 1 ? 'ονται ' : 'εται ') + and(show) : '') + (n && st ? ' και ' : '') + st + '. Με «Αποδοχή» ' + (n ? 'εμφανίζ' + (n > 1 ? 'ονται' : 'εται') + ' αμέσως' : 'ενεργοποιούνται') + '· με «Απόρριψη» η σελίδα λειτουργεί κανονικά.';
+    if (!box) { box = document.createElement('div'); box.className = 'advon-ck'; box.setAttribute('role', 'region'); document.body.appendChild(box); }
+    box.setAttribute('aria-label', 'Cookies');
+    box.innerHTML = '<p class="advon-ck-t">Cookies</p><p class="advon-ck-p">' + esc(txt)
+      + (PRIV ? ' <a href="' + esc(PRIV) + '">' + esc(E ? 'Cookie policy' : 'Πολιτική cookies') + '</a>' : '') + '</p><div class="advon-ck-b"><button type="button" data-a="0">' + esc(L.no) + '</button><button type="button" data-a="1">' + esc(L.yes) + '</button></div>';
     box.hidden = false;
     [].forEach.call(box.querySelectorAll('button'), function (b) {
-      b.onclick = function () { var yes = b.getAttribute('data-a') === '1'; C.stats = yes ? 1 : 0; put(C); box.hidden = true; if (yes) loadTrackers(); else { clearCookies(); if (window.__advonTR) location.reload(); } };
+      b.onclick = function () { box.hidden = true; if (b.getAttribute('data-a') === '1') acceptAll(); else rejectAll(); };
     });
   }
 
@@ -2950,7 +2959,8 @@ section{position:relative}
   };
   function start() {
     paint();
-    if (TR.length) { if (C.stats === 1) loadTrackers(); else if (C.stats !== 0) showBox(); }
+    if (TR.length && C.stats === 1) loadTrackers();
+    if (!decided()) showBox();
     [].forEach.call(document.querySelectorAll('[data-advon-settings]'), function (a) { a.addEventListener('click', function (e) { e.preventDefault(); showBox(); }); });
     new MutationObserver(function () { frames().forEach(function (f) { if (!f.getAttribute('data-advon-on')) card(f); }); if (box && !box.hidden) showBox(); })
       .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
